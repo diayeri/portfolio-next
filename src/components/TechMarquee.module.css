@@ -1,0 +1,25 @@
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  animation: marquee 50s linear infinite;
+
+  .group:hover .alt {
+    opacity: 1;
+  }
+}
+
+.alt {
+  opacity: 0;
+}
+
+.group:hover .alt {
+  opacity: 1;
+}

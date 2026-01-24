@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("/fonts/PretendardVariable.woff2") format("woff2");
+  font-weight: 100 900;
+  unicode-range: U+AC00-D7A3; /* 한글 음절 범위 */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :root {
+    --font-sans: "Pretendard", "Satoshi", system-ui, sans-serif;
+    --font-mono: "Space Mono", monospace;
+
+    /* Primary: 진하고 채도 높은 하늘빛/연보라 */
+    --color-primary: #4f74e0; /* 진하고 명확한 포인트 */
+    --color-primary-light: #7a9df0; /* 밝은 하이라이트 */
+    --color-primary-dark: #3a57b5; /* 딥 톤 */
+
+    /* Secondary: 가볍고 상큼한 시원한 하늘/민트 */
+    --color-secondary: #7de2d1; /* 상큼하고 은은한 시원한 포인트 */
+    --color-secondary-light: #a8f0e6; /* 밝은 하이라이트 */
+    --color-secondary-dark: #4bb9a7; /* 딥 톤 */
+
+    /* Background (연하고 부드러운 하늘색) */
+    --color-background: #f8f5f2;
+    --color-background-light: #fff;
+    --color-background-dark: #f3f0ed;
+
+    /* Text */
+    --color-text: #333;
+    --color-text-light: #666; /* 보조 텍스트 */
+    --color-text-dark: #222; /* 강조/딥 텍스트 */
+
+    /* Surface (카드/컨테이너) */
+    --color-surface: #fff;
+    --color-surface-light: #fdfdfd;
+    --color-surface-dark: #e9e4dc;
+
+    /* Gradient (하늘 배경) */
+    --color-gradient-1: #b3e6ee; /* 맑은 하늘색 */
+    --color-gradient-2: #cccff1; /* 연보라빛 구름색 */
+    --color-gradient-3: #e8dcee;
+  }
+
+  .dark {
+    /* Primary: 진주+보랏빛 */
+    --color-primary: #d6dbff; /* 거의 흰색에 가까운 펄라일락 */
+    --color-primary-light: #eef0ff; /* 더 밝은 톤, 하이라이트 */
+    --color-primary-dark: #a5a9e0; /* 살짝 톤다운된 연보라 */
+
+    /* Secondary: 채도 높은 민트 */
+    --color-secondary: #3a9d8a; /* 깊은 민트 */
+    --color-secondary-light: #5fb5a1; /* 살짝 밝은 청록 */
+    --color-secondary-dark: #267366; /* 더 어두운 청록 */
+
+    /* Background (심해) */
+    --color-background: #1a2233;
+    --color-background-light: #232a3a;
+    --color-background-dark: #181e2a;
+
+    /* Text */
+    --color-text: #f5f6fa; /* 기본 텍스트 */
+    --color-text-light: #cfd4da; /* 보조 텍스트 */
+    --color-text-dark: #e0e4ec; /* 반전 강조 */
+
+    /* Surface (카드/컨테이너) */
+    --color-surface: rgba(26, 34, 51, 0.85);
+    --color-surface-light: rgba(35, 42, 58, 0.75);
+    --color-surface-dark: rgba(26, 34, 51, 0.95);
+
+    /* Gradient (바다 배경) */
+    --color-gradient-1: #0d1b2a;
+    --color-gradient-2: #1b263b;
+    --color-gradient-3: #415a77;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    @apply text-text transition-colors duration-300;
+    /* @apply bg-background text-text transition-colors duration-300; */
+    margin: 0;
+    height: 100vh;
+  }
+
+  /* 스크롤바 숨기기 */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  * {
+    scrollbar-width: none;
+  }
+  body {
+    -ms-overflow-style: none;
+  }
+}
+
+@layer components {
+  .bg-ani-gradient {
+    /* 처음 그라데이션 세팅 */
+    background: linear-gradient(
+      -45deg,
+      var(--color-gradient-1),
+      var(--color-gradient-2),
+      var(--color-gradient-3),
+      var(--color-gradient-1)
+    );
+    background-size: 400% 400%;
+
+    /* 애니메이션 */
+    animation: gradientFlow 20s ease infinite;
+  }
+
+  @keyframes gradientFlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
