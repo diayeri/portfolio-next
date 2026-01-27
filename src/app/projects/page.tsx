@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import ProjectCard from "@/components/ProjectCard";
 import AnimatedElement from "@/components/AnimatedElement";
-// import { useRouter } from "next/router";
+// import { useRouter } from "next/navigation";
 import { Button } from "@/components/Button";
 import type { ProjectData } from "@/types/ProjectData";
 // import { projectsData } from '@/data/projectsData';
@@ -75,7 +75,7 @@ const Projects: React.FC = () => {
   return (
     <section className="w-full px-10 py-20">
       <div className="py-10 text-center">
-        <h2 className="mb-10 title">Projects</h2>
+        <h2 className="mb-10 text-5xl font-bold">Projects</h2>
         <div className="flex justify-center gap-2">
           {(["all", "frontend", "markup", "design"] as Category[]).map((c) => (
             <Button

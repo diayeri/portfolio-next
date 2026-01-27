@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useMemo } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import NextImage from "next/image";
 // import { Button } from './Button';
 // import { ArrowRight } from 'lucide-react';
@@ -32,7 +32,7 @@ const Portfolio = () => {
         <div className="flex justify-between w-full">
           <motion.h2
             {...fadeUp(0, false)}
-            className="mr-auto text-white text-5xl font-bold"
+            className="mr-auto text-5xl font-bold text-white"
           >
             Featured Projects
           </motion.h2>

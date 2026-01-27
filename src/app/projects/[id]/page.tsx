@@ -3,8 +3,8 @@
 import React from "react";
 import { useRouter, useParams } from "next/navigation";
 import Link from "next/link";
-import type { ProjectsData } from "@/data/projectsData";
-import Page404 from "@/app/_not-found";
+import { projectsData } from "@/data/projectsData";
+import NotFoundPage from "@/app/_not-found";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 import ProjectsDetailSection from "@/components/ProjectDetailSection";
 import { projectSections } from "@/data/projectSections";
@@ -26,29 +26,25 @@ const ProjectInfoItem: React.FC<ProjectInfoItemProps> = ({
   </div>
 );
 
-interface ProjectDetailProps {
-  projects: ProjectsData[];
-}
-
 /**
  * 프로젝트 상세 정보를 표시하는 컴포넌트
  * - 프로젝트의 상세 정보 표시
  * - 기술 스택, 이미지, 설명 등을 표시
  * - 이전/다음 프로젝트로 이동 기능
  */
-const ProjectDetail: React.FC<ProjectDetailProps> = ({ projects }) => {
+const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
   const router = useRouter();
 
   const projectId = id?.toLowerCase() ?? ""; // URL 파라미터에서 현재 프로젝트 ID를 찾음
-  const project = projects.find((p) => p.id === projectId);
+  const project = projectsData.find((p) => p.id === projectId);
 
   if (!project) {
-    return <Page404 />;
+    return <NotFoundPage />;
   }
 
   // 이전/다음 프로젝트 ID 계산
-  const featuredProjects = projects
+  const featuredProjects = projectsData
     .filter((p) => p.featured)
     .sort((a, b) => a.featured!.order - b.featured!.order);
   const currentIndex = featuredProjects.findIndex((p) => p.id === project.id);
