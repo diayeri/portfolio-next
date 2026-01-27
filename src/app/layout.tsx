@@ -25,7 +25,9 @@ export const metadata: Metadata = {
     template: "Dayoung Jung | UI Developer",
   },
   description: process.env.NEXT_PUBLIC_SITE_DESCRIPTION,
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL!),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfolio-dy.vercel.app",
+  ),
 
   openGraph: {
     title: process.env.NEXT_PUBLIC_SITE_TITLE,
