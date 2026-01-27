@@ -4,7 +4,7 @@ import React from "react";
 import { useRouter, useParams } from "next/navigation";
 import Link from "next/link";
 import { projectsData } from "@/data/projectsData";
-import NotFoundPage from "@/app/_not-found";
+import { notFound } from "next/navigation";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 import ProjectsDetailSection from "@/components/ProjectDetailSection";
 import { projectSections } from "@/data/projectSections";
@@ -40,7 +40,7 @@ const ProjectDetail = () => {
   const project = projectsData.find((p) => p.id === projectId);
 
   if (!project) {
-    return <NotFoundPage />;
+    notFound();
   }
 
   // 이전/다음 프로젝트 ID 계산

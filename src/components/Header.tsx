@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = () => {
       </div>
       <div className="">
         <Link
-          href="https://github.com/diayeri/my-portfolio"
+          href="https://github.com/diayeri/portfolio-next"
           target="_blank"
           className="flex items-center gap-1 text-sm text-gray-500/80 hover:text-primary-light"
         >
