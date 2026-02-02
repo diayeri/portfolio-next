@@ -8,6 +8,7 @@ import { Github, ArrowDown } from "lucide-react";
 import { useHero } from "@/context/HeroContext";
 import { motion } from "framer-motion";
 import { fadeUp } from "@/motion";
+import { sendEvent } from "@/utils/analytics/gtag";
 
 export default function Hero() {
   const { visited, setVisited } = useHero();
@@ -27,6 +28,12 @@ export default function Hero() {
     window.scrollBy({
       top: window.innerHeight,
       behavior: "smooth",
+    });
+
+    sendEvent({
+      action: "click",
+      category: "portfolio",
+      label: "heroExplore_button",
     });
   };
 
@@ -61,6 +68,13 @@ export default function Hero() {
             color="primary"
             variant="outline"
             iconRight={<Github />}
+            onClick={() =>
+              sendEvent({
+                action: "click",
+                category: "portfolio",
+                label: "heroGithub_button",
+              })
+            }
           >
             Github
           </Button>

@@ -3,6 +3,8 @@ import { Space_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import DefaultLayout from "@/layouts/DefaultLayout";
 import MobileNotice from "@/components/MobileNotice";
+import Script from "next/script";
+import GAListener from "@/utils/analytics/GAListener";
 import "./globals.css";
 
 const satoshi = localFont({
@@ -52,7 +54,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
+              page_path: window.location.pathname,
+            });
+          `}
+        </Script>
+      </head>
       <body className={`${satoshi.variable} ${spaceMono.variable} antialiased`}>
+        <GAListener />
         <DefaultLayout>{children}</DefaultLayout>
         <MobileNotice></MobileNotice>
       </body>

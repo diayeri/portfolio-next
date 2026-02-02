@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { sendEvent } from "@/utils/analytics/gtag";
 
 const BuildDate = () => {
   const buildDateString =
@@ -32,6 +33,13 @@ const Header: React.FC<HeaderProps> = () => {
           href="https://github.com/diayeri/portfolio-next"
           target="_blank"
           className="flex items-center gap-1 text-sm text-gray-500/80 hover:text-primary-light"
+          onClick={() =>
+            sendEvent({
+              action: "click",
+              category: "portfolio",
+              label: "buildDate_button",
+            })
+          }
         >
           {/* <span>🚧 Portfolio in Progress</span> */}
           {BuildDate()}
