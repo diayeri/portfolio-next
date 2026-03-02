@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useMemo } from "react";
-import { useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import NextImage from "next/image";
 // import { Button } from './Button';
 // import { ArrowRight } from 'lucide-react';
@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import { fadeUp } from "@/motion";
 
 const Portfolio = () => {
+  const queryRole = useSearchParams().get("role");
   const featuredProjects = useMemo(() => {
     return projectsData
       .filter((p) => p.featured !== undefined)
@@ -86,7 +87,9 @@ const Portfolio = () => {
                         : " text-gray-500"
                     }`}
                   >
-                    {project.category}
+                    {queryRole === "design" && project.category === "UI Dev"
+                      ? "Markup"
+                      : project.category}
                   </span>
                 </div>
                 {/* </a> */}

@@ -1,10 +1,13 @@
 "use client";
 
 import { timelineData } from "@/data/timelineData";
+import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { fadeUp } from "@/motion";
 
 export default function Timeline() {
+  const queryRole = useSearchParams().get("role");
+
   return (
     <section className="w-full px-10 py-20">
       <div className="max-w-[1400px] mx-auto flex">
@@ -13,7 +16,7 @@ export default function Timeline() {
           <motion.h2 {...fadeUp(0, false)} className="text-5xl font-bold">
             Career History
           </motion.h2>
-          <div className="flex flex-col gap-2 mt-10 text-sm text-gray-500 break-keep">
+          <div className="flex flex-col gap-2 mt-10 text-base text-gray-500 break-keep">
             <p>
               UI 개발로 경력을 시작한 후, 디자인과 프론트엔드까지 영역을
               확장하며
@@ -23,10 +26,8 @@ export default function Timeline() {
             <p>
               디자인 시스템과 구조를 고려한 UI 구현으로 프로젝트 완성도를
               높이고, <br />
-              React와 TypeScript 환경에서 개발자 및 디자이너와 원활하게
-              협업합니다.
+              React, TypeScript 환경에서 원활하게 협업합니다.
             </p>
-            <p>앞으로의 프로젝트에서는 풀스택으로 역량을 키워가고 싶습니다.</p>
           </div>
         </div>
         {/* Right */}
@@ -41,9 +42,11 @@ export default function Timeline() {
                 {/* 이벤트 내용 */}
                 <div className="pl-12">
                   <p className="text-base text-gray-500">{event.period}</p>
-                  <h3 className="mt-2 text-2xl font-semibold">{event.title}</h3>
-                  <h3 className="text-2xl font-medium text-primary-dark">
-                    {event.role}
+                  <h3 className="mt-2 text-3xl font-semibold">{event.title}</h3>
+                  <h3 className="text-3xl font-medium text-primary-dark">
+                    {queryRole === "design" && event.role === "UI Developer"
+                      ? "Web Publisher"
+                      : event.role}
                   </h3>
                   <p className="mt-4 text-base font-medium">{event.details}</p>
                   {event.highlights && (

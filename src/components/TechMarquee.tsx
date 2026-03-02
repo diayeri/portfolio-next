@@ -1,7 +1,6 @@
 "use client";
 
 import styles from "./TechMarquee.module.css";
-import NextImage from "next/image";
 
 export function TechMarquee() {
   const logos = [
@@ -30,14 +29,12 @@ export function TechMarquee() {
         {repeatedLogos.map((logo, i) => (
           <div
             key={i}
-            className={`relative flex items-center justify-center mx-6 ${styles.group}`}
+            className={`h-10 relative flex items-center justify-center mx-6 ${styles.group}`}
           >
-            <NextImage
+            <img
               src={logo.src}
               alt={logo.alt}
-              width={40}
-              height={40}
-              className="w-auto h-10 transition duration-200 opacity-50 grayscale hover:opacity-100 hover:grayscale-0"
+              className="w-auto h-full transition duration-200 opacity-50 grayscale hover:opacity-100 hover:grayscale-0"
             />
             {/* hover 시 alt 텍스트 */}
             <span

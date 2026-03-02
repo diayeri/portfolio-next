@@ -35,11 +35,11 @@ export const timelineData = [
   {
     period: "18.10 - 22.05",
     title: "Miral Welfare Foundation",
-    role: "Web Designer & Developer",
+    role: "Web Designer",
     details: "콘텐츠 페이지 디자인 및 기능 구현, 홈페이지 운영",
     highlights: [
       "후원 결제창 개편 프로젝트 제안 및 디자인 주도, 모바일 후원 2배 성과 달성",
-      "포토샵, 일러스트, 촬영 등 전체 제작 과정 수행",
+      "상세페이지 UI 개발, 포토샵, 일러스트, 촬영 등 전체 제작 과정 수행",
     ],
   },
   {
