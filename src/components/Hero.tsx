@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import useRoleMode from "./RoleSwitcher";
 import MainAnimation from "@/components/MainAnimation";
 import { ScrollIndicator } from "@/components/ScrollIndicator";
 import { Button } from "@/components/Button";
@@ -14,7 +14,7 @@ import { sendEvent } from "@/utils/analytics/gtag";
 export default function Hero() {
   const { visited, setVisited } = useHero();
   const [showStatic, setShowStatic] = useState(visited);
-  const queryRole = useSearchParams().get("role");
+  const roleMode = useRoleMode();
 
   useEffect(() => {
     if (!visited) {
@@ -49,12 +49,10 @@ export default function Hero() {
         {...fadeUp(3.2, visited)}
         className="z-10 mt-5 font-medium text-white text-8xl"
       >
-        <span className="ml-[-102px] text-transparent bg-clip-text bg-gradient-to-r from-primary-dark to-black drop-shadow-sm over">
-          {queryRole === "design" ? (
-            <span>UI Designer,</span>
-          ) : (
-            <span className="ml-[54px]">UI Developer,</span>
-          )}
+        <span className="ml-[-120px] text-transparent bg-clip-text bg-gradient-to-r from-primary-dark to-black drop-shadow-sm over">
+          <span className={roleMode.role === "design" ? "" : "ml-[54px]"}>
+            {roleMode.titleEn}
+          </span>
         </span>
         <br />
         <span className="mr-[-244px] text-nowrap drop-shadow-xl">
@@ -66,8 +64,7 @@ export default function Hero() {
         <p className="mt-20 text-base">
           디자인 이해를 바탕으로 UI 개발을 주력으로 하며 <br />
           React, TypeScript 기반 프론트엔드 환경에서 <br />
-          컴포넌트 구현과 기능 개발을 수행해온 UI{" "}
-          {queryRole === "design" ? "디자이너" : "개발자"}입니다.
+          컴포넌트 구현과 기능 개발을 수행해온 {roleMode.titleKo}입니다.
         </p>
         <div className="z-10 flex justify-center gap-2 mt-8">
           <Button

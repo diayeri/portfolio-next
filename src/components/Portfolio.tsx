@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect, useMemo } from "react";
-import { useSearchParams } from "next/navigation";
 import NextImage from "next/image";
+import useRoleMode from "./RoleSwitcher";
 // import { Button } from './Button';
 // import { ArrowRight } from 'lucide-react';
 import { projectsData } from "@/data/projectsData";
@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 import { fadeUp } from "@/motion";
 
 const Portfolio = () => {
-  const queryRole = useSearchParams().get("role");
+  const roleMode = useRoleMode();
   const featuredProjects = useMemo(() => {
     return projectsData
       .filter((p) => p.featured !== undefined)
@@ -87,9 +87,7 @@ const Portfolio = () => {
                         : " text-gray-500"
                     }`}
                   >
-                    {queryRole === "design"
-                      ? project.category.replace("UI Dev", "Markup")
-                      : project.category}
+                    {roleMode.tag}
                   </span>
                 </div>
                 {/* </a> */}
