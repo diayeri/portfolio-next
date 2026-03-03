@@ -43,8 +43,8 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className="w-full py-5 text-xs text-center border-t">
-        &copy; {new Date().getFullYear()} UI Dev Portfolio - Dayoung Jung. All
-        rights reserved.
+        &copy; {new Date().getFullYear()} UI Design & Development Portfolio -
+        Dayoung Jung. All rights reserved.
       </div>
     </footer>
   );

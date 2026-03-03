@@ -87,8 +87,8 @@ const Portfolio = () => {
                         : " text-gray-500"
                     }`}
                   >
-                    {queryRole === "design" && project.category === "UI Dev"
-                      ? "Markup"
+                    {queryRole === "design"
+                      ? project.category.replace("UI Dev", "Markup")
                       : project.category}
                   </span>
                 </div>

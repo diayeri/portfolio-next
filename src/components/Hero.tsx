@@ -49,15 +49,13 @@ export default function Hero() {
         {...fadeUp(3.2, visited)}
         className="z-10 mt-5 font-medium text-white text-8xl"
       >
-        {queryRole === "design" ? (
-          <span className="ml-[-102px] text-transparent bg-clip-text bg-gradient-to-r from-primary-dark to-black drop-shadow-sm">
-            UI Designer,
-          </span>
-        ) : (
-          <span className="ml-[-48px] text-transparent bg-clip-text bg-gradient-to-r from-primary-dark to-black drop-shadow-sm">
-            UI Developer,
-          </span>
-        )}
+        <span className="ml-[-102px] text-transparent bg-clip-text bg-gradient-to-r from-primary-dark to-black drop-shadow-sm over">
+          {queryRole === "design" ? (
+            <span>UI Designer,</span>
+          ) : (
+            <span className="ml-[54px]">UI Developer,</span>
+          )}
+        </span>
         <br />
         <span className="mr-[-244px] text-nowrap drop-shadow-xl">
           Dayoung Jung

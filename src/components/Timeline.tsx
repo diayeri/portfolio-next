@@ -44,8 +44,8 @@ export default function Timeline() {
                   <p className="text-base text-gray-500">{event.period}</p>
                   <h3 className="mt-2 text-3xl font-semibold">{event.title}</h3>
                   <h3 className="text-3xl font-medium text-primary-dark">
-                    {queryRole === "design" && event.role === "UI Developer"
-                      ? "Web Publisher"
+                    {queryRole === "design"
+                      ? event.role.replace("UI Developer", "Web Publisher")
                       : event.role}
                   </h3>
                   <p className="mt-4 text-base font-medium">{event.details}</p>
