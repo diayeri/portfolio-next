@@ -1,12 +1,12 @@
 "use client";
 
 import { timelineData } from "@/data/timelineData";
-import useRoleMode from "./RoleSwitcher";
 import { motion } from "framer-motion";
 import { fadeUp } from "@/motion";
+import { useRole } from "@/context/RoleContext";
 
 export default function Timeline() {
-  const roleMode = useRoleMode();
+  const { roleData } = useRole();
 
   return (
     <section className="w-full px-10 py-20">
@@ -44,7 +44,7 @@ export default function Timeline() {
                   <p className="text-base text-gray-500">{event.period}</p>
                   <h3 className="mt-2 text-3xl font-semibold">{event.title}</h3>
                   <h3 className="text-3xl font-medium text-primary-dark">
-                    {roleMode.replaceRole(event.role)}
+                    {roleData.replaceRole(event.role)}
                   </h3>
                   <p className="mt-4 text-base font-medium">{event.details}</p>
                   {event.highlights && (

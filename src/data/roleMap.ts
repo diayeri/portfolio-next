@@ -1,8 +1,13 @@
-"use client";
+export type RoleType = "develop" | "design";
 
-import { useSearchParams } from "next/navigation";
+type RoleData = {
+  titleEn: string;
+  titleKo: string;
+  tag: string;
+  replaceRole: (role: string) => string;
+};
 
-const ROLE_SET = {
+export const roleMap: Record<RoleType, RoleData> = {
   develop: {
     titleEn: "UI Developer",
     titleKo: "UI 개발자",
@@ -17,11 +22,3 @@ const ROLE_SET = {
       role.replace(/UI Developer/g, "Web Publisher"),
   },
 };
-type RoleType = keyof typeof ROLE_SET;
-export default function useRoleMode() {
-  const searchParams = useSearchParams();
-  const role: RoleType =
-    searchParams.get("role") === "design" ? "design" : "develop";
-
-  return { role, ...ROLE_SET[role] };
-}

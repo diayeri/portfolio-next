@@ -1,7 +1,6 @@
 export {};
 
 type GtagCommand = "config" | "event" | "js";
-
 interface GtagEventParams {
   event_category?: string;
   event_label?: string;

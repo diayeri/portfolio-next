@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import useRoleMode from "./RoleSwitcher";
 import MainAnimation from "@/components/MainAnimation";
 import { ScrollIndicator } from "@/components/ScrollIndicator";
 import { Button } from "@/components/Button";
@@ -10,11 +9,12 @@ import { useHero } from "@/context/HeroContext";
 import { motion } from "framer-motion";
 import { fadeUp } from "@/motion";
 import { sendEvent } from "@/utils/analytics/gtag";
+import { useRole } from "@/context/RoleContext";
 
 export default function Hero() {
   const { visited, setVisited } = useHero();
   const [showStatic, setShowStatic] = useState(visited);
-  const roleMode = useRoleMode();
+  const { roleKey, roleData } = useRole();
 
   useEffect(() => {
     if (!visited) {
@@ -50,8 +50,8 @@ export default function Hero() {
         className="z-10 mt-5 font-medium text-white text-8xl"
       >
         <span className="ml-[-120px] text-transparent bg-clip-text bg-gradient-to-r from-primary-dark to-black drop-shadow-sm over">
-          <span className={roleMode.role === "design" ? "" : "ml-[54px]"}>
-            {roleMode.titleEn}
+          <span className={roleKey !== "design" ? "ml-[54px]" : ""}>
+            {roleData.titleEn}
           </span>
         </span>
         <br />
@@ -64,7 +64,7 @@ export default function Hero() {
         <p className="mt-20 text-base">
           디자인 이해를 바탕으로 UI 개발을 주력으로 하며 <br />
           React, TypeScript 기반 프론트엔드 환경에서 <br />
-          컴포넌트 구현과 기능 개발을 수행해온 {roleMode.titleKo}입니다.
+          컴포넌트 구현과 기능 개발을 수행해온 {roleData.titleKo}입니다.
         </p>
         <div className="z-10 flex justify-center gap-2 mt-8">
           <Button

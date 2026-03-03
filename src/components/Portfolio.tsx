@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo } from "react";
 import NextImage from "next/image";
-import useRoleMode from "./RoleSwitcher";
+import { useRole } from "@/context/RoleContext";
 // import { Button } from './Button';
 // import { ArrowRight } from 'lucide-react';
 import { projectsData } from "@/data/projectsData";
@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 import { fadeUp } from "@/motion";
 
 const Portfolio = () => {
-  const roleMode = useRoleMode();
+  const { roleData } = useRole();
   const featuredProjects = useMemo(() => {
     return projectsData
       .filter((p) => p.featured !== undefined)
@@ -87,7 +87,7 @@ const Portfolio = () => {
                         : " text-gray-500"
                     }`}
                   >
-                    {roleMode.tag}
+                    {roleData.tag}
                   </span>
                 </div>
                 {/* </a> */}
