@@ -1,35 +1,13 @@
-import Hero from "@/components/Hero";
-import Intro from "@/components/Intro";
-import Timeline from "@/components/Timeline";
-import Portfolio from "@/components/Portfolio";
-import { HeroProvider } from "@/context/HeroContext";
-import { RoleProvider } from "@/context/RoleContext";
+import Home from "@/components/Home";
 
-type HomeProps = {
-  roleKey: "design" | "develop";
-};
-
-function Home({ roleKey }: HomeProps) {
-  return (
-    <RoleProvider roleKey={roleKey}>
-      <div className="relative flex flex-col items-center justify-center">
-        <HeroProvider>
-          <Hero />
-        </HeroProvider>
-        <Intro />
-        <Portfolio />
-        <Timeline />
-      </div>
-    </RoleProvider>
-  );
-}
-
-export default function Page({
+export default async function Page({
   searchParams,
 }: {
   searchParams: { role?: string };
 }) {
-  const roleKey = searchParams.role === "design" ? "design" : "develop";
+  const params = await searchParams;
+  const roleKey =
+    params?.role?.toLowerCase() === "design" ? "design" : "develop";
 
   return <Home roleKey={roleKey} />;
 }
