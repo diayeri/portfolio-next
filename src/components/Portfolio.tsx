@@ -87,7 +87,7 @@ const Portfolio = () => {
                         : " text-gray-500"
                     }`}
                   >
-                    {roleData.tag}
+                    {roleData.replaceRole(project.category)}
                   </span>
                 </div>
                 {/* </a> */}
