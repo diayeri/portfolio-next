@@ -19,7 +19,9 @@ export default async function Page({
 
   return (
     <ProjectLayout title={project.meta.title}>
-      <MDXRemote source={project.content} components={components} />
+      <article className="prose prose-slate lg:prose-xl max-w-none">
+        <MDXRemote source={project.content} components={components} />
+      </article>
     </ProjectLayout>
   );
 }
