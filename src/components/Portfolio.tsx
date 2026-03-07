@@ -59,38 +59,35 @@ const Portfolio = () => {
               height={600}
             />
           </div>
-          {/* 프로젝트 리스트 */}
+          {/* 대표 프로젝트 리스트 */}
           <ul className="flex flex-col w-1/2 gap-0 pl-12">
             {featuredProjects.map((project) => (
               <li
                 key={project.id}
                 onMouseEnter={() => setActiveProject(project)}
               >
-                {/* <a
-                  href={`/projects/${project.id}`}
-                  className='flex items-center py-6 border-b border-gray-500 cursor-pointer'
-                > */}
-                <div className="flex items-center py-6 border-b border-gray-500">
-                  <h3
-                    className={`text-3xl font-semibold transition-colors duration-200 ${
-                      activeProject.id === project.id
-                        ? "text-white"
-                        : "text-gray-700"
-                    }`}
-                  >
-                    {project.title}
-                  </h3>
-                  <span
-                    className={`px-2 py-1 ml-5 text-sm font-normal rounded bg-white/20${
-                      activeProject.id === project.id
-                        ? " text-white"
-                        : " text-gray-500"
-                    }`}
-                  >
-                    {roleData.replaceRole(project.category)}
-                  </span>
-                </div>
-                {/* </a> */}
+                <a href={`/projects/${project.id}`}>
+                  <div className="flex items-center py-6 border-b border-gray-500">
+                    <h3
+                      className={`text-3xl font-semibold transition-colors duration-200 ${
+                        activeProject.id === project.id
+                          ? "text-white"
+                          : "text-gray-700"
+                      }`}
+                    >
+                      {project.title}
+                    </h3>
+                    <span
+                      className={`px-2 py-1 ml-5 text-sm font-normal rounded bg-white/20${
+                        activeProject.id === project.id
+                          ? " text-white"
+                          : " text-gray-500"
+                      }`}
+                    >
+                      {roleData.replaceRole(project.category)}
+                    </span>
+                  </div>
+                </a>
               </li>
             ))}
           </ul>
