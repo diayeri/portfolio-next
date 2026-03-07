@@ -30,7 +30,7 @@ export const projectsData: ProjectsData[] = [
     client: "Quarkonix",
     featured: {
       order: 1,
-      cover: "/projects/chromatic/cover.png",
+      cover: "/projects/chromatic/mockup.png",
     },
     links: [
       "https://app.chromatic.finance/",
@@ -50,7 +50,7 @@ export const projectsData: ProjectsData[] = [
     client: "이스트소프트",
     featured: {
       order: 2,
-      cover: "/projects/rounz/cover.png",
+      cover: "/projects/rounz/mockup.png",
     },
   },
   {
@@ -63,7 +63,7 @@ export const projectsData: ProjectsData[] = [
     client: "이스트소프트 프론트엔드 부트캠프 1기",
     featured: {
       order: 3,
-      cover: "/projects/muna/cover.png",
+      cover: "/projects/muna/mockup.png",
     },
   },
   {
@@ -76,7 +76,7 @@ export const projectsData: ProjectsData[] = [
     client: "Krust Universe",
     featured: {
       order: 4,
-      cover: "/projects/klaybay/cover.png",
+      cover: "/projects/klaybay/mockup.png",
     },
   },
   {
@@ -89,7 +89,7 @@ export const projectsData: ProjectsData[] = [
     client: "Cocone",
     featured: {
       order: 5,
-      cover: "/projects/stichy/cover.png",
+      cover: "/projects/stichy/mockup.png",
     },
   },
   {
@@ -102,7 +102,7 @@ export const projectsData: ProjectsData[] = [
     client: "밀알복지재단",
     featured: {
       order: 6,
-      cover: "/projects/miral-payment/cover.png",
+      cover: "/projects/miral-payment/mockup.png",
     },
   },
 ];
