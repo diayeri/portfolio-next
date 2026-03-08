@@ -1,23 +1,16 @@
-"use client";
-
-import { useRouter, useParams } from "next/navigation";
-import { projectsData } from "@/data/projectsData";
+import { ProjectsData } from "@/data/projectsData";
 import { notFound } from "next/navigation";
 import { ProjectHeader } from "./ProjectHeader";
 import { ProjectNav } from "./ProjectNav";
 
 export default function ProjectLayout({
-  title,
+  project,
   children,
 }: {
-  title: string;
+  project: ProjectsData;
   children: React.ReactNode;
 }) {
-  const { id } = useParams<{ id: string }>();
-  const router = useRouter();
-
-  const projectId = id?.toLowerCase() ?? ""; // URL 파라미터에서 현재 프로젝트 ID를 찾음
-  const project = projectsData.find((p) => p.id === projectId);
+  // const router = useRouter();
 
   if (!project) {
     notFound();
