@@ -121,5 +121,7 @@ export const projectsData: ProjectsData[] = [
       order: 6,
       cover: "/projects/miral-payment/mockup.png",
     },
+    description:
+      "사용성 분석을 통해 후원 결제 단계의 병목 지점을 개선하고, 모바일 최적화와 입력 공정 간소화를 통해 전년 대비 모바일 후원을 2배 이상으로 성장시킨 UX 리뉴얼 프로젝트",
   },
 ];
