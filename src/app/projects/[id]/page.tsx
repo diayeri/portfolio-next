@@ -3,10 +3,11 @@ import { getProject } from "@/lib/projects";
 import { projectsData } from "@/data/projectsData";
 import { notFound } from "next/navigation";
 import ProjectLayout from "@/components/project/ProjectLayout";
-import BeforeAfter from "@/components/project/mdx/BeforeAfter";
+import MDXImage from "@/components/project/mdx/MDXImage";
 
 const components = {
-  BeforeAfter,
+  MDXImage,
+  // li: (props: string[]) => <li {...props} className="text-base" />,
 };
 
 export default async function Page({

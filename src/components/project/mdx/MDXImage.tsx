@@ -6,6 +6,7 @@ interface MDXImageProps {
   label?: string;
   width?: number;
   height?: number;
+  maxHeight?: number; // 세로 길이를 제한하는 옵션 추가
 }
 
 export default function MDXImage({
@@ -14,21 +15,25 @@ export default function MDXImage({
   label,
   width = 1120,
   height = 450,
+  maxHeight,
 }: MDXImageProps) {
   return (
-    <figure className="flex flex-col items-center justify-center w-full my-10 not-prose">
-      <div className="relative overflow-visible">
+    <figure className="flex flex-col items-center justify-center my-10 not-prose">
+      <div
+        className="relative overflow-hidden hover:scale-[1.02] duration-500 flex justify-center items-start"
+        style={maxHeight ? { maxHeight: `${maxHeight}px` } : {}}
+      >
         <NextImage
           src={src}
           alt={alt}
           width={width}
           height={height}
-          className="object-cover transition-transform duration-500 hover:scale-[1.02] mb-0"
+          className="object-cover w-auto h-auto mb-0 transition-transform"
         />
       </div>
 
       {label && (
-        <figcaption className="mt-4 text-sm italic font-medium text-center text-gray-500 dark:text-gray-400">
+        <figcaption className="mt-4 text-[11px] font-medium tracking-widest text-gray-400 uppercase text-center">
           {label}
         </figcaption>
       )}

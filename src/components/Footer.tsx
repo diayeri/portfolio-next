@@ -6,14 +6,18 @@ import { Mail, Github, Linkedin } from "lucide-react";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="w-full px-10 mt-8 text-xs text-left text-gray-500">
-      <div className="flex justify-between py-4">
+    <footer className="w-full mt-8 text-xs text-left text-gray-500 bg-gray-100">
+      <div className="flex items-center justify-between px-10 py-4">
         <Link
           href="/"
           className="font-mono text-base font-bold text-gray-500 hover:text-primary-light"
         >
           DtoD
         </Link>
+        <div className="w-full px-10 text-xs text-center">
+          &copy; {new Date().getFullYear()} UI Design & Development Portfolio -
+          Dayoung Jung. All rights reserved.
+        </div>
         <div className="flex gap-5 text-sm font-medium">
           <a
             href="mailto:jdyoung1031@gmail.com"
@@ -41,10 +45,6 @@ const Footer: React.FC = () => {
             <Linkedin className="w-4" />
           </a>
         </div>
-      </div>
-      <div className="w-full py-5 text-xs text-center border-t">
-        &copy; {new Date().getFullYear()} UI Design & Development Portfolio -
-        Dayoung Jung. All rights reserved.
       </div>
     </footer>
   );

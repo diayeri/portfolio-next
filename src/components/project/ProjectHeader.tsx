@@ -12,14 +12,14 @@ const ProjectInfoItem: React.FC<ProjectInfoItemProps> = ({
   value,
   className,
 }) => (
-  <div className={`py-2.5 ${className}`}>
+  <div className={`py-2.5 ${className} w-max`}>
     <h2 className="text-sm font-medium text-gray-400">{label}</h2>
     <p className="text-base text-gray-700">{value}</p>
   </div>
 );
 export const ProjectHeader = ({ project }: { project: ProjectsData }) => {
   return (
-    <div className="flex py-20">
+    <div className="flex my-20">
       {/* left */}
       <div>
         <h1 className="mb-6 text-3xl font-bold md:text-4xl lg:text-6xl">

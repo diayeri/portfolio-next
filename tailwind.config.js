@@ -26,6 +26,25 @@ module.exports = {
         "surface-light": "var(--color-surface-light)",
         "surface-dark": "var(--color-surface-dark)",
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            p: {
+              fontSize: "1rem", // text-base
+            },
+            h3: {
+              fontSize: "1.25rem", // text-xl
+              fontWeight: "700",
+            },
+            li: {
+              fontSize: "1rem",
+              "&::marker": {
+                color: "rgb(31 41 55)", // bg-gray-800
+              },
+            },
+          },
+        },
+      },
     },
   },
   plugins: [typography],
