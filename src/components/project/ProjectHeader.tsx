@@ -13,7 +13,7 @@ const ProjectInfoItem: React.FC<ProjectInfoItemProps> = ({
   className,
 }) => (
   <div className={`py-2.5 ${className} w-max`}>
-    <h2 className="text-sm font-medium text-gray-400">{label}</h2>
+    <h2 className="text-sm font-medium text-gray-400 capitalize">{label}</h2>
     <p className="text-base text-gray-700">{value}</p>
   </div>
 );
@@ -43,17 +43,17 @@ export const ProjectHeader = ({ project }: { project: ProjectsData }) => {
       {/* right */}
       <div className="pl-20 ml-auto">
         <div className="flex gap-10">
-          <ProjectInfoItem label="Role" value={project.category} />
-          <ProjectInfoItem label="Client" value={project.client} />
+          <ProjectInfoItem label="role" value={project.category} />
+          <ProjectInfoItem label={project.clientType} value={project.client} />
           <ProjectInfoItem
-            label="Period"
+            label="period"
             value={`${project.startDate} ~ ${project.endDate ?? "Present"}`}
           />
         </div>
         {project.links && (
           <ProjectInfoItem
             className="col-span-full"
-            label="Link"
+            label="link"
             value={project.links.map((link, idx) => (
               <React.Fragment key={idx}>
                 <a
@@ -72,7 +72,7 @@ export const ProjectHeader = ({ project }: { project: ProjectsData }) => {
         {project.github && (
           <ProjectInfoItem
             className="col-span-full"
-            label="GitHub"
+            label="gitHub"
             value={
               <a
                 href={project.github}

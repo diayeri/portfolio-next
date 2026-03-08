@@ -7,6 +7,7 @@ interface MDXImageProps {
   width?: number;
   height?: number;
   maxHeight?: number; // 세로 길이를 제한하는 옵션 추가
+  noBorder?: boolean;
 }
 
 export default function MDXImage({
@@ -16,11 +17,12 @@ export default function MDXImage({
   width = 1120,
   height = 450,
   maxHeight,
+  noBorder = false,
 }: MDXImageProps) {
   return (
     <figure className="flex flex-col items-center justify-center my-10 not-prose">
       <div
-        className="relative overflow-hidden hover:scale-[1.02] duration-500 flex justify-center items-start border border-gray-200"
+        className={`relative overflow-hidden hover:scale-[1.02] duration-500 flex justify-center items-start ${!noBorder ? "border border-gray-200" : ""}`}
         style={maxHeight ? { maxHeight: `${maxHeight}px` } : {}}
       >
         <NextImage

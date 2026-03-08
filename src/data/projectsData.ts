@@ -6,6 +6,7 @@ export interface ProjectsData {
   category: string;
   tech: string[];
   client: string;
+  clientType: "company" | "client" | "institution" | "personal";
 
   featured?: {
     order: number;
@@ -28,12 +29,13 @@ export const projectsData: ProjectsData[] = [
     category: "Frontend",
     tech: ["React", "TypeScript", "Recoil", "SCSS", "MUI", "jQuery"],
     client: "이스트소프트",
+    clientType: "company",
     featured: {
       order: 1,
       cover: "/projects/rounz/mockup.png",
     },
     links: ["https://rounz.com/series.php?contentIndex=155"],
-    description: `AI 가상 피팅으로 안경을 써보고 구매할 수 있는 이커머스 플랫폼의 사용자 화면과, 복잡한 상품 데이터를 편리하게 관리하는 운영 시스템을 개발한 프로젝트`,
+    description: `AI 가상 피팅으로 안경을 써보고 구매할 수 있는 이커머스 플랫폼의 사용자 화면과, \n복잡한 상품 데이터를 편리하게 관리하는 운영 시스템을 개발한 프로젝트`,
   },
   {
     id: "muna",
@@ -43,10 +45,13 @@ export const projectsData: ProjectsData[] = [
     category: "Frontend",
     tech: ["React", "TypeScript", "Redux Toolkit", "Firebase", "SCSS", "Figma"],
     client: "이스트소프트 프론트엔드 부트캠프 1기",
+    clientType: "institution",
     featured: {
       order: 2,
       cover: "/projects/muna/mockup.png",
     },
+    links: ["https://www.figma.com/slides/balGjqj90gSVp93OMEfe9A/Report_MUNA"],
+    github: "https://github.com/TEAM-MUNA/muna",
   },
   {
     id: "chromatic",
@@ -56,6 +61,7 @@ export const projectsData: ProjectsData[] = [
     category: "UI Dev",
     tech: ["React", "TypeScript", "Tailwind", "Storybook"],
     client: "Quarkonix",
+    clientType: "company",
     featured: {
       order: 3,
       cover: "/projects/chromatic/mockup.png",
@@ -66,7 +72,7 @@ export const projectsData: ProjectsData[] = [
       // 'https://chromatic.gitbook.io/docs',
     ],
     github: "https://github.com/chromatic-protocol/frontend-archive",
-    description: `복잡한 차트와 금융 데이터를 한눈에 확인하며, 유동성 공급과 보상 체계를 직관적인 UI로 구현한 탈중앙화 금융(DeFi) 플랫폼`,
+    description: `블록체인 기술을 바탕으로 실시간 시세 연동 선물 시장을 생성하고, \n유동성 공급과 보상 체계를 직관적인 UI로 구현한 탈중앙화 금융(DeFi) 플랫폼`,
   },
   {
     id: "klaybay",
@@ -76,6 +82,7 @@ export const projectsData: ProjectsData[] = [
     category: "UI Dev",
     tech: ["React", "MUI", "SCSS", "Storybook"],
     client: "Krust Universe",
+    clientType: "company",
     featured: {
       order: 4,
       cover: "/projects/klaybay/mockup.png",
@@ -89,6 +96,7 @@ export const projectsData: ProjectsData[] = [
     category: "UI Dev",
     tech: ["SCSS", "Bootstrap"],
     client: "Cocone",
+    clientType: "client",
     featured: {
       order: 5,
       cover: "/projects/stichy/mockup.png",
@@ -102,6 +110,7 @@ export const projectsData: ProjectsData[] = [
     category: "Design",
     tech: ["Photoshop"],
     client: "밀알복지재단",
+    clientType: "company",
     featured: {
       order: 6,
       cover: "/projects/miral-payment/mockup.png",
