@@ -1,3 +1,4 @@
+"use client";
 import NextImage from "next/image";
 
 interface MDXImageProps {
@@ -39,6 +40,8 @@ export default function MDXImage({
           width={width}
           height={height}
           className="object-cover w-auto h-auto mb-0 transition-transform"
+          placeholder="blur"
+          blurDataURL="rgb(229 231 235)"
         />
       </div>
 
