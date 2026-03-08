@@ -53,4 +53,14 @@ export const timelineData = [
       "디자인, 기획, 촬영 등 다양한 실무 경험 수행",
     ],
   },
+  {
+    period: "10.03 - 15.08",
+    title: "Handong Global University",
+    role: "UX/UI Designer",
+    details: "제품디자인, 시각디자인 복수전공 (3.63/4.5)",
+    highlights: [
+      "[대호물류공장 UX 개선] 팀 프로젝트 졸업 작품",
+      "[The Answer] UX/UI 디자인 학회 활동",
+    ],
+  },
 ];

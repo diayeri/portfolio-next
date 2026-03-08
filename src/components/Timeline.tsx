@@ -14,7 +14,7 @@ export default function Timeline() {
         {/* Left */}
         <div className="w-1/2 pr-40">
           <motion.h2 {...fadeUp(0, false)} className="text-5xl font-bold">
-            Career History
+            Career Roadmap
           </motion.h2>
           <div className="flex flex-col gap-2 mt-10 text-base text-gray-500 break-keep">
             <p>
