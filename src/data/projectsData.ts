@@ -21,26 +21,6 @@ export interface ProjectsData {
 
 export const projectsData: ProjectsData[] = [
   {
-    id: "chromatic",
-    title: "Chromatic Protocol",
-    startDate: "2023.03",
-    endDate: "2024.04",
-    category: "UI Dev",
-    tech: ["React", "TypeScript", "Tailwind", "Storybook"],
-    client: "Quarkonix",
-    featured: {
-      order: 1,
-      cover: "/projects/chromatic/mockup.png",
-    },
-    links: [
-      "https://app.chromatic.finance/",
-      "https://www.chromatic.finance/",
-      // 'https://chromatic.gitbook.io/docs',
-    ],
-    github: "https://github.com/chromatic-protocol/frontend-archive",
-    description: `Arbitrum 기반의 탈 중앙화 선물 거래 프로토콜로, Oracle Price Feed에 연동된 가격을 바탕으로 선물 시장을 생성하고 거래할 수 있는 블록체인 기반 트레이딩 플랫폼입니다.`,
-  },
-  {
     id: "rounz",
     title: "Rounz E-Commerce, Admin",
     startDate: "2024.12",
@@ -49,7 +29,7 @@ export const projectsData: ProjectsData[] = [
     tech: ["React", "TypeScript", "Recoil", "SCSS", "MUI", "jQuery"],
     client: "이스트소프트",
     featured: {
-      order: 2,
+      order: 1,
       cover: "/projects/rounz/mockup.png",
     },
   },
@@ -62,9 +42,29 @@ export const projectsData: ProjectsData[] = [
     tech: ["React", "TypeScript", "Redux Toolkit", "Firebase", "SCSS", "Figma"],
     client: "이스트소프트 프론트엔드 부트캠프 1기",
     featured: {
-      order: 3,
+      order: 2,
       cover: "/projects/muna/mockup.png",
     },
+  },
+  {
+    id: "chromatic",
+    title: "Chromatic Protocol",
+    startDate: "2023.03",
+    endDate: "2024.04",
+    category: "UI Dev",
+    tech: ["React", "TypeScript", "Tailwind", "Storybook"],
+    client: "Quarkonix",
+    featured: {
+      order: 3,
+      cover: "/projects/chromatic/mockup.png",
+    },
+    links: [
+      "https://app.chromatic.finance/",
+      "https://www.chromatic.finance/",
+      // 'https://chromatic.gitbook.io/docs',
+    ],
+    github: "https://github.com/chromatic-protocol/frontend-archive",
+    description: `Arbitrum 기반의 탈 중앙화 선물 거래 프로토콜로, Oracle Price Feed에 연동된 가격을 바탕으로 선물 시장을 생성하고 거래할 수 있는 블록체인 기반 트레이딩 플랫폼입니다.`,
   },
   {
     id: "klaybay",
