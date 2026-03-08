@@ -1,0 +1,115 @@
+---
+title: Klaybay
+subtitle: 클레이튼 기반 NFT 마켓플레이스 및 관리자 스튜디오 개발
+role: UI Development (100%), Mobile UI Design
+---
+
+## 🚀 Key Achievements
+
+클레이튼(Klaytn) 생태계 기반의 NFT 마켓플레이스 **Klaybay**의 초기 구축부터 대규모 리뉴얼까지 UI 개발 전 과정을 전담하였습니다. 기존에는 HTML/CSS 파일을 전달하면 개발 단에서 다시 JSX(React) 형식으로 변환해야 하는 번거로운 공정이 있었으나, 이를 개선하기 위해 **React 상에서 직접 마크업하는 구조**를 제안하고 적용했습니다.
+
+이 과정에서 **Atomic Design** 패턴을 처음으로 도입하여 컴포넌트 단위의 UI 제작을 시도하였으며, **Storybook**을 통해 이를 문서화함으로써 팀 전체의 개발 생산성을 높였습니다. 특히 디자인 공정의 병목을 해결하기 위해 **모바일 UI 선제 설계**를 제안하는 등 효율적인 방법을 찾아 전체 개발 일정을 단축했습니다.
+
+<div className="flex gap-2 justify-center">
+  <MDXImage
+    src="/projects/klaybay/mbox_detail.png"
+    alt="mystery box detail"
+    label="NFT Drop Mystery Box Detail"
+  />
+  <MDXImage
+    src="/projects/klaybay/mbox_win.png"
+    alt="mystery box win"
+    label="Mystery Box Winning Modal"
+  />
+</div>
+
+### 주요 성과
+
+- **컴포넌트 기반 아키텍처 전환:** HTML 파일을 JSX로 변환하던 불필요한 단계를 제거하고 React 내 직접 마크업 방식 도입
+- **선제적 모바일 UI 설계 및 협업:** PC 시안을 바탕으로 모바일 UI를 직접 설계하고 디자이너와 긴밀히 협의하여 일정 단축
+- **Storybook 도입 및 문서화:** 컴포넌트별 상태 시각화와 문서화를 통해 디자이너·개발자 간 피드백 루프 최적화
+- **Admin 대시보드 구축:** 외주 개발사와의 원활한 협업을 고려하여 유지보수가 용이한 관리자 페이지 UI 개발
+
+<div className="flex gap-2 justify-center">
+  <MDXImage
+    src="/projects/klaybay/game_main.png"
+    alt="game main"
+    label="Game Main"
+    maxHeight="720"
+  />
+  <MDXImage
+    src="/projects/klaybay/game_list.png"
+    alt="game list"
+    label="Game List"
+    maxHeight="720"
+  />
+</div>
+
+## 🛠 Challenges & Technical Excellence
+
+### 효율적인 협업을 위한 React 중심 마크업 제안
+
+**NFT Drop** 페이지 작업 및 전체 리뉴얼을 진행하면서, 개발 효율을 높이기 위해 기존의 퍼블리싱 방식을 전면 수정했습니다. 단순히 HTML/CSS를 전달하는 대신 **React 환경에서 직접 컴포넌트 단위로 마크업**을 진행하여 개발 단에서의 2차 가공 시간을 없앴습니다.
+
+이때 **Atomic Design** 철학을 적용하며 최소 단위의 UI를 독립적으로 관리하기 시작했습니다. 이러한 변화는 결과적으로 프로젝트의 빌드 속도와 코드 가독성을 크게 개선하는 계기가 되었습니다.
+
+<div className="flex gap-2 justify-center">
+  <MDXImage
+    src="/projects/klaybay/mbox_main.png"
+    alt="mystery box main"
+    label="[PC] NFT Drop Main"
+    maxHeight="1300"
+  />
+  <MDXImage
+    src="/projects/klaybay/mbox_main_m.png"
+    alt="mystery box main mobile"
+    label="[MOBILE]"
+    maxHeight="1300"
+  />
+</div>
+
+### 디자이너와의 파트너십을 통한 리뉴얼 주도
+
+전체 디자인 리뉴얼 과정에서 개발 중인 기능들과의 충돌을 최소화하기 위해 단계별 적용 계획을 수립했습니다. 프론트엔드 코드상에서 **Conflict**(충돌)을 적극적으로 해결하며 진행하였고, 디자이너와 직접 우선순위를 조율하여 디자인 의도가 최대한 반영될 수 있도록 노력했습니다.
+
+특히 디자인 대기 시간에는 확보된 PC 시안을 기반으로 **모바일 UI 레이아웃을 선제적으로 설계**하고 퍼블리싱을 병행했습니다. 이후 디자이너와 함께 필요한 부분만 수정하는 방향으로 진행하여, 디자이너로부터 업무 부담이 줄었다는 긍정적인 피드백을 얻기도 했습니다.
+
+<div className="flex gap-2 justify-center">
+  <MDXImage
+    src="/projects/klaybay/main.png"
+    alt="main"
+    label="[PC] Klaybay Main"
+    maxHeight="1070"
+  />
+  <MDXImage
+    src="/projects/klaybay/main_m.png"
+    alt="main mobile"
+    label="[Mobile]"
+    maxHeight="1070"
+  />
+</div>
+
+### 외주 개발사를 고려한 Admin UI 설계
+
+게임사 클라이언트를 위한 **Studio Admin** 페이지는 외주 개발사와 함께 협업하여 진행했습니다. 협업 과정에서 다른 개발자가 코드를 보더라도 의도를 쉽게 파악할 수 있도록 **SCSS 변수와 믹스인**(Mixin)을 활용한 중앙 집중식 스타일 구조를 설계했습니다. 명확한 클래스 네이밍 규칙을 적용하여 외주사 개발 단계에서 발생할 수 있는 스타일 오염을 방지하고 원활한 기능 연동을 지원했습니다.
+
+<div className="flex gap-2 justify-center">
+  <MDXImage
+    src="/projects/klaybay/studio_statistics.png"
+    alt="studio admin statistics"
+    label="Studio Admin - statistics (초기 버전)"
+    maxHeight="700"
+  />
+  <MDXImage
+    src="/projects/klaybay/studio_subscription.png"
+    alt="studio admin subscription"
+    label="Studio Admin - subscription (리뉴얼 버전)"
+    maxHeight="700"
+  />
+</div>
+
+## 📊 Results & Lessons Learned
+
+이번 프로젝트를 통해 기술적 제안이 팀의 생산성에 미치는 영향력과 능동적인 협업의 가치를 깊이 깨달았습니다. 리뉴얼 과정에서 디자인을 깊이 이해하려 노력하며 작업한 덕분에 즐거운 협업 분위기를 만들 수 있었고, 이는 곧 높은 서비스 완성도로 이어졌습니다.
+
+단순히 시안을 코드로 옮기는 역할을 넘어, 디자이너에게는 든든한 파트너가 되고 개발자에게는 효율적인 구조를 제공하는 **브릿지(Bridge) 역할을 수행하는 UI 개발자**로서 큰 자부심과 자신감을 얻은 경험이었습니다.

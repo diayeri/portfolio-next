@@ -52,6 +52,8 @@ export const projectsData: ProjectsData[] = [
     },
     links: ["https://www.figma.com/slides/balGjqj90gSVp93OMEfe9A/Report_MUNA"],
     github: "https://github.com/TEAM-MUNA/muna",
+    description:
+      "공연 예술 통합 데이터를 활용한 공연 정보 공유 및 리뷰 커뮤니티 플랫폼으로, \n실무 기반의 WBS 설계와 Atomic Design 시스템 구축을 통해 최우수상을 수상하며 프로젝트의 완성도와 효율적인 협업 구조를 인정받은 프로젝트",
   },
   {
     id: "chromatic",
@@ -80,13 +82,15 @@ export const projectsData: ProjectsData[] = [
     startDate: "2022.03",
     endDate: "2023.02",
     category: "UI Dev",
-    tech: ["React", "MUI", "SCSS", "Storybook"],
+    tech: ["React", "TypeScript", "MUI", "SCSS", "Storybook"],
     client: "Krust Universe",
     clientType: "company",
     featured: {
       order: 4,
       cover: "/projects/klaybay/mockup.png",
     },
+    description:
+      "클레이튼 생태계 기반의 NFT 마켓플레이스로, 기존의 파편화된 HTML 구조를 React 컴포넌트 단위로 재설계하고 능동적인 모바일 UI 설계를 통해 디자인과 개발의 병목을 해결한 프로젝트",
   },
   {
     id: "stichy",
