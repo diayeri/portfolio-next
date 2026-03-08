@@ -32,6 +32,8 @@ export const projectsData: ProjectsData[] = [
       order: 1,
       cover: "/projects/rounz/mockup.png",
     },
+    links: ["https://rounz.com/series.php?contentIndex=155"],
+    description: `AI 가상 피팅으로 안경을 써보고 구매할 수 있는 이커머스 플랫폼의 사용자 화면과, 복잡한 상품 데이터를 편리하게 관리하는 운영 시스템을 개발한 프로젝트`,
   },
   {
     id: "muna",
@@ -64,7 +66,7 @@ export const projectsData: ProjectsData[] = [
       // 'https://chromatic.gitbook.io/docs',
     ],
     github: "https://github.com/chromatic-protocol/frontend-archive",
-    description: `Arbitrum 기반의 탈 중앙화 선물 거래 프로토콜로, Oracle Price Feed에 연동된 가격을 바탕으로 선물 시장을 생성하고 거래할 수 있는 블록체인 기반 트레이딩 플랫폼입니다.`,
+    description: `복잡한 차트와 금융 데이터를 한눈에 확인하며, 유동성 공급과 보상 체계를 직관적인 UI로 구현한 탈중앙화 금융(DeFi) 플랫폼`,
   },
   {
     id: "klaybay",

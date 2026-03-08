@@ -20,7 +20,7 @@ export default function MDXImage({
   return (
     <figure className="flex flex-col items-center justify-center my-10 not-prose">
       <div
-        className="relative overflow-hidden hover:scale-[1.02] duration-500 flex justify-center items-start"
+        className="relative overflow-hidden hover:scale-[1.02] duration-500 flex justify-center items-start border border-gray-200"
         style={maxHeight ? { maxHeight: `${maxHeight}px` } : {}}
       >
         <NextImage

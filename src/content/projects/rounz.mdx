@@ -1,0 +1,103 @@
+---
+title: Rounz E-Commerce & Admin
+subtitle: AI 안경 가상 피팅 커머스 플랫폼 및 관리자 시스템 UI 개발
+role: Frontend Development (100%), UI Architecture Design
+---
+
+## 🚀 Key Achievements
+
+인공지능 기반 아이웨어 커머스 플랫폼 라운즈(ROUNZ)의 이커머스 서비스와 사내 운영을 위한 CMS 어드민 개발을 담당하였습니다. 인턴십 과정 동안 파편화되어 있던 UI 구조를 체계적으로 정리하고, 반복적인 마운트 작업을 **JSON 기반 템플릿 구조**로 설계하여 콘텐츠 관리 효율을 획기적으로 개선했습니다.
+
+또한, 노후화된 PHP 기반 어드민 시스템을 **React**로 점진적으로 마이그레이션하며 컴포넌트 기반의 유지보수 환경을 구축하였고, **GitHub Actions**를 도입하여 배포 안정성과 팀 협업 효율을 동시에 확보했습니다.
+
+<div className="flex gap-2 justify-center">
+  <MDXImage
+    src="/projects/rounz/list_before.png"
+    alt="list before"
+    label="[BEFORE] CMS - Contents List"
+  />
+  <MDXImage
+    src="/projects/rounz/list_after.png"
+    alt="list after"
+    label="[AFTER] CMS - Contents List"
+  />
+</div>
+<div className="flex gap-2 justify-center">
+  <MDXImage
+    src="/projects/rounz/series_before.png"
+    alt="series before"
+    label="[BEFORE] CMS - Series List"
+  />
+  <MDXImage
+    src="/projects/rounz/series_after.png"
+    alt="series after"
+    label="[AFTER] CMS - Series List"
+  />
+</div>
+
+### 주요 성과
+
+- **관리자 시스템 고도화:** PHP 기반 환경에서 React, TypeScript, Recoil 스택으로의 점진적 마이그레이션 수행
+- **콘텐츠 관리 효율화:** JSON 기반 템플릿 설계를 통해 반복적인 수동 마크업 작업을 자동화하고 수정 시간 단축
+- **UI/UX 사용성 개선:** MUI와 SCSS를 활용한 UI 일관성 확보 및 관리자 작업 흐름을 고려한 입력 요소 최적화
+- **인터랙티브 경험 강화:** Framer 및 React 기반 동적 컴포넌트 구현으로 사용자 경험 고도화
+
+<div className="flex gap-2 justify-center">
+  <MDXImage
+    src="/projects/rounz/mypage.png"
+    alt="rounz e-commerce mypage"
+    label="Rounz - E-Commerce Service"
+    maxHeight="800"
+  />
+  <MDXImage
+    src="/projects/rounz/shoppingcart.png"
+    alt="rounz e-commerce shopping cart"
+    label="Rounz - E-Commerce Service"
+    maxHeight="800"
+  />
+</div>
+
+## 🛠 Challenges & Technical Excellence
+
+### 관리자 작업 흐름을 고려한 UI 구조 재정립
+
+기존 CMS 어드민은 여러 라이브러리(Bootstrap, MUI 등)와 스타일 코드가 혼재되어 스타일 충돌 및 UI 불일치 문제가 잦았습니다. 이를 해결하기 위해 **MUI를 공통 컴포넌트 베이스**로 삼고, 세밀한 레이아웃은 **SCSS**로 분리하여 스타일 구조를 재정리했습니다.
+
+특히 관리자의 작업 동선을 분석하여 불필요하거나 유효하지 않은 셀렉트 옵션들을 제거하고 입력 프로세스를 단순화했습니다. 결과적으로 관리자의 운영 실수를 방지하고 작업 데이터의 정확도를 높이는 실질적인 사용성 개선을 이루었습니다.
+
+### JSON 기반 템플릿화로 운영 효율성 극대화
+
+이커머스 특성상 성별, 연령대, 제품군별 순위 데이터 등 대량의 콘텐츠 업데이트가 빈번했으나, 기존에는 매번 반복적인 마크업 수정이 필요했습니다. 저는 이를 **JSON 기반 데이터 구조**로 리팩토링하여 데이터만 교체하면 UI가 자동 렌더링되는 템플릿 시스템을 구축했습니다.
+
+이 방식을 통해 신규 페이지 제작 시 동일한 구조를 즉시 재활용할 수 있게 되었으며, 수동 작업으로 인한 오타나 관리 실수를 원천적으로 방지하여 운영팀의 업무 효율을 대폭 향상시켰습니다.
+
+<div className="flex gap-2 justify-center">
+  <MDXImage
+    src="/projects/rounz/json.png"
+    alt="json template"
+    label="Rounz - JSON Template Structure"
+    maxHeight="820"
+  />
+  <MDXImage
+    src="/projects/rounz/trend.png"
+    alt="trend ranking"
+    label="Rounz - Trend Ranking"
+    maxHeight="820"
+  />
+</div>
+
+### Framer를 활용한 고도화된 인터랙션 구현
+
+단순한 상품 나열을 넘어 사용자 참여를 유도하는 인터랙티브 콘텐츠를 구현하기 위해 **Framer**와 React 컴포넌트를 연동했습니다. 디바이스를 감지하여 웹과 앱 링크를 자동으로 분기하는 로직을 포함하고, CMS 및 외부 API와 연동하여 실시간 상품 정보를 자동으로 로드하는 동적 UI를 구축했습니다. 이를 통해 사용자에게 더욱 생동감 있고 개인화된 쇼핑 경험을 제공할 수 있었습니다.
+
+<MDXImage
+  src="/projects/rounz/framer.png"
+  alt="framer"
+  label="Rounz - Framer"
+/>
+
+## 📊 Results & Lessons Learned
+
+기존의 노후화된 PHP 환경을 현대적인 **React** 기반으로 마이그레이션하는 전 과정을 전담하며, 실제 서비스 수준의 **프론트엔드 실무 역량**을 탄탄하게 다졌습니다. 특히 컴포넌트 단위의 설계부터 **Recoil**을 활용한 복잡한 상태 관리, 그리고 **API 연동**을 통한 데이터 바인딩까지 프론트엔드 개발의 핵심 프로세스를 직접 구현하며 데이터가 화면에 시각화되는 전체적인 흐름을 깊이 있게 이해하게 되었습니다.
+
+단순히 화면을 그리는 퍼블리셔의 역할을 넘어, 대규모 데이터를 효율적으로 처리하는 **기능 구현과 데이터 연결**의 중요성을 체감했습니다. 운영자의 작업 환경과 서비스의 확장성을 고려해 시스템 아키텍처를 개선하며, 사용자에게는 빠르고 안정적인 경험을, 개발자에게는 유지보수가 용이한 코드를 제공하는 프론트엔드 개발자로서의 기틀을 다질 수 있었던 소중한 경험이었습니다.
