@@ -105,6 +105,8 @@ export const projectsData: ProjectsData[] = [
       order: 5,
       cover: "/projects/stichy/mockup.png",
     },
+    description:
+      "아바타 기반의 SNS 웹 앱 및 아티스트 전용 관리자 시스템으로, 모바일 UI를 직접 설계하고 프리랜서로서 클라이언트와의 직접 소통을 통해 프로젝트 전 과정을 관리",
   },
   {
     id: "miral-payment",
