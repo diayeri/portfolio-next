@@ -16,18 +16,40 @@ export default function Timeline() {
           <motion.h2 {...fadeUp(0, false)} className="text-5xl font-bold">
             Career Roadmap
           </motion.h2>
-          <div className="flex flex-col gap-2 mt-10 text-base text-gray-500 break-keep">
-            <p>
-              UI 개발로 경력을 시작한 후, 디자인과 프론트엔드까지 영역을
-              확장하며
-              <br />웹 서비스 전반을 이해하고 구현할 수 있는 경험을
-              쌓아왔습니다.
-            </p>
-            <p>
-              디자인 시스템과 구조를 고려한 UI 구현으로 프로젝트 완성도를
-              높이고, <br />
-              React, TypeScript 환경에서 원활하게 협업합니다.
-            </p>
+          <div className="flex flex-col gap-6 mt-12 text-base text-gray-500 break-keep">
+            <div>
+              <h3 className="mb-2 font-bold text-gray-700">
+                비즈니스 가치를 만드는 UX/UI 설계
+              </h3>
+              <p>
+                UX/UI 디자인 전공을 시작으로 8년여간 웹 기술의 변화를 실무에서
+                겪어왔습니다. 밀알복지재단 결제 UX 리뉴얼로 모바일 후원 200%
+                증대를 이끌어냈으며, 기획의 의도가 실질적인 성과로 이어지는
+                과정을 주도해 왔습니다.
+              </p>
+            </div>
+            <div>
+              <h3 className="mb-2 font-bold text-gray-700">
+                협업의 병목을 해결하는 시스템 구축
+              </h3>
+              <p>
+                단순 구현을 넘어 WBS 설계와 Atomic Design 아키텍처를 제안하여 팀
+                생산성을 높입니다. 카카오 크러스트 유니버스 등에서 Storybook
+                기반 UI 문서화를 주도하며 디자이너와 개발자 사이의 간극을 줄이는
+                브릿지(Bridge) 역할을 수행합니다.
+              </p>
+            </div>
+            <div>
+              <h3 className="mb-2 font-bold text-gray-700">
+                준비된 End-to-End 전문가
+              </h3>
+              <p>
+                초기 기획 검증부터 고도화된 React/TypeScript 구현, 유지보수까지
+                전 과정을 책임지는 올라운더로 성장하고 있습니다. 8년의 현장
+                감각과 최신 기술 스택을 결합해, 사용자에게는 즐거운 경험을,
+                팀에게는 확장 가능한 구조를 제공하겠습니다.
+              </p>
+            </div>
           </div>
         </div>
         {/* Right */}
