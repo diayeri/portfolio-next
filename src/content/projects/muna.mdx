@@ -1,0 +1,109 @@
+---
+title: Muna
+subtitle: 공연 정보 공유 및 리뷰 커뮤니티 플랫폼
+role: UI Design (90%), Frontend Development (25%)
+period: 202X.XX - 202X.XX
+---
+
+## 🚀 Key Achievements
+
+공연 예술 통합 전산망(Kopis) API를 활용한 공연 정보 공유 및 리뷰 플랫폼 **Muna**의 UX 기획과 전체 UI 디자인(90%), 그리고 프론트엔드 개발을 담당하였습니다. 프로젝트 초기 단계에서 실무 경험을 바탕으로 세분화된 **WBS**(Work Breakdown Structure)를 직접 설계하고 일정을 관리하여, 기획부터 개발 환경 세팅까지 단 1주일 만에 완료하는 효율적인 프로세스를 주도했습니다.
+
+**Atomic Design** 철학을 기반으로 디자인 시스템을 컴포넌트 단위로 체계적으로 정리하였습니다. 이를 통해 개발 과정에서 발생할 수 있는 UI 수정을 최소화하고 재작업으로 인한 시간 낭비를 방지하여, 팀원들이 핵심 기능 구현에만 몰입할 수 있는 표준화된 협업 환경을 구축했습니다.
+
+<div className="flex gap-2 justify-center">
+  <MDXImage
+    src="/projects/muna/main.png"
+    alt="muna main"
+    label="메인 인터페이스"
+  />
+  <MDXImage src="/projects/muna/list.png" alt="muna list" label="공연 목록" />
+  <MDXImage
+    src="/projects/muna/search.png"
+    alt="muna search"
+    label="검색 결과"
+  />
+</div>
+
+### 주요 성과
+
+- **디자인 시스템 설계 및 UI 디자인 90%:** Figma와 React 컴포넌트를 동기화한 시스템 구축으로 개발 효율 극대화
+- **실무 기반의 린(Lean) 프로젝트 주도:** WBS 설계를 통한 병렬 작업 구조화로 안정적인 개발 기간 확보
+- **최우수상 수상 및 기술력 인정:** 프로젝트 완료 후 완성도를 인정받아 최우수상을 수상하였으며, 실무 수준의 결과물이라는 높은 평가를 받음
+- **데이터 구조 최적화:** Kopis API의 제약사항을 분석하고 Firebase와 Redux를 활용해 사용자 활동 기반 정렬 로직 구현
+
+<div className="flex gap-2 justify-center">
+  <MDXImage src="/projects/muna/show.png" alt="muna show" label="공연 상세" />
+  <MDXImage
+    src="/projects/muna/review.png"
+    alt="muna review"
+    label="공연 리뷰"
+  />
+</div>
+
+## 🛠 Challenges & Technical Excellence
+
+### 효율적인 협업을 위한 시스템 가이드 정의
+
+기획 변경이나 UI 수정에 따른 반복적인 재개발을 방지하기 위해 프로젝트 시작 전 **디자인 시스템**을 선제적으로 정의했습니다. **Atomic Design** 패턴에 따라 가장 작은 단위인 버튼, 입력창부터 복잡한 카드 형태까지 체계적으로 설계하였으며, 이를 코드 단의 **공통 컴포넌트**와 동기화했습니다.
+
+이러한 설계 덕분에 개발 중 UI 수정 비용을 획기적으로 낮출 수 있었고, UI 디자인 결과물이 코드에 즉각적으로 반영되어 높은 디자인 완성도를 유지할 수 있었습니다. 이는 팀원들이 복잡한 레이아웃 고민 없이 기능 구현에만 집중할 수 있는 튼튼한 기반이 되었습니다.
+
+<div className="flex gap-2 justify-center">
+  <MDXImage
+    src="/projects/muna/figma_comp.png"
+    alt="figma components"
+    label="컴포넌트 단위 디자인시스템 설계"
+  />
+  <MDXImage
+    src="/projects/muna/figma_page.png"
+    alt="figma page"
+    label="페이지 UX UI 디자인"
+  />
+</div>
+
+### API 제약사항을 극복한 데이터 및 상태 관리
+
+Kopis Open API가 최신순 정렬 등 필수적인 기능을 제공하지 않는 한계를 파악하고, 이를 **Firestore DB**와 **Redux Toolkit**으로 보완하는 아키텍처를 설계했습니다. `createAsyncThunk`를 활용해 Firebase와의 비동기 통신을 전역 상태로 관리하며, API가 제공하지 못하는 정렬 로직을 프론트엔드 단에서 안정적으로 구현했습니다.
+
+또한, **Firebase Emulator**를 도입하여 로컬 환경에서도 클라우드 서비스와 동일한 환경을 구축함으로써 데이터 연동 오류를 사전에 차단하고 개발 생산성을 높였습니다.
+
+<MDXImage
+  src="/projects/muna/architect.png"
+  alt="muna architecture"
+  label="아키텍처 설계"
+  noBorder
+/>
+
+## 📊 Results & Lessons Learned
+
+실무 경험을 바탕으로 팀 전체의 일정 관리를 이끌고, 그 프로세스가 실제 성과로 검증되는 과정을 통해 **린(Lean) 프로젝트를 주도하는 역량**에 대한 확신을 얻었습니다. 체계적인 설계와 효율적인 협업 환경 구축의 결과로 **프로젝트 최우수상**을 수상하였으며, 특히 심사 위원들로부터 "팀 내에 실무 경험자가 있느냐"는 질문을 받을 정도로 완성도 높은 피드백을 이끌어냈습니다.
+
+단순한 기능 구현을 넘어, 프로젝트의 전체 흐름을 조율하고 팀원들과 기술적 접점을 찾아가는 경험을 통해 **협업을 리드하고 실질적인 비즈니스 가치를 창출하는 UI 개발자**로서 한 단계 더 성장할 수 있었습니다.
+
+<div className="flex gap-2 justify-center">
+  <MDXImage
+    src="/projects/muna/mypage.png"
+    alt="muna mypage"
+    label="마이페이지"
+  />
+  <MDXImage
+    src="/projects/muna/profile.png"
+    alt="muna profile"
+    label="사용자 프로필 페이지"
+  />
+  <MDXImage src="/projects/muna/edit.png" alt="muna edit" label="후기 작성" />
+</div>
+<div className="flex gap-2 justify-center">
+  <MDXImage src="/projects/muna/login.png" alt="muna login" label="로그인" />
+  <MDXImage
+    src="/projects/muna/withdraw.png"
+    alt="muna setting - withdraw"
+    label="설정 - 회원 탈퇴"
+  />
+  <MDXImage
+    src="/projects/muna/password.png"
+    alt="muna setting - password"
+    label="설정 - 비밀번호 변경"
+  />
+</div>
