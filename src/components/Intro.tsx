@@ -58,12 +58,7 @@ export default function Intro() {
       <div className="absolute inset-0 z-0 flex items-center opacity-50">
         <TechMarquee />
       </div>
-      <div
-        className="absolute inset-0 z-10 
-      backdrop-blur-xl bg-white
-      [mask-image:radial-gradient(circle_at_center,_black_50%,transparent_70%)]
-      [pointer-events:none]"
-      />
+      <div className="absolute inset-0 z-10 backdrop-blur-xl bg-white [mask-image:radial-gradient(circle_at_center,_black_50%,transparent_70%)] [pointer-events:none]" />
       <div className="z-20 flex flex-col items-center max-w-5xl gap-12 px-6 py-12 mx-auto lg:flex-row lg:gap-24">
         {/* 1. Core Value (좌측) */}
         <section className="flex-[1.4] space-y-12">
@@ -95,9 +90,7 @@ export default function Intro() {
         </section>
 
         {/* 2. Technical Expertise (우측) */}
-        {/* <section className="flex-1 w-full p-8 border bg-gray-50/50 rounded-3xl border-gray-100/50"> */}
         <section className="flex-1 w-full px-8 pb-8 overflow-hidden border bg-gray-50/50 rounded-3xl border-gray-100/50">
-          {/* <h3 className="text-xs font-black tracking-[0.2em] text-gray-500 uppercase mb-10 opacity-70"> */}
           <h3 className="text-xs font-black tracking-[0.2em] uppercase mb-8 opacity-70 -mx-8 px-8 bg-gray-300 text-white py-3">
             Technical Expertise
           </h3>
