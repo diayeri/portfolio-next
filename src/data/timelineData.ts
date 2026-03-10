@@ -21,17 +21,17 @@ export const timelineData = [
       "컴포넌트 단위 반응형 UI 제작과 QA 수행으로 실무 코드 경험 강화",
     ],
   },
-  {
-    period: "20.10 - 21.04",
-    title: "Cocone",
-    role: "UI Developer (Freelancer)",
-    details:
-      "아바타 기반 소셜 네트워크 웹 서비스 & 관리자 페이지 UI 개발, jQuery 활용",
-    highlights: [
-      "아바타 기반 SNS 반응형 UI 구현",
-      "Admin 관리자 페이지 적응형 UI 구현",
-    ],
-  },
+  // {
+  //   period: "20.10 - 21.04",
+  //   title: "Cocone",
+  //   role: "UI Developer (Freelancer)",
+  //   details:
+  //     "아바타 기반 소셜 네트워크 웹 서비스 & 관리자 페이지 UI 개발, jQuery 활용",
+  //   highlights: [
+  //     "아바타 기반 SNS 반응형 UI 구현",
+  //     "Admin 관리자 페이지 적응형 UI 구현",
+  //   ],
+  // },
   {
     period: "18.10 - 22.05",
     title: "Miral Welfare Foundation",
