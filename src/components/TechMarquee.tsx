@@ -16,38 +16,36 @@ export function TechMarquee() {
     { src: "/logos/figma.svg", alt: "Figma" },
     { src: "/logos/photoshop.svg", alt: "Photoshop" },
     { src: "/logos/illustrator.svg", alt: "Illustrator" },
-    { src: "/logos/storybook.svg", alt: "Storybook" },
-    { src: "/logos/framer.svg", alt: "Framer" },
-    { src: "/logos/git.svg", alt: "Git" },
   ];
 
-  const repeatedLogos = [...logos, ...logos];
+  const total = logos.length;
+  // 각 로고 사이의 각도 계산
+  const angle = 360 / total;
+  // 궤도의 반지름 (멀리/가깝게 조절하려면 이 값을 수정하세요)
+  const radius = 720;
 
   return (
-    <div className="relative w-[800px] overflow-hidden">
-      <div className={`flex w-max ${styles["animate-marquee"]}`}>
-        {repeatedLogos.map((logo, i) => (
-          <div
-            key={i}
-            className={`h-10 relative flex items-center justify-center mx-6 ${styles.group}`}
-          >
-            <img
-              src={logo.src}
-              alt={logo.alt}
-              className="w-auto h-full transition duration-200 opacity-50 grayscale hover:opacity-100 hover:grayscale-0"
-            />
-            {/* hover 시 alt 텍스트 */}
-            <span
-              className={`absolute bottom-0 px-1 py-[2px] mb-2 text-sm font-medium backdrop-blur-md text-white bg-black/10 rounded pointer-events-none ${styles.alt}`}
+    <div className={styles.container}>
+      <div className={styles.stage}>
+        <div className={styles.orbit}>
+          {logos.map((logo, i) => (
+            <div
+              key={i}
+              className={styles.item}
+              style={{
+                // 인라인 스타일로 각 로고의 위치값 계산
+                transform: `rotateY(${i * angle}deg) translateZ(${radius}px)`,
+              }}
             >
-              {logo.alt}
-            </span>
-          </div>
-        ))}
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className="w-auto h-full transition duration-200 opacity-70 grayscale hover:opacity-100 hover:grayscale-0"
+              />
+            </div>
+          ))}
+        </div>
       </div>
-
-      <div className="absolute top-0 left-0 z-10 w-20 h-full pointer-events-none bg-gradient-to-r from-white to-transparent" />
-      <div className="absolute top-0 right-0 z-10 w-20 h-full pointer-events-none bg-gradient-to-l from-white to-transparent" />
     </div>
   );
 }
