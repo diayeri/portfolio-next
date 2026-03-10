@@ -9,7 +9,7 @@ import { projectsData } from "@/data/projectsData";
 import { motion } from "framer-motion";
 import { fadeUp } from "@/motion";
 
-const Portfolio = () => {
+const FeaturedProjectList = () => {
   const { roleData } = useRole();
   const featuredProjects = useMemo(() => {
     return projectsData
@@ -73,15 +73,20 @@ const Portfolio = () => {
                   >
                     {project.title}
                   </h3>
-                  <span
-                    className={`px-2 py-1 ml-5 text-sm font-normal rounded bg-white/20${
-                      activeProject.id === project.id
-                        ? " text-white"
-                        : " text-gray-500"
-                    }`}
-                  >
-                    {roleData.replaceRole(project.category)}
-                  </span>
+                  <div className="inline-flex gap-2 ml-5">
+                    {project.category.map((tag) => (
+                      <span
+                        key={tag}
+                        className={`px-2 py-1 text-sm font-normal rounded bg-white/20${
+                          activeProject.id === project.id
+                            ? " text-white"
+                            : " text-gray-500"
+                        }`}
+                      >
+                        {roleData.replaceRole(tag)}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </a>
             </li>
@@ -92,4 +97,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default FeaturedProjectList;

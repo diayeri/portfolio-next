@@ -3,7 +3,7 @@ export interface ProjectsData {
   title: string;
   startDate: string;
   endDate?: string | null; // 없으면 진행중
-  category: string;
+  category: string[];
   tech: string[];
   client: string;
   clientType: "company" | "client" | "institution" | "personal";
@@ -26,7 +26,7 @@ export const projectsData: ProjectsData[] = [
     title: "Rounz E-Commerce, Admin",
     startDate: "2024.12",
     endDate: "2025.05",
-    category: "Frontend",
+    category: ["Frontend"],
     tech: ["React", "TypeScript", "Recoil", "SCSS", "MUI", "jQuery"],
     client: "이스트소프트",
     clientType: "company",
@@ -42,7 +42,7 @@ export const projectsData: ProjectsData[] = [
     title: "Muna",
     startDate: "2024.09",
     endDate: "2024.10",
-    category: "Frontend",
+    category: ["Frontend", "Design"],
     tech: ["React", "TypeScript", "Redux Toolkit", "Firebase", "SCSS", "Figma"],
     client: "이스트소프트 프론트엔드 부트캠프 1기",
     clientType: "institution",
@@ -60,7 +60,7 @@ export const projectsData: ProjectsData[] = [
     title: "Chromatic Protocol",
     startDate: "2023.03",
     endDate: "2024.04",
-    category: "UI Dev",
+    category: ["UI Dev"],
     tech: ["React", "TypeScript", "Tailwind", "Storybook"],
     client: "Quarkonix",
     clientType: "company",
@@ -81,7 +81,7 @@ export const projectsData: ProjectsData[] = [
     title: "Klaybay, Admin",
     startDate: "2022.03",
     endDate: "2023.02",
-    category: "UI Dev",
+    category: ["UI Dev"],
     tech: ["React", "TypeScript", "MUI", "SCSS", "Storybook"],
     client: "Krust Universe",
     clientType: "company",
@@ -97,7 +97,7 @@ export const projectsData: ProjectsData[] = [
     title: "Stichy",
     startDate: "2020.10",
     endDate: "2021.04",
-    category: "UI Dev",
+    category: ["UI Dev"],
     tech: ["SCSS", "Bootstrap"],
     client: "Cocone",
     clientType: "client",
@@ -113,7 +113,7 @@ export const projectsData: ProjectsData[] = [
     title: "Miral Payment Renewal",
     startDate: "2019.03",
     endDate: "2020.01",
-    category: "Design",
+    category: ["Design"],
     tech: ["Photoshop"],
     client: "밀알복지재단",
     clientType: "company",

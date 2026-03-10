@@ -3,7 +3,7 @@
 import Hero from "@/components/Hero";
 import Intro from "@/components/Intro";
 import Timeline from "@/components/Timeline";
-import Portfolio from "@/components/Portfolio";
+import FeaturedProjectList from "@/components/FeaturedProjectList";
 import { HeroProvider } from "@/context/HeroContext";
 import { RoleProvider } from "@/context/RoleContext";
 
@@ -19,7 +19,7 @@ export default function Home({ roleKey }: HomeProps) {
           <Hero />
         </HeroProvider>
         <Intro />
-        <Portfolio />
+        <FeaturedProjectList />
         <Timeline />
       </div>
     </RoleProvider>
