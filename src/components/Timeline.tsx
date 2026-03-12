@@ -16,9 +16,9 @@ export default function Timeline() {
           <motion.h2 {...fadeUp(0, false)} className="text-5xl font-bold">
             Career Roadmap
           </motion.h2>
-          <div className="flex flex-col gap-6 mt-12 text-base text-gray-500 break-keep">
+          <div className="flex flex-col gap-8 mt-12 text-sm text-gray-500 break-keep">
             <div>
-              <h3 className="mb-2 font-bold text-gray-700">
+              <h3 className="mb-2 text-base font-bold text-gray-700">
                 비즈니스 가치를 만드는 UX/UI 설계
               </h3>
               <p>
@@ -29,7 +29,7 @@ export default function Timeline() {
               </p>
             </div>
             <div>
-              <h3 className="mb-2 font-bold text-gray-700">
+              <h3 className="mb-2 text-base font-bold text-gray-700">
                 협업의 병목을 해결하는 시스템 구축
               </h3>
               <p>
@@ -40,7 +40,7 @@ export default function Timeline() {
               </p>
             </div>
             <div>
-              <h3 className="mb-2 font-bold text-gray-700">
+              <h3 className="mb-2 text-base font-bold text-gray-700">
                 준비된 End-to-End 전문가
               </h3>
               <p>
@@ -59,18 +59,20 @@ export default function Timeline() {
             {timelineData.map((event, idx) => (
               <div key={idx} className="relative">
                 {/* 점 */}
-                <div className="absolute -translate-x-[50%] w-4 h-4 border-white border-4 rounded-full bg-primary top-[6px]" />
+                <div className="absolute -translate-x-[50%] w-3 h-3 border-primary border-2 rounded-full bg-white top-[6px]" />
 
                 {/* 이벤트 내용 */}
                 <div className="pl-12">
-                  <p className="text-base text-gray-500">{event.period}</p>
-                  <h3 className="mt-2 text-3xl font-semibold">{event.title}</h3>
-                  <h3 className="text-3xl font-medium text-primary-dark">
+                  <p className="text-sm text-gray-500">{event.period}</p>
+                  <h3 className="mt-2 text-2xl font-semibold">{event.title}</h3>
+                  <h3 className="text-2xl text-primary-dark">
                     {roleData.replaceRole(event.role)}
                   </h3>
-                  <p className="mt-4 text-base font-medium">{event.details}</p>
+                  <p className="mt-4 text-base font-medium text-gray-700">
+                    {event.details}
+                  </p>
                   {event.highlights && (
-                    <ul className="mt-2 text-base text-gray-700 list-disc list-inside">
+                    <ul className="mt-2 text-sm text-gray-500 list-disc list-inside">
                       {event.highlights.map((item, idx) => (
                         <li key={idx}>{item}</li>
                       ))}
