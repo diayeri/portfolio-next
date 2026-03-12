@@ -1,5 +1,5 @@
 import React from "react";
-import { ProjectsData } from "@/data/projectsData";
+import { ProjectsData } from "@/types/projects";
 
 interface ProjectInfoItemProps {
   label: string;

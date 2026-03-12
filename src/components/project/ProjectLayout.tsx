@@ -1,4 +1,4 @@
-import { ProjectsData } from "@/data/projectsData";
+import { ProjectsData } from "@/types/projects";
 import { notFound } from "next/navigation";
 import { ProjectHeader } from "./ProjectHeader";
 import { ProjectNav } from "./ProjectNav";

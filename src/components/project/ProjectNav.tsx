@@ -1,5 +1,6 @@
 import React from "react";
-import { ProjectsData, projectsData } from "@/data/projectsData";
+import { ProjectsData } from "@/types/projects";
+import { projectsData } from "@/data/projectsData";
 import Link from "next/link";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 
