@@ -42,7 +42,7 @@ const FeaturedProjectList = () => {
           />
         </div>
         {/* 대표 프로젝트 리스트 */}
-        <ul className="flex flex-col w-1/2 gap-0 pl-12">
+        <ul className="flex flex-col w-1/2 gap-0 pl-12 pr-20">
           <div className="flex justify-between w-full mb-12">
             <motion.h2
               {...fadeUp(0, false)}
@@ -54,44 +54,54 @@ const FeaturedProjectList = () => {
             <Button
               size="sm"
               variant="outline"
-              className="mr-12 hover:text-white hover:border-white"
+              className=" hover:text-white hover:border-white"
               iconRight={<ArrowRight />}
               onClick={() => router.push("/projects")}
             >
-              All Projects
+              View All
             </Button>
           </div>
-          {featuredProjects.map((project) => (
-            <li key={project.id} onMouseEnter={() => setActiveProject(project)}>
-              <a href={`/projects/${project.id}`}>
-                <div className="flex items-center py-6 border-b border-gray-500">
-                  <h3
-                    className={`text-3xl font-semibold transition-colors duration-200 ${
-                      activeProject.id === project.id
-                        ? "text-white"
-                        : "text-gray-700"
-                    }`}
+          {featuredProjects.map((project) => {
+            const isActive = activeProject.id === project.id;
+            return (
+              <li
+                className="group"
+                key={project.id}
+                onMouseEnter={() => setActiveProject(project)}
+              >
+                <a href={`/projects/${project.id}`}>
+                  <div
+                    className={`flex items-center justify-between py-8 duration-200 border-b ${isActive ? "border-white/60" : "border-white/20"}`}
                   >
-                    {project.title}
-                  </h3>
-                  <div className="inline-flex gap-2 ml-5">
-                    {project.category.map((tag) => (
-                      <span
-                        key={tag}
-                        className={`px-2 py-1 text-sm font-normal rounded bg-white/20${
-                          activeProject.id === project.id
-                            ? " text-white"
-                            : " text-gray-500"
-                        }`}
-                      >
-                        {roleData.replaceRole(tag)}
-                      </span>
-                    ))}
+                    <h3
+                      className={`text-3xl font-semibold transition-colors duration-200 ${
+                        isActive ? "text-white" : "text-gray-400/40"
+                      }`}
+                    >
+                      {project.title}
+                    </h3>
+                    <div className="inline-flex gap-2 ml-5">
+                      {project.category.map((tag) => (
+                        <span
+                          key={tag}
+                          className={`
+                            px-2 py-0.5 text-xs font-bold uppercase duration-200 tracking-wider rounded border transition-colors
+                            ${
+                              isActive
+                                ? "bg-white/10 border-white/20 text-white"
+                                : "bg-transparent border-white/20 text-white/30"
+                            }
+                          `}
+                        >
+                          {roleData.replaceRole(tag)}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </a>
-            </li>
-          ))}
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </section>
