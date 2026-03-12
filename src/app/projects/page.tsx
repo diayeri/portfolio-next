@@ -3,8 +3,10 @@
 import React, { useState, useMemo } from "react";
 import ProjectCard from "@/components/ProjectCard";
 // import { useRouter } from "next/navigation";
-import { Button } from "@/components/Button";
+// import { Button } from "@/components/Button";
 import { projectsData } from "@/data/projectsData";
+import { motion } from "framer-motion";
+import { fadeUp } from "@/motion";
 
 type Category = "all" | "frontend" | "ui dev" | "design";
 
@@ -64,13 +66,14 @@ const Projects: React.FC = () => {
 
       <div className="max-w-[1400px] mx-auto grid grid-cols-3 gap-5">
         {filteredProjects.map((project, index) => (
-          <div
+          <motion.div
+            {...fadeUp(index < 6 ? index * 0.05 : 0)}
             key={project.id}
             // onClick={() => router.push(`/projects/${project.id}`)}
             className="h-full cursor-pointer"
           >
             <ProjectCard project={project} />
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
