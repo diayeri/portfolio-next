@@ -1,24 +1,4 @@
-export interface ProjectsData {
-  id: string;
-  title: string;
-  startDate: string;
-  endDate?: string | null; // 없으면 진행중
-  category: string[];
-  tech: string[];
-  client: string;
-  clientType: "company" | "client" | "institution" | "personal";
-
-  featured?: {
-    order: number;
-    cover: string;
-  };
-
-  links?: string[];
-  github?: string;
-
-  description?: string;
-  images?: string[];
-}
+import { ProjectsData } from "@/types/projects";
 
 export const projectsData: ProjectsData[] = [
   {
@@ -34,6 +14,7 @@ export const projectsData: ProjectsData[] = [
       order: 1,
       cover: "/projects/rounz/mockup.png",
     },
+    thumbnail: "/projects/rounz/thumb.png",
     links: ["https://rounz.com/series.php?contentIndex=155"],
     description: `AI 가상 피팅으로 안경을 써보고 구매할 수 있는 이커머스 플랫폼의 사용자 화면과, \n복잡한 상품 데이터를 편리하게 관리하는 운영 시스템을 개발한 프로젝트`,
   },
@@ -50,6 +31,7 @@ export const projectsData: ProjectsData[] = [
       order: 2,
       cover: "/projects/muna/mockup.png",
     },
+    thumbnail: "/projects/muna/thumb.png",
     links: ["https://www.figma.com/slides/balGjqj90gSVp93OMEfe9A/Report_MUNA"],
     github: "https://github.com/TEAM-MUNA/muna",
     description:
@@ -68,6 +50,7 @@ export const projectsData: ProjectsData[] = [
       order: 3,
       cover: "/projects/chromatic/mockup.png",
     },
+    thumbnail: "/projects/chromatic/thumb.png",
     links: [
       "https://app.chromatic.finance/",
       "https://www.chromatic.finance/",
@@ -89,6 +72,7 @@ export const projectsData: ProjectsData[] = [
       order: 4,
       cover: "/projects/klaybay/mockup.png",
     },
+    thumbnail: "/projects/klaybay/thumb.png",
     description:
       "클레이튼 생태계 기반의 NFT 마켓플레이스로, 기존의 파편화된 HTML 구조를 React 컴포넌트 단위로 재설계하고 능동적인 모바일 UI 설계를 통해 디자인과 개발의 병목을 해결한 프로젝트",
   },
@@ -105,6 +89,7 @@ export const projectsData: ProjectsData[] = [
       order: 5,
       cover: "/projects/stichy/mockup.png",
     },
+    thumbnail: "/projects/stichy/thumb.png",
     description:
       "아바타 기반의 SNS 웹 앱 및 아티스트 전용 관리자 시스템으로, 모바일 UI를 직접 설계하고 프리랜서로서 클라이언트와의 직접 소통을 통해 프로젝트 전 과정을 관리",
   },
@@ -121,6 +106,7 @@ export const projectsData: ProjectsData[] = [
       order: 6,
       cover: "/projects/miral-payment/mockup.png",
     },
+    thumbnail: "/projects/miral-payment/thumb.png",
     description:
       "사용성 분석을 통해 후원 결제 단계의 병목 지점을 개선하고, 모바일 최적화와 입력 공정 간소화를 통해 전년 대비 모바일 후원을 2배 이상으로 성장시킨 UX 리뉴얼 프로젝트",
   },

@@ -1,11 +1,12 @@
 "use client";
 
 import React from "react";
-import type { ProjectData } from "../types/ProjectData";
+import type { ProjectsData } from "../types/projects";
+import NextImage from "next/image";
+import Link from "next/link";
 
 interface ProjectCardProps {
-  project: ProjectData;
-  className?: string;
+  project: ProjectsData;
 }
 
 /**
@@ -14,84 +15,67 @@ interface ProjectCardProps {
  * - 반응형 디자인
  * - 호버 효과
  */
-const ProjectCard: React.FC<ProjectCardProps> = ({
-  project,
-  className = "",
-}) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
-    <article
-      className={`
-        relative flex flex-col bg-white rounded-xl overflow-hidden shadow-md transition-all duration-300 group
-        ${className}
-      `}
+    <Link
+      href={`/projects/${project.id}`}
+      className="group relative flex flex-col bg-white/40 backdrop-blur-md border border-gray-100 rounded-[32px] overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gray-200/50 hover:bg-white/80"
     >
-      {/* 프로젝트 이미지 */}
-      <div className="relative flex-none w-full overflow-hidden h-[240px]">
-        {Array.isArray(project.images) && project.images.length > 0 ? (
-          <img
-            src={project.images[0]}
-            alt={project.title}
-            className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
-            loading="lazy"
-          />
-        ) : (
-          <img
-            src={project.image}
-            alt={project.title}
-            className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
-            loading="lazy"
-          />
-        )}
+      {/* 1. 상단 비주얼 영역 (Thumbnail) */}
+      <div className="relative w-full h-[260px] overflow-hidden bg-gray-50">
+        <NextImage
+          src={project.featured?.cover || project.thumbnail}
+          alt={project.title}
+          fill
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        {/* 카테고리 오버레이 배지 */}
+        <div className="absolute top-5 left-5">
+          <span className="px-3 py-1 text-xs font-bold tracking-widest text-white uppercase rounded-full bg-gray-900/40 backdrop-blur-md">
+            {project.category?.[0] || "Project"}
+          </span>
+        </div>
       </div>
 
-      {/* 프로젝트 정보 */}
-      <div className="p-5">
-        <h3 className="mb-2 text-xl font-semibold group-hover:text-primary-light dark:group-hover:text-primary-dark">
+      {/* 2. 정보 영역 */}
+      <div className="flex flex-col flex-1 p-8">
+        {/* 클라이언트 및 기간 정보 */}
+        <div className="flex items-center justify-between mb-4">
+          <span className="text-xs font-bold tracking-wider uppercase text-primary opacity-70">
+            {project.client}
+          </span>
+          <span className="text-xs font-medium text-gray-400">
+            {project.startDate} —{" "}
+            {project.endDate?.split(".")[1] ? project.endDate : "Present"}
+          </span>
+        </div>
+
+        {/* 제목 및 설명 */}
+        <h3 className="mb-3 text-2xl font-bold tracking-tight text-gray-900 transition-colors group-hover:text-primary">
           {project.title}
         </h3>
-
-        <p className="mb-4 text-gray-600 dark:text-gray-300 line-clamp-3">
+        <p className="mb-6 text-sm leading-relaxed text-gray-500 line-clamp-2">
           {project.description}
         </p>
 
-        {/* 기술 스택 */}
-        <div className="flex flex-wrap gap-2 mb-4">
-          {project.tech.map((tech, index) => (
+        {/* 3. 하단 기술 스택 (공간 효율을 위해 주요 4개만 노출) */}
+        <div className="mt-auto pt-6 border-t border-gray-100 flex flex-wrap gap-1.5">
+          {project.tech.slice(0, 4).map((tech, index) => (
             <span
               key={index}
-              className="px-2 py-1 text-xs text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-200"
+              className="px-2.5 py-1 text-xs font-bold text-gray-600 bg-gray-50 rounded-lg border border-gray-100 group-hover:bg-white transition-colors"
             >
               {tech}
             </span>
           ))}
+          {project.tech.length > 4 && (
+            <span className="self-center ml-1 text-xs font-medium text-gray-300">
+              +{project.tech.length - 4}
+            </span>
+          )}
         </div>
-
-        {/* 외부 링크 아이콘 (GitHub 있는 경우만 표시) - 링크 대신 버튼 사용 */}
-        {project.github && (
-          <div className="absolute p-2 bg-white rounded-full shadow-md top-3 right-3 dark:bg-gray-800">
-            <button
-              type="button"
-              className="block text-gray-600 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-dark"
-              aria-label="View source code on GitHub"
-              onClick={(e) => {
-                e.stopPropagation();
-                e.preventDefault();
-                window.open(project.github, "_blank", "noopener,noreferrer");
-              }}
-            >
-              <svg
-                className="w-5 h-5"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"></path>
-              </svg>
-            </button>
-          </div>
-        )}
       </div>
-    </article>
+    </Link>
   );
 };
 

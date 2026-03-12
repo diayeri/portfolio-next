@@ -1,10 +1,11 @@
 "use client";
 
 import { useState, useEffect, useMemo } from "react";
+import { useRouter } from "next/navigation";
 import NextImage from "next/image";
 import { useRole } from "@/context/RoleContext";
-// import { Button } from './Button';
-// import { ArrowRight } from 'lucide-react';
+import { Button } from "./Button";
+import { ArrowRight } from "lucide-react";
 import { projectsData } from "@/data/projectsData";
 import { motion } from "framer-motion";
 import { fadeUp } from "@/motion";
@@ -18,7 +19,7 @@ const FeaturedProjectList = () => {
   }, []);
 
   const [activeProject, setActiveProject] = useState(featuredProjects[0]);
-  // const router = useRouter();
+  const router = useRouter();
 
   useEffect(() => {
     featuredProjects.forEach((project) => {
@@ -50,15 +51,15 @@ const FeaturedProjectList = () => {
               Featured Projects
             </motion.h2>
 
-            {/* <Button
-            size='sm'
-            variant='outline'
-            className='hover:text-white hover:border-white'
-            iconRight={<ArrowRight />}
-            onClick={() => router('/projects')}
-          >
-            All Projects
-          </Button> */}
+            <Button
+              size="sm"
+              variant="outline"
+              className="mr-12 hover:text-white hover:border-white"
+              iconRight={<ArrowRight />}
+              onClick={() => router.push("/projects")}
+            >
+              All Projects
+            </Button>
           </div>
           {featuredProjects.map((project) => (
             <li key={project.id} onMouseEnter={() => setActiveProject(project)}>

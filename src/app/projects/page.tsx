@@ -5,66 +5,7 @@ import ProjectCard from "@/components/ProjectCard";
 import AnimatedElement from "@/components/AnimatedElement";
 // import { useRouter } from "next/navigation";
 import { Button } from "@/components/Button";
-import type { ProjectData } from "@/types/ProjectData";
-// import { projectsData } from '@/data/projectsData';
-
-const projectsData: ProjectData[] = [
-  {
-    id: 1,
-    title: "Portfolio Website",
-    description:
-      "A personal portfolio website built with React, TypeScript and Tailwind CSS. Features modern design, dark mode, and responsive layout.",
-    tech: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    images: [
-      "https://placehold.co/400x250/svg?text=Portfolio",
-      "https://placehold.co/400x250/svg?text=Portfolio+2",
-    ],
-    link: "/projects/3",
-    github: "https://github.com/username/portfolio",
-  },
-  {
-    id: 2,
-    title: "E-commerce Platform",
-    description:
-      "An online shopping platform with product listings, cart functionality, and checkout process. Includes user authentication, product filtering, and payment integration.",
-    tech: ["React", "Redux", "Node.js", "MongoDB", "Express"],
-    images: [
-      "https://placehold.co/400x250/svg?text=E-commerce",
-      "https://placehold.co/400x250/svg?text=E-commerce+2",
-    ],
-    link: "/projects/1",
-    github: "https://github.com/username/ecommerce",
-  },
-  {
-    id: 3,
-    title: "Task Management App",
-    description:
-      "A productivity application for managing tasks, projects, and deadlines. Features include drag-and-drop task organization, priority levels, and progress tracking.",
-    tech: ["React", "Firebase", "Material UI", "Redux"],
-    image: "https://placehold.co/400x250/svg?text=Task+App", // legacy single image
-    link: "/projects/2",
-  },
-  {
-    id: 4,
-    title: "Weather Dashboard",
-    description:
-      "Real-time weather information dashboard with location-based forecasts. Features interactive maps, hourly forecasts, and severe weather alerts.",
-    tech: ["JavaScript", "Weather API", "Chart.js", "Leaflet"],
-    image: "https://placehold.co/400x250/svg?text=Weather+App",
-    link: "#",
-    github: "https://github.com/username/weather-app",
-  },
-  {
-    id: 5,
-    title: "Social Media Dashboard",
-    description:
-      "Analytics dashboard for social media platforms that integrates multiple accounts and provides engagement metrics and content performance data.",
-    tech: ["React", "D3.js", "Node.js", "OAuth"],
-    image: "https://placehold.co/400x250/svg?text=Social+Media",
-    link: "#",
-    github: "https://github.com/username/social-dashboard",
-  },
-];
+import { projectsData } from "@/data/projectsData";
 
 type Category = "all" | "frontend" | "markup" | "design";
 
@@ -100,10 +41,7 @@ const Projects: React.FC = () => {
               // onClick={() => router.push(`/projects/${project.id}`)}
               className="h-full cursor-pointer"
             >
-              <ProjectCard
-                project={project}
-                className="h-full text-xs md:text-sm"
-              />
+              <ProjectCard project={project} />
             </div>
           </AnimatedElement>
         ))}
