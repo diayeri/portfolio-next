@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import AnimatedElement from "./AnimatedElement";
 
 /**
  * SectionTitle Component
@@ -17,16 +16,14 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
   withBar = false,
 }) => {
   return (
-    <AnimatedElement animation="fade-up" duration={800}>
-      <h2 className="text-xl md:text-2xl font-bold mb-6 text-center relative">
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark">
-          {title}
-        </span>
-        {withBar && (
-          <span className="absolute bottom-0 left-1/2 w-10 h-1 bg-primary-light dark:bg-primary-dark transform -translate-x-1/2 mt-2"></span>
-        )}
-      </h2>
-    </AnimatedElement>
+    <h2 className="relative mb-6 text-xl font-bold text-center md:text-2xl">
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark">
+        {title}
+      </span>
+      {withBar && (
+        <span className="absolute bottom-0 w-10 h-1 mt-2 transform -translate-x-1/2 left-1/2 bg-primary-light dark:bg-primary-dark"></span>
+      )}
+    </h2>
   );
 };
 

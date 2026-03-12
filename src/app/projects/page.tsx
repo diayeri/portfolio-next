@@ -2,7 +2,6 @@
 
 import React, { useState, useMemo } from "react";
 import ProjectCard from "@/components/ProjectCard";
-import AnimatedElement from "@/components/AnimatedElement";
 // import { useRouter } from "next/navigation";
 import { Button } from "@/components/Button";
 import { projectsData } from "@/data/projectsData";
@@ -25,11 +24,11 @@ const Projects: React.FC = () => {
       <div className="flex flex-col items-center mb-16 space-y-12">
         {/* 타이틀 영역: 올라운더 정체성 부여 */}
         <div className="space-y-4 text-center">
-          {/* <p className="text-sm font-medium tracking-widest text-gray-400 uppercase">
-            Design to Code, Vision to Reality
-          </p> */}
-          <h2 className="text-6xl font-bold text-gray-900 md:text-6xl">
-            Projects Portfolio
+          <p className="text-sm font-medium tracking-widest text-gray-400 uppercase">
+            Dayoung Jung: UI Designer & Developer
+          </p>
+          <h2 className="text-4xl font-bold text-gray-900 md:text-6xl">
+            Project Archive
           </h2>
         </div>
 
@@ -54,30 +53,24 @@ const Projects: React.FC = () => {
         </div>
 
         {/* 필터 결과 요약 (사용성 향상) */}
-        <p className="text-xs text-gray-400">
+        {/* <p className="text-xs text-gray-400">
           Showing{" "}
           <span className="font-bold text-gray-900">
             {filteredProjects.length}
           </span>{" "}
           {category === "all" ? "total" : category} projects
-        </p>
+        </p> */}
       </div>
 
       <div className="max-w-[1400px] mx-auto grid grid-cols-3 gap-5">
         {filteredProjects.map((project, index) => (
-          <AnimatedElement
+          <div
             key={project.id}
-            animation="fade-up"
-            duration={500}
-            delay={0}
+            // onClick={() => router.push(`/projects/${project.id}`)}
+            className="h-full cursor-pointer"
           >
-            <div
-              // onClick={() => router.push(`/projects/${project.id}`)}
-              className="h-full cursor-pointer"
-            >
-              <ProjectCard project={project} />
-            </div>
-          </AnimatedElement>
+            <ProjectCard project={project} />
+          </div>
         ))}
       </div>
     </section>
