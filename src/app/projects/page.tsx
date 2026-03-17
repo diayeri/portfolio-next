@@ -12,23 +12,19 @@ const Projects: React.FC = () => {
   const [category, setCategory] = useState<TabCategory>("all");
 
   const filteredProjects = useMemo(() => {
-    if (category === "all") return projectsData;
+    return projectsData
+      .filter((project) => {
+        if (category === "all") return true;
+        const tags = project.category.map((t) => t.toLowerCase());
 
-    return projectsData.filter((project) => {
-      const projectTags = project.category.map((c) => c.toLowerCase());
-
-      if (category === "development") {
-        return (
-          projectTags.includes("frontend") || projectTags.includes("ui dev")
-        );
-      }
-
-      if (category === "design") {
-        return projectTags.includes("design");
-      }
-
-      return false;
-    });
+        if (category === "development") {
+          return ["frontend", "ui dev", "markup"].some((t) => tags.includes(t));
+        }
+        return tags.some((t) => t.includes("design"));
+      })
+      .sort((a, b) => {
+        return b.startDate.localeCompare(a.startDate);
+      });
   }, [category]);
 
   return (
