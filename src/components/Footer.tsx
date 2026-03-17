@@ -14,7 +14,7 @@ const BuildDate = () => {
 const Footer: React.FC = () => {
   return (
     <footer className="w-full mt-20 border-t border-gray-100 bg-gray-50">
-      <div className="flex flex-col md:flex-row items-center justify-between px-8 py-12 max-w-[1400px] mx-auto gap-8">
+      <div className="flex flex-col items-center justify-between gap-8 px-8 py-12 mx-auto md:grid md:grid-cols-3">
         {/* Left: Brand & Build Date */}
         <div className="flex flex-col items-center gap-2 md:items-start">
           <Link
@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Right: Social Links */}
-        <div className="flex order-2 gap-6 md:order-3">
+        <div className="flex justify-end order-2 gap-6 md:order-3">
           <a
             href="mailto:jdyoung1031@gmail.com"
             className="text-gray-400 transition-colors hover:text-gray-900"

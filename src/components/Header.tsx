@@ -18,7 +18,7 @@ export const Header = () => {
 
   return (
     <header className="fixed top-0 z-50 w-full px-6 py-4 border-b backdrop-blur-lg border-gray-400/10 bg-gray-50/30">
-      <div className="flex items-center justify-between w-full">
+      <div className="grid items-center justify-between w-full grid-cols-3">
         {/* Left: Brand */}
         <div className="flex items-center">
           <Link
@@ -30,7 +30,7 @@ export const Header = () => {
         </div>
 
         {/* Center: Navigation */}
-        <nav className="absolute flex items-center gap-10 -translate-x-1/2 left-1/2">
+        <nav className="flex items-center justify-center gap-10">
           <Link
             href="/projects"
             className={`text-xs font-bold tracking-[0.2em] uppercase transition-all ${
@@ -51,7 +51,7 @@ export const Header = () => {
         </nav>
 
         {/* Right: Build Date & Github */}
-        <div className="flex items-center">
+        <div className="flex items-center justify-end">
           <a
             href="https://github.com/diayeri/portfolio-next"
             target="_blank"
