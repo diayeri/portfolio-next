@@ -8,17 +8,32 @@ import { projectsData } from "@/data/projectsData";
 import { motion } from "framer-motion";
 import { fadeUp } from "@/motion";
 
-type Category = "all" | "frontend" | "ui dev" | "design";
+// type Category = "all" | "frontend" | "ui dev" | "design";
+type TabCategory = "all" | "development" | "design";
 
 const Projects: React.FC = () => {
-  const [category, setCategory] = useState<Category>("all");
+  // const [category, setCategory] = useState<Category>("all");
+  const [category, setCategory] = useState<TabCategory>("all");
 
   const filteredProjects = useMemo(() => {
     if (category === "all") return projectsData;
-    return projectsData.filter((project) =>
-      project.category.some((c) => c.toLowerCase() === category),
-    );
-  }, [category, projectsData]);
+
+    return projectsData.filter((project) => {
+      const projectTags = project.category.map((c) => c.toLowerCase());
+
+      if (category === "development") {
+        return (
+          projectTags.includes("frontend") || projectTags.includes("ui dev")
+        );
+      }
+
+      if (category === "design") {
+        return projectTags.includes("design");
+      }
+
+      return false;
+    });
+  }, [category]);
 
   // const router = useRouter();
   return (
@@ -36,7 +51,7 @@ const Projects: React.FC = () => {
 
         {/* 필터 영역: 세련된 탭 버튼 스타일 */}
         <div className="flex flex-wrap justify-center p-1.5 bg-gray-100/50 backdrop-blur-md rounded-2xl border border-gray-100">
-          {(["all", "frontend", "ui dev", "design"] as const).map((c) => (
+          {(["all", "development", "design"] as const).map((c) => (
             <button
               key={c}
               onClick={() => setCategory(c)}
