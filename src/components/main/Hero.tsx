@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import MainAnimation from "@/components/MainAnimation";
+import MainAnimation from "@/components/main/MainAnimation";
 import { ScrollIndicator } from "@/components/ScrollIndicator";
 import { Button } from "@/components/Button";
 import { Github, ArrowDown } from "lucide-react";

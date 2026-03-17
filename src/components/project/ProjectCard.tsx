@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import type { ProjectsData } from "../types/projects";
+import type { ProjectsData } from "../../types/projects";
 import NextImage from "next/image";
 import Link from "next/link";
 

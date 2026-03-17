@@ -4,7 +4,7 @@ import { useState, useEffect, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import NextImage from "next/image";
 import { useRole } from "@/context/RoleContext";
-import { Button } from "./Button";
+import { Button } from "../Button";
 import { ArrowRight } from "lucide-react";
 import { projectsData } from "@/data/projectsData";
 import { motion } from "framer-motion";

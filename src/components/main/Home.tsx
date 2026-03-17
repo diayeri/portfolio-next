@@ -1,9 +1,9 @@
 "use client";
 
-import Hero from "@/components/Hero";
-import Intro from "@/components/Intro";
-import Timeline from "@/components/Timeline";
-import FeaturedProjectList from "@/components/FeaturedProjectList";
+import Hero from "@/components/main/Hero";
+import Intro from "@/components/main/Intro";
+import Timeline from "@/components/main/Timeline";
+import FeaturedProjectList from "@/components/main/FeaturedProjectList";
 import { HeroProvider } from "@/context/HeroContext";
 import { RoleProvider } from "@/context/RoleContext";
 

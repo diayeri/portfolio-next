@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import ProjectCard from "@/components/ProjectCard";
+import ProjectCard from "@/components/project/ProjectCard";
 import { projectsData } from "@/data/projectsData";
 import { motion } from "framer-motion";
 import { fadeUp } from "@/motion";

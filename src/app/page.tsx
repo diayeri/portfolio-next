@@ -1,4 +1,4 @@
-import Home from "@/components/Home";
+import Home from "@/components/main/Home";
 
 export default async function Page({
   searchParams,
