@@ -13,7 +13,7 @@ const BuildDate = () => {
 
 const Footer: React.FC = () => {
   return (
-    <footer className="w-full mt-32 border-t border-gray-100 bg-gray-50">
+    <footer className="w-full mt-20 border-t border-gray-100 bg-gray-50">
       <div className="flex flex-col md:flex-row items-center justify-between px-8 py-12 max-w-[1400px] mx-auto gap-8">
         {/* Left: Brand & Build Date */}
         <div className="flex flex-col items-center gap-2 md:items-start">

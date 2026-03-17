@@ -9,7 +9,7 @@ export default function Timeline() {
   const { roleData } = useRole();
 
   return (
-    <section className="w-full px-10 py-20" id="timeline">
+    <section className="w-full px-10 py-32" id="timeline">
       <div className="max-w-[1400px] mx-auto flex">
         {/* Left */}
         <div className="w-1/2 pr-40">

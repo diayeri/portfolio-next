@@ -17,7 +17,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 z-50 w-full px-6 py-4 border-b backdrop-blur-lg border-gray-400/10 bg-white/70">
+    <header className="fixed top-0 z-50 w-full px-6 py-4 border-b backdrop-blur-lg border-gray-400/10 bg-gray-50/30">
       <div className="flex items-center justify-between w-full">
         {/* Left: Brand */}
         <div className="flex items-center">
@@ -42,11 +42,11 @@ export const Header = () => {
             Projects
           </Link>
           <Link
-            href="/#about"
+            href="/#timeline"
             onClick={scrollToTimeline}
             className="text-xs font-bold tracking-[0.2em] uppercase text-gray-400 hover:text-gray-600 transition-all"
           >
-            About
+            Career
           </Link>
         </nav>
 

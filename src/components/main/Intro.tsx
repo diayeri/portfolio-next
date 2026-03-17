@@ -54,7 +54,10 @@ export default function Intro() {
   ];
 
   return (
-    <section className="relative flex flex-col items-center w-full px-10 py-16 overflow-hidden">
+    <section
+      className="relative flex flex-col items-center w-full px-10 py-16 overflow-hidden"
+      id="about"
+    >
       <div className="absolute inset-0 z-0 flex items-center opacity-50">
         <TechMarquee />
       </div>

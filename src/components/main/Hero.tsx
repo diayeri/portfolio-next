@@ -49,42 +49,30 @@ export default function Hero() {
         {...fadeUp(3.2, visited)}
         className="z-10 mt-5 font-medium text-white text-8xl"
       >
-        <span className="ml-[-120px] text-transparent bg-clip-text bg-gradient-to-r from-primary-dark to-black drop-shadow-sm over">
+        <span className="md:ml-[-120px] text-transparent bg-clip-text bg-gradient-to-r from-primary-dark to-black drop-shadow-sm over">
           <span className={roleKey !== "design" ? "ml-[54px]" : ""}>
             {roleData.titleEn}
           </span>
         </span>
         <br />
-        <span className="mr-[-244px] text-nowrap drop-shadow-xl">
+        <span className="md:mr-[-244px] text-nowrap drop-shadow-xl">
           Dayoung Jung
         </span>
       </motion.h1>
 
       <motion.div {...fadeUp(4, visited)}>
-        <p className="mt-20 text-base">
+        <p className="mt-16 text-base">
           디자인 이해를 바탕으로 UI 개발을 주력으로 하며 <br />
           React, TypeScript 기반 프론트엔드 환경에서 <br />
           컴포넌트 구현과 기능 개발을 수행해온 {roleData.titleKo}입니다.
         </p>
-        <div className="z-10 flex justify-center gap-2 mt-8">
-          <Button
-            href="https://github.com/diayeri"
-            color="primary"
-            variant="outline"
-            iconRight={<Github />}
-            onClick={() =>
-              sendEvent({
-                action: "click",
-                category: "portfolio",
-                label: "heroGithub_button",
-              })
-            }
-          >
-            Github
-          </Button>
-          <Button onClick={handleScrollDown} iconRight={<ArrowDown />}>
-            Explore
-          </Button>
+        <div className="z-10 flex flex-col justify-center gap-2 mt-10">
+          <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-gray-400/80">
+            Focused on React · TypeScript
+          </span>
+          <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-gray-400/80">
+            UI/UX Design
+          </span>
         </div>
       </motion.div>
 
