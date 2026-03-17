@@ -2,17 +2,13 @@
 
 import React, { useState, useMemo } from "react";
 import ProjectCard from "@/components/ProjectCard";
-// import { useRouter } from "next/navigation";
-// import { Button } from "@/components/Button";
 import { projectsData } from "@/data/projectsData";
 import { motion } from "framer-motion";
 import { fadeUp } from "@/motion";
 
-// type Category = "all" | "frontend" | "ui dev" | "design";
 type TabCategory = "all" | "development" | "design";
 
 const Projects: React.FC = () => {
-  // const [category, setCategory] = useState<Category>("all");
   const [category, setCategory] = useState<TabCategory>("all");
 
   const filteredProjects = useMemo(() => {
@@ -35,11 +31,10 @@ const Projects: React.FC = () => {
     });
   }, [category]);
 
-  // const router = useRouter();
   return (
     <section className="w-full px-6 mx-auto py-28 max-w-7xl">
       <div className="flex flex-col items-center mb-16 space-y-12">
-        {/* 타이틀 영역: 올라운더 정체성 부여 */}
+        {/* 타이틀 영역 */}
         <div className="space-y-4 text-center">
           <p className="text-sm font-medium tracking-widest text-gray-400 uppercase">
             Dayoung Jung: UI Designer & Developer
@@ -49,7 +44,7 @@ const Projects: React.FC = () => {
           </h2>
         </div>
 
-        {/* 필터 영역: 세련된 탭 버튼 스타일 */}
+        {/* 필터링 버튼 */}
         <div className="flex flex-wrap justify-center p-1.5 bg-gray-100/50 backdrop-blur-md rounded-2xl border border-gray-100">
           {(["all", "development", "design"] as const).map((c) => (
             <button
@@ -69,7 +64,7 @@ const Projects: React.FC = () => {
           ))}
         </div>
 
-        {/* 필터 결과 요약 (사용성 향상) */}
+        {/* 필터 결과 요약 */}
         {/* <p className="text-xs text-gray-400">
           Showing{" "}
           <span className="font-bold text-gray-900">
@@ -84,7 +79,6 @@ const Projects: React.FC = () => {
           <motion.div
             {...fadeUp(index < 6 ? index * 0.05 : 0)}
             key={project.id}
-            // onClick={() => router.push(`/projects/${project.id}`)}
             className="h-full cursor-pointer"
           >
             <ProjectCard project={project} />

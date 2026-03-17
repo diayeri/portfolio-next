@@ -30,10 +30,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           className="object-cover transition-all duration-700 group-hover:scale-105 brightness-[0.98] group-hover:brightness-100"
         />
         {/* 카테고리 오버레이 배지 */}
-        <div className="absolute top-5 left-5">
-          <span className="px-3 py-1 text-xs font-bold tracking-widest text-white uppercase rounded-full bg-gray-900/40 backdrop-blur-md">
-            {project.category?.[0] || "Project"}
-          </span>
+        <div className="absolute flex flex-wrap gap-2 top-4 left-4">
+          {Array.isArray(project.category)
+            ? project.category.map((cat, index) => (
+                <span
+                  key={index}
+                  className="px-3 py-1 text-xs font-bold tracking-widest text-white uppercase rounded-full bg-gray-900/40 backdrop-blur-md"
+                >
+                  {cat}
+                </span>
+              ))
+            : null}
         </div>
       </div>
 
