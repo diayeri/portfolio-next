@@ -4,10 +4,32 @@ import React from "react";
 import { ProjectsData } from "@/types/projects";
 import { motion } from "framer-motion";
 import { fadeUp } from "@/motion";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 
 export const ProjectHeader = ({ project }: { project: ProjectsData }) => {
   return (
     <section className="max-w-[1200px] mx-auto pt-20 pb-24 md:pb-32">
+      {/* Back Button Area */}
+      <motion.div
+        initial={{ opacity: 0, x: -10 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        className="mb-12"
+      >
+        <Link
+          href="/projects"
+          className="inline-flex items-center gap-2 text-gray-400 transition-colors group hover:text-primary-dark"
+        >
+          <div className="flex items-center justify-center w-8 h-8 transition-all border border-gray-100 rounded-full group-hover:border-primary-dark">
+            <ArrowLeft size={16} />
+          </div>
+          <span className="text-[11px] font-bold tracking-[0.2em] uppercase">
+            Projects List
+          </span>
+        </Link>
+      </motion.div>
+
       <div className="flex flex-col items-center justify-between gap-12 lg:flex-row lg:gap-20">
         {/* Left: Main Content */}
         <div className="flex-1 space-y-8">

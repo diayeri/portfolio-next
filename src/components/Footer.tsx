@@ -1,48 +1,67 @@
 "use client";
 
 import Link from "next/link";
-// import { Button } from './Button';
 import { Mail, Github, Linkedin } from "lucide-react";
+
+const BuildDate = () => {
+  const buildDateString =
+    process.env.NEXT_PUBLIC_BUILD_DATE || new Date().toISOString();
+  const formattedDate = buildDateString.split("T")[0].replace(/-/g, ".");
+
+  return formattedDate;
+};
 
 const Footer: React.FC = () => {
   return (
-    <footer className="w-full mt-8 text-xs text-left text-gray-500 bg-gray-100">
-      <div className="flex items-center justify-between px-10 py-4">
-        <Link
-          href="/"
-          className="font-mono text-base font-bold text-gray-500 hover:text-primary-light"
-        >
-          DtoD
-        </Link>
-        <div className="w-full px-10 text-xs text-center">
-          &copy; {new Date().getFullYear()} UI Design & Development Portfolio -
-          Dayoung Jung. All rights reserved.
+    <footer className="w-full mt-32 border-t border-gray-100 bg-gray-50">
+      <div className="flex flex-col md:flex-row items-center justify-between px-8 py-12 max-w-[1400px] mx-auto gap-8">
+        {/* Left: Brand & Build Date */}
+        <div className="flex flex-col items-center gap-2 md:items-start">
+          <Link
+            href="/"
+            className="font-mono text-lg font-black tracking-tighter text-gray-900 transition-colors hover:text-primary"
+          >
+            DtoD
+          </Link>
+          <div className="flex items-center gap-2 text-[10px] font-bold tracking-widest text-gray-300 uppercase">
+            <span>Last Updated</span>
+            <span className="text-gray-400">{BuildDate()}</span>
+          </div>
         </div>
-        <div className="flex gap-5 text-sm font-medium">
+
+        {/* Center: Copyright */}
+        <div className="order-3 text-xs tracking-tight text-center text-gray-400 md:order-2">
+          &copy; {new Date().getFullYear()} UI Designer & Developer Dayoung
+          Jung.
+          <span className="hidden sm:inline"> All rights reserved.</span>
+        </div>
+
+        {/* Right: Social Links */}
+        <div className="flex order-2 gap-6 md:order-3">
           <a
             href="mailto:jdyoung1031@gmail.com"
-            className="hover:text-primary"
-            title="mail"
+            className="text-gray-400 transition-colors hover:text-gray-900"
+            title="Mail"
           >
-            <Mail className="w-4" />
+            <Mail size={18} strokeWidth={2.5} />
           </a>
           <a
             href="https://github.com/diayeri"
-            className="hover:text-primary"
-            title="github"
             target="_blank"
             rel="noopener"
+            className="text-gray-400 transition-colors hover:text-gray-900"
+            title="GitHub"
           >
-            <Github className="w-4" />
+            <Github size={18} strokeWidth={2.5} />
           </a>
           <a
             href="https://www.linkedin.com/in/diayeri/"
-            className="hover:text-primary"
-            title="linkedin"
             target="_blank"
             rel="noopener"
+            className="text-gray-400 transition-colors hover:text-gray-900"
+            title="LinkedIn"
           >
-            <Linkedin className="w-4" />
+            <Linkedin size={18} strokeWidth={2.5} />
           </a>
         </div>
       </div>

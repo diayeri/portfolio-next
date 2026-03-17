@@ -1,55 +1,73 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { sendEvent } from "@/utils/analytics/gtag";
+import { ArrowUpRight } from "lucide-react";
+import { usePathname } from "next/navigation";
 
-const BuildDate = () => {
-  const buildDateString =
-    process.env.NEXT_PUBLIC_BUILD_DATE || new Date().toISOString();
-  const formattedDate = buildDateString.split("T")[0].replace(/-/g, ".");
+export const Header = () => {
+  const pathname = usePathname();
 
-  return <span>Last updated: {formattedDate}</span>;
-};
+  const scrollToTimeline = (e: React.MouseEvent) => {
+    if (pathname === "/") {
+      e.preventDefault();
+      const timeline = document.getElementById("timeline");
+      timeline?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
-// Header 컴포넌트 props 타입 정의
-interface HeaderProps {
-  className?: string;
-}
-
-const Header: React.FC<HeaderProps> = () => {
   return (
-    <header className="fixed top-0 z-50 flex items-center justify-between w-full px-6 py-4 border-b backdrop-blur-lg border-gray-400/20">
-      <div className="flex items-center">
-        <Link
-          href="/"
-          className="font-mono text-base font-bold text-gray-700 hover:text-primary-light"
-        >
-          DtoD
-        </Link>
-      </div>
-      <div className="">
-        <Link
-          href="https://github.com/diayeri/portfolio-next"
-          target="_blank"
-          className="flex items-center gap-1 text-sm text-gray-500/80 hover:text-primary-light"
-          onClick={() =>
-            sendEvent({
-              action: "click",
-              category: "portfolio",
-              label: "buildDate_button",
-            })
-          }
-        >
-          {/* <span>🚧 Portfolio in Progress</span> */}
-          {BuildDate()}
-          <ArrowRight className="w-4" />
-        </Link>
-      </div>
+    <header className="fixed top-0 z-50 w-full px-6 py-4 border-b backdrop-blur-lg border-gray-400/10 bg-white/70">
+      <div className="flex items-center justify-between w-full">
+        {/* Left: Brand */}
+        <div className="flex items-center">
+          <Link
+            href="/"
+            className="font-mono text-base font-black tracking-tighter text-gray-900 transition-colors hover:text-primary"
+          >
+            DtoD
+          </Link>
+        </div>
 
-      {/* <p className='text-sm text-white/70'>UI Developer, Dayoung Jung</p> */}
+        {/* Center: Navigation */}
+        <nav className="absolute flex items-center gap-10 -translate-x-1/2 left-1/2">
+          <Link
+            href="/projects"
+            className={`text-xs font-bold tracking-[0.2em] uppercase transition-all ${
+              pathname.includes("/projects")
+                ? "text-gray-900"
+                : "text-gray-400 hover:text-gray-600"
+            }`}
+          >
+            Projects
+          </Link>
+          <Link
+            href="/#about"
+            onClick={scrollToTimeline}
+            className="text-xs font-bold tracking-[0.2em] uppercase text-gray-400 hover:text-gray-600 transition-all"
+          >
+            About
+          </Link>
+        </nav>
+
+        {/* Right: Build Date & Github */}
+        <div className="flex items-center">
+          <a
+            href="https://github.com/diayeri/portfolio-next"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1 text-gray-400 transition-colors group hover:text-gray-900"
+          >
+            <span className="text-[11px] font-bold tracking-[0.2em] uppercase">
+              Github
+            </span>
+            <ArrowUpRight
+              size={14}
+              className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 opacity-50 group-hover:opacity-100"
+            />
+          </a>
+        </div>
+      </div>
     </header>
   );
 };
-
-export default Header;
