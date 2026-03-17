@@ -51,7 +51,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         </div>
 
         {/* 제목 및 설명 */}
-        <h3 className="mb-3 text-2xl font-bold tracking-tight text-gray-900 transition-colors group-hover:text-primary">
+        <h3 className="mb-3 text-2xl font-bold tracking-tight text-gray-900 transition-colors group-hover:text-primary-dark">
           {project.title}
         </h3>
         <p className="mb-6 text-sm leading-relaxed text-gray-500 line-clamp-2">

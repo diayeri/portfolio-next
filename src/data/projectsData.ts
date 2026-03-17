@@ -16,7 +16,7 @@ export const projectsData: ProjectsData[] = [
     },
     thumbnail: "/projects/rounz/thumb.png",
     links: ["https://rounz.com/series.php?contentIndex=155"],
-    description: `AI 가상 피팅으로 안경을 써보고 구매할 수 있는 이커머스 플랫폼의 사용자 화면과, \n복잡한 상품 데이터를 편리하게 관리하는 운영 시스템을 개발한 프로젝트`,
+    description: `AI 가상 피팅으로 안경을 써보고 구매할 수 있는 이커머스 플랫폼의 사용자 화면과, 복잡한 상품 데이터를 편리하게 관리하는 운영 시스템을 개발한 프로젝트`,
   },
   {
     id: "muna",
@@ -35,7 +35,7 @@ export const projectsData: ProjectsData[] = [
     links: ["https://www.figma.com/slides/balGjqj90gSVp93OMEfe9A/Report_MUNA"],
     github: "https://github.com/TEAM-MUNA/muna",
     description:
-      "공연 예술 통합 데이터를 활용한 공연 정보 공유 및 리뷰 커뮤니티 플랫폼으로, \n실무 기반의 WBS 설계와 Atomic Design 시스템 구축을 통해 최우수상을 수상하며 프로젝트의 완성도와 효율적인 협업 구조를 인정받은 프로젝트",
+      "공연 예술 통합 데이터를 활용한 공연 정보 공유 및 리뷰 커뮤니티 플랫폼으로, 실무 기반의 WBS 설계와 Atomic Design 시스템 구축을 통해 최우수상을 수상하며 프로젝트의 완성도와 효율적인 협업 구조를 인정받은 프로젝트",
   },
   {
     id: "chromatic",
@@ -57,7 +57,7 @@ export const projectsData: ProjectsData[] = [
       // 'https://chromatic.gitbook.io/docs',
     ],
     github: "https://github.com/chromatic-protocol/frontend-archive",
-    description: `블록체인 기술을 바탕으로 실시간 시세 연동 선물 시장을 생성하고, \n유동성 공급과 보상 체계를 직관적인 UI로 구현한 탈중앙화 금융(DeFi) 플랫폼`,
+    description: `블록체인 기술을 바탕으로 실시간 시세 연동 선물 시장을 생성하고, 유동성 공급과 보상 체계를 직관적인 UI로 구현한 탈중앙화 금융(DeFi) 플랫폼`,
   },
   {
     id: "klaybay",

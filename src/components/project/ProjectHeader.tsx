@@ -1,91 +1,112 @@
+"use client";
+
 import React from "react";
 import { ProjectsData } from "@/types/projects";
+import { motion } from "framer-motion";
+import { fadeUp } from "@/motion";
 
-interface ProjectInfoItemProps {
-  label: string;
-  value: string | React.ReactNode;
-  className?: string;
-}
-
-const ProjectInfoItem: React.FC<ProjectInfoItemProps> = ({
-  label,
-  value,
-  className,
-}) => (
-  <div className={`py-2.5 ${className} w-max`}>
-    <h2 className="text-sm font-medium text-gray-400 capitalize">{label}</h2>
-    <p className="text-base text-gray-700">{value}</p>
-  </div>
-);
 export const ProjectHeader = ({ project }: { project: ProjectsData }) => {
   return (
-    <div className="flex my-20">
-      {/* left */}
-      <div>
-        <h1 className="mb-6 text-3xl font-bold md:text-4xl lg:text-6xl">
-          {project.title}
-        </h1>
-        <p className="mb-6 text-base text-gray-700 whitespace-pre-line">
-          {project.description}
-        </p>
-        <div className="flex flex-wrap gap-2">
-          {project.tech.map((tech, index) => (
-            <span
-              key={index}
-              className="px-3 py-1 text-sm bg-gray-200 rounded-full"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-      </div>
+    <section className="max-w-[1200px] mx-auto pt-20 pb-24 md:pb-32">
+      <div className="flex flex-col items-center justify-between gap-12 lg:flex-row lg:gap-20">
+        {/* Left: Main Content */}
+        <div className="flex-1 space-y-8">
+          <motion.div {...fadeUp(0)} className="space-y-4">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter text-gray-900 leading-[0.95]">
+              {project.title}
+            </h1>
+          </motion.div>
 
-      {/* right */}
-      <div className="pl-20 ml-auto">
-        <div className="flex gap-10">
-          <ProjectInfoItem label="role" value={project.category} />
-          <ProjectInfoItem label={project.clientType} value={project.client} />
-          <ProjectInfoItem
-            label="period"
-            value={`${project.startDate} ~ ${project.endDate ?? "Present"}`}
-          />
-        </div>
-        {project.links && (
-          <ProjectInfoItem
-            className="col-span-full"
-            label="link"
-            value={project.links.map((link, idx) => (
-              <React.Fragment key={idx}>
-                <a
-                  key={idx}
-                  href={link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mr-3 text-sm underline"
-                >
-                  {link}
-                </a>
-              </React.Fragment>
-            ))}
-          />
-        )}
-        {project.github && (
-          <ProjectInfoItem
-            className="col-span-full"
-            label="gitHub"
-            value={
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm underline"
+          <motion.p
+            {...fadeUp(0.1)}
+            className="max-w-2xl text-base leading-relaxed text-gray-500 md:text-lg break-keep"
+          >
+            {project.description}
+          </motion.p>
+
+          {/* Tech Stack */}
+          <motion.div {...fadeUp(0.2)} className="flex flex-wrap gap-1.5">
+            {project.tech.map((tech, index) => (
+              <span
+                key={index}
+                className="px-3 py-1 text-xs font-semibold text-gray-500 border border-gray-200 rounded-sm bg-gray-50/50"
               >
-                {project.github.replace("https://github.com/", "")}
-              </a>
-            }
-          />
-        )}
+                {tech}
+              </span>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Right: Project Meta */}
+        <motion.div
+          {...fadeUp(0.3)}
+          className="w-full lg:w-[300px] shrink-0 pt-8 lg:pt-2 lg:border-l lg:pl-12 border-gray-100"
+        >
+          <div className="grid grid-cols-2 lg:grid-cols-1 gap-y-8 gap-x-4">
+            <MetaItem label="Role" value={project.category} />
+            <MetaItem
+              label={project.clientType || "Client"}
+              value={project.client}
+            />
+            <MetaItem
+              label="Period"
+              value={`${project.startDate} — ${project.endDate ?? "Present"}`}
+            />
+
+            {/* Connect Section */}
+            {(project.links || project.github) && (
+              <div className="col-span-2 space-y-2 lg:col-span-1">
+                <span className="text-[11px] font-bold tracking-widest uppercase text-primary-light">
+                  Connect
+                </span>
+                <div className="flex flex-col gap-1">
+                  {project.links?.map((link, idx) => (
+                    <a
+                      key={idx}
+                      href={link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-1 text-sm font-semibold text-gray-700 transition-colors hover:text-primary group"
+                    >
+                      Visit Website{" "}
+                      <span className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">
+                        ↗
+                      </span>
+                    </a>
+                  ))}
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-1 text-sm font-semibold text-gray-700 transition-colors hover:text-primary"
+                    >
+                      Github Repository
+                    </a>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
+
+const MetaItem = ({
+  label,
+  value,
+}: {
+  label: string;
+  value: string | string[];
+}) => (
+  <div className="space-y-1.5">
+    <span className="text-[11px] font-bold tracking-widest uppercase text-primary-light">
+      {label}
+    </span>
+    <div className="text-sm font-semibold leading-tight text-gray-700 break-keep">
+      {Array.isArray(value) ? value.join(", ") : value}
+    </div>
+  </div>
+);
