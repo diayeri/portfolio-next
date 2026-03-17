@@ -23,7 +23,7 @@ export const projectsData: ProjectsData[] = [
     title: "Muna",
     startDate: "2024.09",
     endDate: "2024.10",
-    category: ["Frontend", "Design"],
+    category: ["Frontend", "UX/UI Design"],
     tech: ["React", "TypeScript", "Redux Toolkit", "Firebase", "SCSS", "Figma"],
     client: "이스트소프트 프론트엔드 부트캠프 1기",
     clientType: "institution",
@@ -98,7 +98,7 @@ export const projectsData: ProjectsData[] = [
     title: "Miral Payment Renewal",
     startDate: "2019.03",
     endDate: "2020.01",
-    category: ["Design"],
+    category: ["UX/UI Design"],
     tech: ["Photoshop"],
     client: "밀알복지재단",
     clientType: "company",
@@ -109,5 +109,17 @@ export const projectsData: ProjectsData[] = [
     thumbnail: "/projects/miral-payment/thumb.png",
     description:
       "사용성 분석을 통해 후원 결제 단계의 병목 지점을 개선하고, 모바일 최적화와 입력 공정 간소화를 통해 전년 대비 모바일 후원을 2배 이상으로 성장시킨 UX 리뉴얼 프로젝트",
+  },
+  {
+    id: "central-church",
+    title: "Central Church Brand Design",
+    startDate: "2025.04",
+    category: ["Branding", "Visual Design"],
+    tech: ["Figma", "OpenAI"],
+    client: "중앙성결교회",
+    clientType: "client",
+    thumbnail: "/projects/central-church/thumb.png",
+    description:
+      "새로 신설된 상담원의 따뜻한 정체성을 시각화하여 성도들의 참여를 이끌어내고, 기획한 무료검사 목표를 달성하며 공동체의 건강한 가정 교육에 기여한 브랜드 디자인 프로젝트",
   },
 ];
