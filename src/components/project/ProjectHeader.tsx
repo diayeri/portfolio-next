@@ -25,7 +25,7 @@ export const ProjectHeader = ({ project }: { project: ProjectsData }) => {
             <ArrowLeft size={16} />
           </div>
           <span className="text-[11px] font-bold tracking-[0.2em] uppercase">
-            Projects List
+            Project List
           </span>
         </Link>
       </motion.div>
