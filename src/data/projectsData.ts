@@ -111,6 +111,19 @@ export const projectsData: ProjectsData[] = [
       "사용성 분석을 통해 후원 결제 단계의 병목 지점을 개선하고, 모바일 최적화와 입력 공정 간소화를 통해 전년 대비 모바일 후원을 2배 이상으로 성장시킨 UX 리뉴얼 프로젝트",
   },
   {
+    id: "miral-1000",
+    title: "소액기부 캠페인 UI 리뉴얼",
+    startDate: "2019.10",
+    endDate: "2019.12",
+    category: ["UI/UX Design", "UI Dev"],
+    tech: ["Figma", "HTML", "CSS", "JavaScript", "Responsive/Adaptive"],
+    client: "밀알복지재단",
+    clientType: "company",
+    thumbnail: "/projects/miral-1000/thumb.png",
+    description:
+      "기존 외주 시스템을 컨셉 변화에 맞춰 전면 개편한 프로젝트입니다. 디자인 수정부터 마크업 구현까지 직접 전담하여 리소스를 최적화했으며, 적응형과 반응형 기법을 병행하여 정교한 UI를 구현했습니다.",
+  },
+  {
     id: "central-church",
     title: "Central Church Brand Design",
     startDate: "2025.04",
