@@ -54,7 +54,7 @@
   }
   100% {
     border-radius: 50%;
-    transform: scale(12%, 12%) translate(0, -200px) rotate(15deg);
+    transform: scale(12%, 12%) translate(0, -120px) rotate(15deg);
   }
 }
 
@@ -70,7 +70,7 @@
 }
 .animation-done {
   border-radius: 50%;
-  transform: scale(12%, 12%) translate(0, -200px) rotate(15deg);
+  transform: scale(12%, 12%) translate(0, -120px) rotate(15deg);
   animation: none;
   .glass::after {
     animation: none;
