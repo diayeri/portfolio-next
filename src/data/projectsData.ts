@@ -129,7 +129,7 @@ export const projectsData: ProjectsData[] = [
     startDate: "2020.08",
     endDate: "2020.11",
     category: ["UX/UI Design"],
-    tech: ["Photoshop", "HTML5", "CSS3", "JavaScript"],
+    tech: ["Photoshop", "HTML5", "CSS3", "JavaScript", "jQuery"],
     client: "밀알복지재단",
     clientType: "company",
     thumbnail: "/projects/miral-fan/thumb.png",
