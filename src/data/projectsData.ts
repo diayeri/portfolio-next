@@ -116,12 +116,25 @@ export const projectsData: ProjectsData[] = [
     startDate: "2019.10",
     endDate: "2019.12",
     category: ["UI/UX Design", "UI Dev"],
-    tech: ["Figma", "HTML", "CSS", "JavaScript", "Responsive/Adaptive"],
+    tech: ["Photoshop", "HTML5", "CSS3", "JavaScript", "Responsive/Adaptive"],
     client: "밀알복지재단",
     clientType: "company",
     thumbnail: "/projects/miral-1000/thumb.png",
     description:
       "기존 외주 시스템을 컨셉 변화에 맞춰 전면 개편한 프로젝트입니다. 디자인 수정부터 마크업 구현까지 직접 전담하여 리소스를 최적화했으며, 적응형과 반응형 기법을 병행하여 정교한 UI를 구현했습니다.",
+  },
+  {
+    id: "miral-fan",
+    title: "팬슈머 기부 경험 설계",
+    startDate: "2020.08",
+    endDate: "2020.11",
+    category: ["UX/UI Design"],
+    tech: ["Photoshop", "HTML5", "CSS3", "JavaScript"],
+    client: "밀알복지재단",
+    clientType: "company",
+    thumbnail: "/projects/miral-fan/thumb.png",
+    description:
+      "팬덤의 '인증 문화'를 기부와 결합한 리워드 컨셉을 업계 최초로 기획하고, 감사장과 굿즈를 아우르는 통합 디자인 가이드를 수립하고 인터랙티브 요소를 직접 퍼블리싱했습니다. SNS 자발적 바이럴을 통해 기부의 선순환 구조를 만든 프로젝트입니다.",
   },
   {
     id: "central-church",
