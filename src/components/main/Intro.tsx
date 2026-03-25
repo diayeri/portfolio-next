@@ -55,33 +55,31 @@ export default function Intro() {
 
   return (
     <section
-      className="relative flex flex-col items-center w-full px-10 py-16 overflow-hidden"
+      className="relative flex flex-col items-center w-full px-5 py-16 overflow-hidden"
       id="about"
     >
-      <div className="absolute inset-0 z-0 flex items-center opacity-50">
+      <div className="absolute inset-0 z-0 items-center hidden opacity-50 md:flex">
         <TechMarquee />
       </div>
       <div className="absolute inset-0 z-10 backdrop-blur-xl bg-white [mask-image:radial-gradient(circle_at_center,_black_50%,transparent_70%)] [pointer-events:none]" />
-      <div className="z-20 flex flex-col items-center max-w-5xl gap-12 px-6 py-12 mx-auto lg:flex-row lg:gap-24">
+      <div className="z-20 flex flex-col items-center max-w-5xl gap-12 mx-auto lg:px-6 md:py-12 md:flex-row lg:gap-24">
         {/* 1. Core Value (좌측) */}
-        <section className="flex-[1.4] space-y-12">
+        <section className="flex-[1.4] flex flex-col gap-8 lg:gap-x-8 lg:gap-y-12">
           {values.map((item, index) => (
             <div
               key={index}
               className="relative pl-6 transition-colors border-l-2 border-gray-100 group hover:border-primary/50"
             >
-              <span className="absolute -left-[2px] top-0 h-8 w-[2px] bg-primary scale-y-0 group-hover:scale-y-100 transition-transform origin-top" />
-
-              <h4 className="mb-2 text-2xl tracking-tight text-primary-dark">
+              <span className="absolute -left-[2px] top-0 h-8 w-[2px] bg-primary scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-300" />
+              <h4 className="mb-2 text-xl font-semibold tracking-tight transition-all md:text-2xl text-primary-dark">
                 {item.title}
               </h4>
-
-              <p className="text-base leading-relaxed text-gray-500">
+              <p className="text-sm leading-relaxed text-gray-500 md:text-base break-keep">
                 {item.description.split(item.highlight).map((part, i, arr) => (
                   <span key={i}>
                     {part}
                     {i < arr.length - 1 && (
-                      <strong className="font-semibold text-gray-700">
+                      <strong className="font-semibold text-gray-900">
                         {item.highlight}
                       </strong>
                     )}
@@ -98,7 +96,7 @@ export default function Intro() {
             Technical Expertise
           </h3>
 
-          <div className="grid gap-y-9">
+          <div className="grid grid-cols-1 gap-y-9 gap-x-8">
             {skills.map((group, i) => (
               <div key={i} className="group/item">
                 <div className="flex justify-between items-end mb-2 border-b border-gray-200/50 pb-1.5">

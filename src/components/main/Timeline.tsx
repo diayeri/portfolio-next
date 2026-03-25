@@ -10,15 +10,18 @@ export default function Timeline() {
 
   return (
     <section className="w-full px-10 py-32" id="timeline">
-      <div className="max-w-[1400px] mx-auto flex">
+      <div className="max-w-[1400px] mx-auto lg:flex">
         {/* Left */}
-        <div className="w-1/2 pr-40">
-          <motion.h2 {...fadeUp(0, false)} className="text-5xl font-bold">
+        <div className="lg:pr-40 lg:w-1/2">
+          <motion.h2
+            {...fadeUp(0, false)}
+            className="text-4xl font-bold md:text-5xl"
+          >
             Career Roadmap
           </motion.h2>
-          <div className="flex flex-col gap-8 mt-12 text-sm text-gray-500 break-keep">
+          <div className="flex flex-col gap-8 mt-12 text-base text-gray-500 lg:text-sm break-keep">
             <div>
-              <h3 className="mb-2 text-base font-bold text-gray-700">
+              <h3 className="mb-2 text-lg font-bold text-gray-700 lg:text-base">
                 비즈니스 가치를 만드는 UX/UI 설계
               </h3>
               <p>
@@ -29,7 +32,7 @@ export default function Timeline() {
               </p>
             </div>
             <div>
-              <h3 className="mb-2 text-base font-bold text-gray-700">
+              <h3 className="mb-2 text-lg font-bold text-gray-700 lg:text-base">
                 협업의 병목을 해결하는 시스템 구축
               </h3>
               <p>
@@ -40,7 +43,7 @@ export default function Timeline() {
               </p>
             </div>
             <div>
-              <h3 className="mb-2 text-base font-bold text-gray-700">
+              <h3 className="mb-2 text-lg font-bold text-gray-700 lg:text-base">
                 준비된 End-to-End 전문가
               </h3>
               <p>
@@ -53,7 +56,7 @@ export default function Timeline() {
           </div>
         </div>
         {/* Right */}
-        <div className="relative w-1/2">
+        <div className="relative mt-16 lg:mt-0 lg:w-1/2">
           <div className="absolute top-0 -translate-x-[50%] left-0 w-[2px] h-full bg-gradient-to-t from-primary-dark to-primary-light" />
           <div className="py-2 space-y-12">
             {timelineData.map((event, idx) => (

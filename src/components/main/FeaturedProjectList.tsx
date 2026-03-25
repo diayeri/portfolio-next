@@ -29,10 +29,28 @@ const FeaturedProjectList = () => {
   }, [featuredProjects]);
 
   return (
-    <section className="w-full px-0 py-20 bg-black">
-      <div className="flex items-center my-10">
+    <section className="w-full px-5 py-20 bg-black lg:px-20">
+      <div className="flex flex-wrap justify-between w-full gap-6 mb-5 md:mb-12">
+        <motion.h2
+          {...fadeUp(0, false)}
+          className="text-4xl font-bold text-white md:text-5xl"
+        >
+          Featured Projects
+        </motion.h2>
+
+        <Button
+          size="sm"
+          variant="outline"
+          className="hover:text-white hover:border-white"
+          iconRight={<ArrowRight />}
+          onClick={() => router.push("/projects")}
+        >
+          View All
+        </Button>
+      </div>
+      <div className="flex flex-col items-center gap-16 lg:flex-row">
         {/* 미리보기 영역 */}
-        <div className="w-1/2 h-[600px] pl-12 rounded overflow-hidden flex items-center justify-center">
+        <div className="lg:w-1/2 h-[600px] rounded overflow-hidden items-center justify-center lg:flex hidden">
           <NextImage
             src={activeProject.featured!.cover}
             alt={activeProject.title}
@@ -42,25 +60,7 @@ const FeaturedProjectList = () => {
           />
         </div>
         {/* 대표 프로젝트 리스트 */}
-        <ul className="flex flex-col w-1/2 gap-0 pl-12 pr-20">
-          <div className="flex justify-between w-full mb-12">
-            <motion.h2
-              {...fadeUp(0, false)}
-              className="mr-auto text-5xl font-bold text-white"
-            >
-              Featured Projects
-            </motion.h2>
-
-            <Button
-              size="sm"
-              variant="outline"
-              className=" hover:text-white hover:border-white"
-              iconRight={<ArrowRight />}
-              onClick={() => router.push("/projects")}
-            >
-              View All
-            </Button>
-          </div>
+        <ul className="z-10 flex flex-col w-full gap-0 lg:w-1/2">
           {featuredProjects.map((project) => {
             const isActive = activeProject.id === project.id;
             return (
@@ -71,10 +71,10 @@ const FeaturedProjectList = () => {
               >
                 <a href={`/projects/${project.id}`}>
                   <div
-                    className={`flex items-center justify-between py-8 duration-200 border-b ${isActive ? "border-white/60" : "border-white/20"}`}
+                    className={`flex items-center justify-between py-7 xl:py-8 duration-200 border-b ${isActive ? "border-white/60" : "border-white/20"}`}
                   >
                     <h3
-                      className={`text-3xl font-semibold transition-colors duration-200 ${
+                      className={`text-xl md:text-2xl xl:text-3xl font-semibold transition-colors duration-200 ${
                         isActive ? "text-white" : "text-gray-400/40"
                       }`}
                     >
