@@ -15,9 +15,8 @@ export const roleMap: Record<RoleType, RoleData> = {
   design: {
     titleEn: "UX/UI Designer",
     titleKo: "UX/UI 디자이너/퍼블리셔",
-    replaceRole: (role: string) =>
-      role
-        .replace(/UI Developer/g, "Web Publisher")
-        .replace(/\bUI Dev\b/g, "Markup"),
+    replaceRole: (role: string) => role,
+    // .replace(/UI Developer/g, "Web Publisher")
+    // .replace(/\bUI Dev\b/g, "Markup"),
   },
 };

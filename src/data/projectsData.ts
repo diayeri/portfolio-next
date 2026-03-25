@@ -25,7 +25,7 @@ export const projectsData: ProjectsData[] = [
     endDate: "2024.10",
     category: ["Frontend", "UX/UI Design"],
     tech: ["React", "TypeScript", "Redux Toolkit", "Firebase", "SCSS", "Figma"],
-    client: "이스트소프트 프론트엔드 부트캠프 1기",
+    client: "이스트소프트 프론트엔드 부트캠프",
     clientType: "institution",
     featured: {
       order: 2,
