@@ -23,8 +23,9 @@ const spaceMono = Space_Mono({
 export const metadata: Metadata = {
   title: {
     default:
-      process.env.NEXT_PUBLIC_SITE_TITLE ?? "Dayoung Jung | UI Developer",
-    template: "Dayoung Jung | UI Developer",
+      process.env.NEXT_PUBLIC_SITE_TITLE ??
+      "Dayoung Jung | UX UI Designer & Developer",
+    template: "Dayoung Jung | UX UI Designer & Developer",
   },
   description: process.env.NEXT_PUBLIC_SITE_DESCRIPTION,
   metadataBase: new URL(

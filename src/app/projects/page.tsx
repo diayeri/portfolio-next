@@ -18,7 +18,7 @@ const Projects: React.FC = () => {
         const tags = project.category.map((t) => t.toLowerCase());
 
         if (category === "development") {
-          return ["frontend", "ui dev", "markup"].some((t) => tags.includes(t));
+          return ["frontend", "markup"].some((t) => tags.includes(t));
         }
         return tags.some((t) => t.includes("design"));
       })

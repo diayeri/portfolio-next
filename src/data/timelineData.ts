@@ -13,7 +13,7 @@ export const timelineData = [
   {
     period: "22.03 - 24.04",
     title: "(Kakao) Krust Universe & Quarkonix",
-    role: "UI Developer (Freelancer → Full-time)",
+    role: "Web Publisher (Freelancer → Full-time)",
     details:
       "블록체인 기반 마켓플레이스와 트레이드 웹 앱 UI 개발, React/TypeScript 활용",
     highlights: [
@@ -24,7 +24,7 @@ export const timelineData = [
   {
     period: "20.10 - 21.04",
     title: "Cocone",
-    role: "UI Developer (Freelancer)",
+    role: "Web Publisher (Freelancer)",
     details:
       "아바타 기반 소셜 네트워크 웹 서비스 & 관리자 페이지 UI 개발, jQuery 활용",
     highlights: [
@@ -45,7 +45,7 @@ export const timelineData = [
   {
     period: "15.06 - 17.06",
     title: "Makewith",
-    role: "UI Developer",
+    role: "Web Publisher",
     details:
       "커뮤니티 웹사이트 제작을 통해 UI 개발 경험 시작, 웹 개발 기초 역량 강화",
     highlights: [
