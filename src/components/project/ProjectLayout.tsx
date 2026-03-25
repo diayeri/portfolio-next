@@ -24,7 +24,7 @@ export default function ProjectLayout({
   // };
 
   return (
-    <div className="max-w-6xl px-4 py-10 mx-auto">
+    <div className="max-w-6xl px-5 py-10 mx-auto">
       {/* <a
           href='/projects'
           className='inline-flex items-center mb-6 text-primary-light dark:text-primary-dark hover:underline'

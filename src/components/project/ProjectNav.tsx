@@ -22,17 +22,20 @@ export const ProjectNav = ({ project }: { project: ProjectsData }) => {
       : null;
 
   return (
-    <div className="flex items-center justify-between pt-8 mt-20 border-t border-gray-200">
-      <div>
+    <div className="flex flex-col items-stretch justify-between gap-8 pt-8 mt-12 border-t border-gray-200 md:flex-row md:items-center md:mt-20 md:gap-0">
+      {/* Previous Project */}
+      <div className="flex-1">
         {prevProject && (
           <Link
             href={`/projects/${prevProject.id}`}
-            className="inline-flex items-center group"
+            className="inline-flex items-center transition-transform group hover:-translate-x-1"
           >
-            <ChevronLeft className="text-gray-700" />
-            <div className="ml-2">
-              <div className="text-sm text-gray-400">Previous Project</div>
-              <div className="text-lg font-medium text-gray-700">
+            <ChevronLeft className="w-5 h-5 text-gray-700 md:w-6 md:h-6" />
+            <div className="ml-3">
+              <div className="text-[10px] md:text-sm font-bold tracking-widest text-gray-400 uppercase">
+                Previous
+              </div>
+              <div className="text-base font-medium text-gray-700 transition-colors md:text-lg group-hover:text-primary">
                 {prevProject.title}
               </div>
             </div>
@@ -40,19 +43,22 @@ export const ProjectNav = ({ project }: { project: ProjectsData }) => {
         )}
       </div>
 
-      <div className="text-right">
+      {/* Next Project */}
+      <div className="flex-1 text-right">
         {nextProject && (
           <Link
             href={`/projects/${nextProject.id}`}
-            className="inline-flex items-center group"
+            className="inline-flex items-center text-right transition-transform group hover:translate-x-1"
           >
-            <div className="mr-2">
-              <div className="text-sm text-gray-400">Next Project</div>
-              <div className="text-lg font-medium text-gray-700">
+            <div className="mr-3">
+              <div className="text-[10px] md:text-sm font-bold tracking-widest text-gray-400 uppercase">
+                Next
+              </div>
+              <div className="text-base font-medium text-gray-700 transition-colors md:text-lg group-hover:text-primary">
                 {nextProject.title}
               </div>
             </div>
-            <ChevronRight className="text-gray-700" />
+            <ChevronRight className="w-5 h-5 text-gray-700 md:w-6 md:h-6" />
           </Link>
         )}
       </div>

@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Github } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 export const Header = () => {
@@ -17,23 +17,23 @@ export const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 z-50 w-full px-6 py-4 border-b backdrop-blur-lg border-gray-400/10 bg-gray-50/30">
-      <div className="grid items-center justify-between w-full grid-cols-3">
+    <header className="fixed top-0 z-50 w-full px-4 py-4 border-b md:px-6 backdrop-blur-lg border-gray-400/10 bg-gray-50/30">
+      <div className="flex items-center justify-between w-full mx-auto max-w-7xl">
         {/* Left: Brand */}
-        <div className="flex items-center">
+        <div className="flex-1">
           <Link
             href="/"
-            className="font-mono text-base font-black tracking-tighter text-gray-900 transition-colors hover:text-primary"
+            className="font-mono text-sm font-black tracking-tighter text-gray-900 transition-colors md:text-base hover:text-primary"
           >
             DtoD
           </Link>
         </div>
 
         {/* Center: Navigation */}
-        <nav className="flex items-center justify-center gap-10">
+        <nav className="flex items-center justify-center gap-6 md:gap-10">
           <Link
             href="/projects"
-            className={`text-xs font-bold tracking-[0.2em] uppercase transition-all ${
+            className={`text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase transition-all ${
               pathname.includes("/projects")
                 ? "text-gray-900"
                 : "text-gray-400 hover:text-gray-600"
@@ -44,26 +44,32 @@ export const Header = () => {
           <Link
             href="/#timeline"
             onClick={scrollToTimeline}
-            className="text-xs font-bold tracking-[0.2em] uppercase text-gray-400 hover:text-gray-600 transition-all"
+            className="text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase text-gray-400 hover:text-gray-600 transition-all"
           >
             Career
           </Link>
         </nav>
 
-        {/* Right: Build Date & Github */}
-        <div className="flex items-center justify-end">
+        {/* Right: Github - 모바일 아이콘 대응 */}
+        <div className="flex items-center justify-end flex-1">
           <a
             href="https://github.com/diayeri/portfolio-next"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 text-gray-400 transition-colors group hover:text-gray-900"
+            className="flex items-center gap-1.5 text-gray-400 transition-colors group hover:text-gray-900"
           >
-            <span className="text-[11px] font-bold tracking-[0.2em] uppercase">
+            {/* 모바일: Github 아이콘만 노출 */}
+            <Github size={18} className="md:hidden" />
+
+            {/* 데스크톱: 'Github' 텍스트 노출 */}
+            <span className="hidden md:block text-[11px] font-bold tracking-[0.2em] uppercase">
               Github
             </span>
+
+            {/* 데스크톱: 화살표 아이콘 노출 */}
             <ArrowUpRight
               size={14}
-              className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 opacity-50 group-hover:opacity-100"
+              className="hidden md:block transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 opacity-50 group-hover:opacity-100"
             />
           </a>
         </div>

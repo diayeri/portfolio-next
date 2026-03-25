@@ -14,9 +14,9 @@ const BuildDate = () => {
 const Footer: React.FC = () => {
   return (
     <footer className="w-full mt-20 border-t border-gray-100 bg-gray-50">
-      <div className="flex flex-col items-center justify-between gap-8 px-8 py-12 mx-auto md:grid md:grid-cols-3">
+      <div className="flex flex-col items-center justify-between w-full gap-5 px-8 py-12 md:flex-row">
         {/* Left: Brand & Build Date */}
-        <div className="flex flex-col items-center gap-2 md:items-start">
+        <div className="flex flex-col items-center gap-2 md:items-start md:w-1/4">
           <Link
             href="/"
             className="font-mono text-lg font-black tracking-tighter text-gray-900 transition-colors hover:text-primary"
@@ -33,11 +33,15 @@ const Footer: React.FC = () => {
         <div className="order-3 text-xs tracking-tight text-center text-gray-400 md:order-2">
           &copy; {new Date().getFullYear()} UX/UI Designer & Developer Dayoung
           Jung.
-          <span className="hidden sm:inline"> All rights reserved.</span>
+          <wbr />
+          <span className="hidden sm:inline text-nowrap">
+            {" "}
+            All rights reserved.
+          </span>
         </div>
 
         {/* Right: Social Links */}
-        <div className="flex justify-end order-2 gap-6 md:order-3">
+        <div className="flex justify-end order-2 gap-6 md:w-1/4">
           <a
             href="mailto:jdyoung1031@gmail.com"
             className="text-gray-400 transition-colors hover:text-gray-900"

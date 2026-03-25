@@ -23,7 +23,7 @@ export default function MDXImage({
   labelTop = undefined,
 }: MDXImageProps) {
   return (
-    <figure className="flex flex-col items-center justify-center my-10 not-prose">
+    <figure className="flex flex-col items-center justify-center my-4 md:my-10 not-prose">
       {labelTop && (
         <figcaption className="mb-2.5 text-sm font-bold tracking-widest text-center text-gray-400 uppercase">
           {labelTop}
