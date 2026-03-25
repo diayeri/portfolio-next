@@ -55,14 +55,14 @@ export default function Intro() {
 
   return (
     <section
-      className="relative flex flex-col items-center w-full px-5 py-16 overflow-hidden"
+      className="relative flex flex-col items-center w-full py-16 overflow-hidden"
       id="about"
     >
       <div className="absolute inset-0 z-0 items-center hidden opacity-50 md:flex">
         <TechMarquee />
       </div>
       <div className="absolute inset-0 z-10 backdrop-blur-xl bg-white [mask-image:radial-gradient(circle_at_center,_black_50%,transparent_70%)] [pointer-events:none]" />
-      <div className="z-20 flex flex-col items-center max-w-5xl gap-12 mx-auto lg:px-6 md:py-12 md:flex-row lg:gap-24">
+      <div className="z-20 flex flex-col items-center w-full px-5 md:px-10 max-w-[1200] gap-12 mx-auto md:flex-row lg:gap-24">
         {/* 1. Core Value (좌측) */}
         <section className="flex-[1.4] flex flex-col gap-8 lg:gap-x-8 lg:gap-y-12">
           {values.map((item, index) => (

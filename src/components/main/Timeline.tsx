@@ -9,8 +9,11 @@ export default function Timeline() {
   const { roleData } = useRole();
 
   return (
-    <section className="w-full px-10 py-32" id="timeline">
-      <div className="max-w-[1400px] mx-auto lg:flex">
+    <section
+      className="w-full px-5 py-16 md:py-24 md:px-10 max-w-[1400px] mx-auto"
+      id="timeline"
+    >
+      <div className="lg:flex">
         {/* Left */}
         <div className="lg:pr-40 lg:w-1/2">
           <motion.h2
@@ -65,7 +68,7 @@ export default function Timeline() {
                 <div className="absolute -translate-x-[50%] w-3 h-3 border-primary border-2 rounded-full bg-white top-[6px]" />
 
                 {/* 이벤트 내용 */}
-                <div className="pl-12">
+                <div className="pl-8 md:pl-12">
                   <p className="text-sm text-gray-500">{event.period}</p>
                   <h3 className="mt-2 text-2xl font-semibold">{event.title}</h3>
                   <h3 className="text-2xl text-primary-dark">

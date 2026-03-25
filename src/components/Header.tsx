@@ -17,8 +17,8 @@ export const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 z-50 w-full px-4 py-4 border-b md:px-6 backdrop-blur-lg border-gray-400/10 bg-gray-50/30">
-      <div className="flex items-center justify-between w-full mx-auto max-w-7xl">
+    <header className="fixed top-0 z-50 w-full px-4 py-4 border-b md:px-8 backdrop-blur-lg border-gray-400/10 bg-gray-50/30">
+      <div className="flex items-center justify-between w-full mx-auto">
         {/* Left: Brand */}
         <div className="flex-1">
           <Link

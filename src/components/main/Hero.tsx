@@ -42,7 +42,7 @@ export default function Hero() {
   // };
 
   return (
-    <section className="relative flex flex-col items-center justify-center w-full h-screen px-5 py-10 text-center bg-ani-gradient">
+    <section className="relative flex flex-col items-center justify-center w-full h-screen px-5 py-10 overflow-hidden text-center bg-ani-gradient">
       <div className="absolute hidden left-center top-center md:flex">
         <MainAnimation showStatic={showStatic} />
       </div>
