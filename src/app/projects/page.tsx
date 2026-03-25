@@ -33,7 +33,7 @@ const Projects: React.FC = () => {
         {/* 타이틀 영역 */}
         <div className="space-y-4 text-center">
           <p className="text-sm font-medium tracking-widest text-gray-400 uppercase">
-            Dayoung Jung: UI Designer & Developer
+            Dayoung Jung: UX/UI Designer & Developer
           </p>
           <h2 className="text-4xl font-bold text-gray-900 md:text-6xl">
             Project Archive

@@ -66,7 +66,7 @@ export default function Hero() {
         <p className="mt-16 text-base font-medium leading-7 text-gray-700/80">
           UX 인사이트를 바탕으로 UI 디자인과 프론트엔드 개발을 통합 수행하며,
           <br />
-          유지보수성 높은 디자인 시스템 구축 및 구현을 주도해 왔습니다.
+          유지보수성 높은 디자인 시스템 구축 및 구현을 주도합니다.
         </p>
         <div className="z-10 flex flex-col justify-center gap-2 mt-10">
           <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-gray-400/80">

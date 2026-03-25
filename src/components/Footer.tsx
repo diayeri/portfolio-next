@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
 
         {/* Center: Copyright */}
         <div className="order-3 text-xs tracking-tight text-center text-gray-400 md:order-2">
-          &copy; {new Date().getFullYear()} UI Designer & Developer Dayoung
+          &copy; {new Date().getFullYear()} UX/UI Designer & Developer Dayoung
           Jung.
           <span className="hidden sm:inline"> All rights reserved.</span>
         </div>
