@@ -11,7 +11,7 @@ export const timelineData = [
     ],
   },
   {
-    period: "22.03 - 24.04",
+    period: "22.03 - 24.05",
     title: "(Kakao) Krust Universe & Quarkonix",
     role: "Web Publisher (Freelancer → Full-time)",
     details:
@@ -43,7 +43,7 @@ export const timelineData = [
     ],
   },
   {
-    period: "15.06 - 17.06",
+    period: "15.07 - 17.07",
     title: "Makewith",
     role: "Web Publisher",
     details:
