@@ -30,14 +30,16 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Center: Copyright */}
-        <div className="order-3 text-xs tracking-tight text-center text-gray-400 md:order-2">
-          &copy; {new Date().getFullYear()} UX/UI Designer & Developer Dayoung
-          Jung.
-          <wbr />
-          <span className="hidden sm:inline text-nowrap">
-            {" "}
-            All rights reserved.
-          </span>
+        <div className="order-3 text-[10px] md:text-xs tracking-tight text-center text-gray-400 md:order-2 leading-relaxed">
+          <p className="font-bold text-gray-400 uppercase tracking-[0.15em] mb-0.5">
+            Design & Development by Dayoung Jung
+          </p>
+
+          <p className="mt-1 opacity-80">
+            &copy; {new Date().getFullYear()} All rights reserved.
+            <span className="mx-2 opacity-30">|</span>
+            기획부터 구현까지 직접 제작한 포트폴리오입니다.
+          </p>
         </div>
 
         {/* Right: Social Links */}

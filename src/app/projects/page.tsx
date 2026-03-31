@@ -32,10 +32,10 @@ const Projects: React.FC = () => {
       <div className="flex flex-col items-center mb-12 space-y-8 md:mb-16 md:space-y-12">
         {/* 타이틀 영역 */}
         <div className="space-y-4 text-center">
-          <p className="text-xs md:text-sm font-medium tracking-[0.2em] text-gray-400 uppercase">
+          <p className="text-xs font-medium tracking-widest text-gray-400 uppercase md:text-sm">
             Dayoung Jung: UX/UI Designer & Developer
           </p>
-          <h2 className="text-4xl font-bold tracking-tight text-gray-900 md:text-6xl">
+          <h2 className="text-4xl font-bold text-gray-900 md:text-6xl">
             Project Archive
           </h2>
         </div>

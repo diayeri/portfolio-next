@@ -63,7 +63,7 @@ export const Header = () => {
 
             {/* 데스크톱: 'Github' 텍스트 노출 */}
             <span className="hidden md:block text-[11px] font-bold tracking-[0.2em] uppercase">
-              Github
+              View Source
             </span>
 
             {/* 데스크톱: 화살표 아이콘 노출 */}
