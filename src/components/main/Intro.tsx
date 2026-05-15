@@ -32,9 +32,9 @@ export default function Intro() {
 
   const skills = [
     {
-      category: "Development",
-      skills: ["React", "Next.js", "TypeScript"],
-      desc: "Atomic Design 기반의 확장 가능한 아키텍처 설계",
+      category: "Visual Strategy",
+      skills: ["Figma", "Photoshop", "Illustrator"],
+      desc: "서비스 톤앤매너 정의 및 디자인, 디자인 시스템 구축",
     },
     {
       category: "Style & UI",
@@ -42,9 +42,9 @@ export default function Intro() {
       desc: "디자인 시스템 고도화 및 UI 문서화",
     },
     {
-      category: "Visual Strategy",
-      skills: ["Figma", "Photoshop", "Illustrator"],
-      desc: "서비스 톤앤매너 정의 및 디자인",
+      category: "Development",
+      skills: ["React", "Next.js", "TypeScript"],
+      desc: "Atomic Design 기반의 확장 가능한 아키텍처 설계",
     },
     {
       category: "Collaboration",
@@ -125,7 +125,7 @@ export default function Intro() {
 
           {/* 보조 스택 */}
           <div className="flex flex-wrap gap-2 mt-8 opacity-40">
-            {["Redux", "Recoil", "MUI", "Bootstrap"].map((etc, i) => (
+            {["MUI", "Bootstrap", "Redux", "Recoil"].map((etc, i) => (
               <span
                 key={i}
                 className="text-xs font-semibold px-2 py-0.5 border border-gray-300 rounded text-gray-700"

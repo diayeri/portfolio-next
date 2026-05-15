@@ -53,7 +53,7 @@ export const Header = () => {
         {/* Right: Github - 모바일 아이콘 대응 */}
         <div className="flex items-center justify-end flex-1">
           <a
-            href="https://github.com/diayeri/portfolio-next"
+            href="https://github.com/diayeri"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 text-gray-400 transition-colors group hover:text-gray-900"
@@ -63,7 +63,7 @@ export const Header = () => {
 
             {/* 데스크톱: 'Github' 텍스트 노출 */}
             <span className="hidden md:block text-[11px] font-bold tracking-[0.2em] uppercase">
-              View Source
+              Github
             </span>
 
             {/* 데스크톱: 화살표 아이콘 노출 */}

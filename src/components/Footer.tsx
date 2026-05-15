@@ -35,10 +35,10 @@ const Footer: React.FC = () => {
             Design & Development by Dayoung Jung
           </p>
 
-          <p className="mt-1 opacity-80">
+          <p className="mt-2 opacity-80">
             &copy; {new Date().getFullYear()} All rights reserved.
             <span className="mx-2 opacity-30">|</span>
-            기획부터 구현까지 직접 제작한 포트폴리오입니다.
+            기획부터 구현까지 직접 제작한 웹 포트폴리오
           </p>
         </div>
 

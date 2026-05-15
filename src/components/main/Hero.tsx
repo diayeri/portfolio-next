@@ -66,17 +66,22 @@ export default function Hero() {
 
       <motion.div {...fadeUp(isMobile ? 0 : 4, visited)}>
         <p className="mt-16 text-base font-medium leading-7 text-gray-700/80">
-          UX 인사이트를 바탕으로 UI 디자인과 프론트엔드 개발을 통합 수행하며,{" "}
+          디자이너와 개발자 사이의 업무 간극을 줄이고,{" "}
           <br className="hidden sm:block" />
-          유지보수성 높은 디자인 시스템 구축 및 구현을 주도합니다.
+          사용자 중심의 디지털 경험을 제공합니다.
         </p>
-        <div className="z-10 flex flex-col justify-center gap-2 mt-10">
-          <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-gray-400/80">
-            Focused on UI/UX Design
+        <div className="z-10 flex items-center justify-center gap-2 mt-10">
+          <span className="px-4 py-1 text-xs font-bold tracking-widest border rounded-full text-gray-400/90 border-gray-400/60">
+            diayeri.dev@gmail.com
           </span>
-          <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-gray-400/80">
-            Frontend Development
-          </span>
+          <a
+            href="https://open.kakao.com/o/sA6r44ui"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-1 text-xs font-bold tracking-widest border rounded-full text-gray-400/90 border-gray-400/60"
+          >
+            Kakaotalk Openchat
+          </a>
         </div>
       </motion.div>
 

@@ -54,14 +54,14 @@
   }
   100% {
     border-radius: 50%;
-    transform: scale(12%, 12%) translate(0, -120px) rotate(15deg);
+    transform: scale(12%, 12%) translate(0, -80px) rotate(15deg);
   }
 }
 
 .animation {
   display: grid;
-  width: 360px;
-  height: 360px;
+  width: 340px;
+  height: 340px;
   background-size: contain;
   grid-template-columns: repeat(24, 1fr);
   grid-auto-rows: calc(100% / 24);
@@ -70,7 +70,7 @@
 }
 .animation-done {
   border-radius: 50%;
-  transform: scale(12%, 12%) translate(0, -120px) rotate(15deg);
+  transform: scale(12%, 12%) translate(0, -80px) rotate(15deg);
   animation: none;
   .glass::after {
     animation: none;
