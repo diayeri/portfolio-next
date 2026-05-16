@@ -3,8 +3,7 @@
 import { useEffect, useState } from "react";
 import MainAnimation from "@/components/main/MainAnimation";
 import { ScrollIndicator } from "@/components/ScrollIndicator";
-// import { Button } from "@/components/Button";
-// import { Github, ArrowDown } from "lucide-react";
+import { Mail, MessagesSquare } from "lucide-react";
 import { useHero } from "@/context/HeroContext";
 import { motion } from "framer-motion";
 import { fadeUp } from "@/motion";
@@ -65,21 +64,26 @@ export default function Hero() {
       </motion.h1>
 
       <motion.div {...fadeUp(isMobile ? 0 : 4, visited)}>
-        <p className="mt-16 text-base font-medium leading-7 text-gray-700/80">
+        <p className="mt-16 text-base font-medium leading-7 text-gray-700/60">
           디자이너와 개발자 사이의 업무 간극을 줄이고,{" "}
           <br className="hidden sm:block" />
           사용자 중심의 디지털 경험을 제공합니다.
         </p>
         <div className="z-10 flex items-center justify-center gap-2 mt-10">
-          <span className="px-4 py-1 text-xs font-bold tracking-widest border rounded-full text-gray-400/90 border-gray-400/60">
+          <a
+            href="mailto:diayeri.dev@gmail.com"
+            className="inline-flex items-center gap-1.5 px-4 py-1 text-xs font-bold tracking-widest border rounded-full text-gray-400/90 border-gray-400/60"
+          >
+            <Mail size={14} className="inline-block" />
             diayeri.dev@gmail.com
-          </span>
+          </a>
           <a
             href="https://open.kakao.com/o/sA6r44ui"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-1 text-xs font-bold tracking-widest border rounded-full text-gray-400/90 border-gray-400/60"
+            className="inline-flex items-center gap-1.5 px-4 py-1 text-xs font-bold tracking-widest border rounded-full text-gray-400/90 border-gray-400/60"
           >
+            <MessagesSquare size={14} className="inline-block" />
             Kakaotalk Openchat
           </a>
         </div>

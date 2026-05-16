@@ -76,6 +76,12 @@
     animation: none;
   }
 }
+/* Static state for individual elements when showStatic=true */
+.static {
+  animation: none !important;
+  background-color: var(--bgc-after) !important;
+  transform: translateY(0) translateX(0) scale(1) !important;
+}
 .bg {
   animation: bg 1s both alternate infinite 1.5s;
 }

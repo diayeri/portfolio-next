@@ -179,15 +179,7 @@ export default function MainAnimation(props: { showStatic: boolean }) {
     className
       .split(" ")
       .map((c) => styles[c])
-      .join(" ");
-
-  const style = showStatic
-    ? {
-        animation: "none",
-        backgroundColor: `var(--bgc-after)` as string,
-        transform: "translateY(0) translateX(0) scale(1)",
-      }
-    : undefined;
+      .join(" ") + (showStatic ? ` ${styles.static}` : "");
 
   return (
     <section
@@ -195,11 +187,7 @@ export default function MainAnimation(props: { showStatic: boolean }) {
     >
       {elements.map(({ className, count }, i) =>
         Array.from({ length: count }, (_, j) => (
-          <div
-            key={`${className}-${i}-${j}`}
-            className={classes(className)}
-            style={style}
-          />
+          <div key={`${className}-${i}-${j}`} className={classes(className)} />
         )),
       )}
     </section>

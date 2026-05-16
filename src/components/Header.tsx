@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowUpRight, Github } from "lucide-react";
+import { SquareArrowOutUpRight, Github } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 export const Header = () => {
@@ -67,9 +67,9 @@ export const Header = () => {
             </span>
 
             {/* 데스크톱: 화살표 아이콘 노출 */}
-            <ArrowUpRight
+            <SquareArrowOutUpRight
               size={14}
-              className="hidden md:block transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 opacity-50 group-hover:opacity-100"
+              className="hidden md:block transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100"
             />
           </a>
         </div>
