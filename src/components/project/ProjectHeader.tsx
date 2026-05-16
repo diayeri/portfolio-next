@@ -65,7 +65,7 @@ export const ProjectHeader = ({ project }: { project: ProjectsData }) => {
           className="w-full lg:w-[300px] shrink-0 pt-8 lg:pt-2 lg:border-l lg:pl-12 border-gray-100"
         >
           <div className="grid grid-cols-2 lg:grid-cols-1 gap-y-8 gap-x-4">
-            <MetaItem label="Role" value={project.category} />
+            <MetaItem label="Role" value={project.role} />
             <MetaItem
               label={project.clientType || "Client"}
               value={project.client}

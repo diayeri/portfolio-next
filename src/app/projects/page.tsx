@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from "react";
 import ProjectCard from "@/components/project/ProjectCard";
-import FeaturedProjectShowcase from "@/components/project/FeaturedProjectShowcase";
+// import FeaturedProjectShowcase from "@/components/project/FeaturedProjectShowcase";
 import { projectsData } from "@/data/projectsData";
 import { motion } from "framer-motion";
 import { fadeUp } from "@/motion";
@@ -14,6 +14,7 @@ const Projects: React.FC = () => {
 
   const filteredProjects = useMemo(() => {
     return projectsData
+      .filter((project) => project.showInList !== false)
       .filter((project) => {
         if (category === "all") return true;
         const tags = project.category.map((t) => t.toLowerCase());
@@ -29,7 +30,7 @@ const Projects: React.FC = () => {
   }, [category]);
 
   return (
-    <section className="w-full px-5 mx-auto py-28 max-w-7xl">
+    <section className="w-full px-5 py-32 mx-auto max-w-7xl">
       <div className="flex flex-col items-center mb-12 space-y-8 md:mb-16 md:space-y-16">
         {/* 타이틀 영역 */}
         <div className="space-y-4 text-center">
@@ -40,7 +41,7 @@ const Projects: React.FC = () => {
             Project Archive
           </h2>
         </div>
-        <FeaturedProjectShowcase />
+        {/* <FeaturedProjectShowcase /> */}
 
         <div className="flex w-full sm:w-auto overflow-x-auto no-scrollbar p-1.5 bg-gray-100/50 backdrop-blur-md rounded-2xl border border-gray-100">
           <div className="flex justify-center w-full mx-auto flex-nowrap sm:w-auto">

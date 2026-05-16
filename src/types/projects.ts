@@ -1,9 +1,11 @@
 export interface ProjectsData {
+  showInList?: boolean;
   id: string;
   title: string;
   startDate: string;
   endDate?: string | null; // 없으면 진행중
   category: string[];
+  role: string;
   tech: string[];
   client: string;
   clientType: "company" | "client" | "institution" | "personal";
@@ -11,6 +13,12 @@ export interface ProjectsData {
   featured?: {
     order: number;
     cover: string;
+  };
+
+  showcase?: {
+    order: number;
+    cover: string;
+    showOnlyViaLink?: boolean;
   };
 
   links?: string[];
