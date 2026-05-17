@@ -18,20 +18,25 @@ const ProjectShowcase: React.FC = () => {
       (p) => p.showcase !== undefined && !p.showcase?.showOnlyViaLink,
     );
 
-    // 2. URL 파라미터로 강제 진입한 프로젝트가 있는지 확인
+    // 2. showcase.order 기준 오름차순 정렬 (order가 없는 경우를 대비해 기본값 999 설정)
+    const sortedBase = [...baseFeatured].sort((a, b) => {
+      const orderA = a.showcase?.order ?? 999;
+      const orderB = b.showcase?.order ?? 999;
+      return orderA - orderB;
+    });
+
+    // 3. URL 파라미터로 강제 진입한 프로젝트가 있는 경우
     if (targetProjectId) {
       const matchedProject = projectsData.find((p) => p.id === targetProjectId);
 
       if (matchedProject) {
-        // 기존 리스트에 이미 있든 없든, 중복을 제거하고 '무조건 맨 앞'에 배치
-        const filteredList = baseFeatured.filter(
-          (p) => p.id !== targetProjectId,
-        );
+        // 정렬된 리스트에서 해당 프로젝트 제외 후 맨 앞에 추가
+        const filteredList = sortedBase.filter((p) => p.id !== targetProjectId);
         return [matchedProject, ...filteredList].slice(0, 5);
       }
     }
 
-    // 3. 파라미터가 없거나 매칭되는 프로젝트가 없으면 기본 리스트 반환
+    // 4. 파라미터가 없거나 매칭되는 프로젝트가 없으면 기본 리스트 반환
     return baseFeatured.slice(0, 3);
   }, [targetProjectId]);
 

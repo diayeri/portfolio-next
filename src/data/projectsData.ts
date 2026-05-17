@@ -60,7 +60,7 @@ export const projectsData: ProjectsData[] = [
       cover: "/projects/chromatic/mockup.png",
     },
     showcase: {
-      order: 2,
+      order: 3,
       cover: "/projects/chromatic/showcase.png",
     },
     thumbnail: "/projects/chromatic/thumb.png",
@@ -124,7 +124,7 @@ export const projectsData: ProjectsData[] = [
       cover: "/projects/miral-payment/mockup.png",
     },
     showcase: {
-      order: 3,
+      order: 2,
       cover: "/projects/miral-payment/showcase.png",
     },
     thumbnail: "/projects/miral-payment/thumb.png",
@@ -205,6 +205,6 @@ export const projectsData: ProjectsData[] = [
     },
     thumbnail: "/projects/godbible/thumb.png",
     description:
-      "갓바이블 앱의 UX/UI 개선을 통해, 성경 읽기와 묵상 활동을 보다 동적이고 편리한 경험으로 제공하기 위한 아이디어를 제안드립니다. 테스트는 IOS 26.3 기준으로 진행되었습니다.",
+      "갓바이블 앱의 UX/UI 개선을 통해, 성경 읽기와 묵상 활동을 보다 동적이고 편리한 경험으로 제공하기 위한 아이디어를 제안드립니다. 테스트는 아이폰 13미니, IOS 26.3 기준으로 진행하였습니다.",
   },
 ];
