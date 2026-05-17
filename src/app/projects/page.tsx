@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import React, { useState, useMemo } from "react";
 import ProjectCard from "@/components/project/ProjectCard";
 import ProjectShowcase from "@/components/project/ProjectShowcase";
@@ -41,7 +42,13 @@ const Projects: React.FC = () => {
             Project Archive
           </h2>
         </div>
-        <ProjectShowcase />
+        <Suspense
+          fallback={
+            <div className="w-full h-[420px] bg-gray-100 rounded-3xl animate-pulse" />
+          }
+        >
+          <ProjectShowcase />
+        </Suspense>
 
         <div className="flex w-full sm:w-auto overflow-x-auto no-scrollbar p-1.5 bg-gray-100/50 backdrop-blur-md rounded-2xl border border-gray-100">
           <div className="flex justify-center w-full mx-auto flex-nowrap sm:w-auto">

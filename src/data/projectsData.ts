@@ -25,7 +25,7 @@ export const projectsData: ProjectsData[] = [
     startDate: "2024.09",
     endDate: "2024.10",
     category: ["Frontend", "UX/UI Design"],
-    role: "Frontend 25%, UX/UI Design 90%",
+    role: "UX/UI Design 90%, Frontend 25%",
     tech: ["React", "TypeScript", "Redux Toolkit", "Firebase", "SCSS", "Figma"],
     tag: ["FullStack", "UX/UI", "DesignSystem", "FrontendDevelopment"],
     client: "이스트소프트 프론트엔드 부트캠프",
@@ -133,7 +133,7 @@ export const projectsData: ProjectsData[] = [
   },
   {
     id: "miral-1000",
-    title: "소액기부 캠페인 UI 리뉴얼",
+    title: "소액기부 캠페인 리뉴얼",
     startDate: "2019.10",
     endDate: "2019.12",
     category: ["Web Design", "Markup"],
