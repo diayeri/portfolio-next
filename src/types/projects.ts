@@ -7,6 +7,7 @@ export interface ProjectsData {
   category: string[];
   role: string;
   tech: string[];
+  tag?: string[];
   client: string;
   clientType: "company" | "client" | "institution" | "personal";
 

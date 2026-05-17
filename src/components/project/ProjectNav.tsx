@@ -6,9 +6,9 @@ import { ChevronRight, ChevronLeft } from "lucide-react";
 
 export const ProjectNav = ({ project }: { project: ProjectsData }) => {
   // 1. 모든 프로젝트를 가져와서 메인 리스트와 동일하게 최신순으로 정렬
-  const allSortedProjects = [...projectsData].sort((a, b) =>
-    b.startDate.localeCompare(a.startDate),
-  );
+  const allSortedProjects = [...projectsData]
+    .filter((project) => project.showInList !== false)
+    .sort((a, b) => b.startDate.localeCompare(a.startDate));
 
   // 2. 현재 프로젝트의 인덱스를 찾기
   const currentIndex = allSortedProjects.findIndex((p) => p.id === project.id);
