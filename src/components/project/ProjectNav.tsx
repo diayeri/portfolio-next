@@ -32,7 +32,7 @@ export const ProjectNav = ({ project }: { project: ProjectsData }) => {
           >
             <ChevronLeft className="w-5 h-5 text-gray-700 md:w-6 md:h-6" />
             <div className="ml-3">
-              <div className="text-[10px] md:text-sm font-bold tracking-widest text-gray-400 uppercase">
+              <div className="text-[10px] md:text-xs font-medium tracking-widest text-primary uppercase mb-1">
                 Previous
               </div>
               <div className="text-base font-medium text-gray-700 transition-colors md:text-lg group-hover:text-primary">
@@ -51,7 +51,7 @@ export const ProjectNav = ({ project }: { project: ProjectsData }) => {
             className="inline-flex items-center text-right transition-transform group hover:translate-x-1"
           >
             <div className="mr-3">
-              <div className="text-[10px] md:text-sm font-bold tracking-widest text-gray-400 uppercase">
+              <div className="text-[10px] md:text-xs font-medium tracking-widest text-primary uppercase mb-1">
                 Next
               </div>
               <div className="text-base font-medium text-gray-700 transition-colors md:text-lg group-hover:text-primary">

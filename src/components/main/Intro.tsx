@@ -68,7 +68,7 @@ export default function Intro() {
           {values.map((item, index) => (
             <div
               key={index}
-              className="relative pl-6 transition-colors border-l-2 border-gray-100 group hover:border-primary/50"
+              className="relative pl-6 transition-colors border-l-2 border-gray-200 group hover:border-primary/50"
             >
               <span className="absolute -left-[2px] top-0 h-8 w-[2px] bg-primary scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-300" />
               <h4 className="mb-2 text-xl font-semibold tracking-tight transition-all md:text-2xl text-primary-dark">
@@ -91,8 +91,8 @@ export default function Intro() {
         </section>
 
         {/* 2. Technical Expertise (우측) */}
-        <section className="flex-1 w-full px-8 pb-8 overflow-hidden border bg-gray-50/50 rounded-3xl border-gray-100/50">
-          <h3 className="text-xs font-black tracking-[0.2em] uppercase mb-8 opacity-70 -mx-8 px-8 bg-gray-300 text-white py-3">
+        <section className="flex-1 w-full px-8 pb-8 overflow-hidden border bg-gray-50/50 rounded-3xl border-gray-200/50">
+          <h3 className="text-xs font-black tracking-[0.2em] uppercase mb-8 -mx-8 px-8 bg-gray-400 text-white py-3">
             Technical Expertise
           </h3>
 
@@ -100,7 +100,7 @@ export default function Intro() {
             {skills.map((group, i) => (
               <div key={i} className="group/item">
                 <div className="flex justify-between items-end mb-2 border-b border-gray-200/50 pb-1.5">
-                  <p className="text-xs font-bold tracking-widest uppercase text-primary-light">
+                  <p className="text-xs font-bold tracking-widest uppercase text-primary">
                     {group.category}
                   </p>
                 </div>
@@ -116,7 +116,7 @@ export default function Intro() {
                   ))}
                 </div>
 
-                <p className="text-xs leading-tight text-gray-400">
+                <p className="text-xs leading-tight text-gray-500">
                   {group.desc}
                 </p>
               </div>
@@ -124,11 +124,11 @@ export default function Intro() {
           </div>
 
           {/* 보조 스택 */}
-          <div className="flex flex-wrap gap-2 mt-8 opacity-40">
+          <div className="flex flex-wrap gap-2 mt-8">
             {["MUI", "Bootstrap", "Redux", "Recoil"].map((etc, i) => (
               <span
                 key={i}
-                className="text-xs font-semibold px-2 py-0.5 border border-gray-300 rounded text-gray-700"
+                className="text-xs font-semibold px-2 py-0.5 border border-gray-300/50 rounded text-gray-500"
               >
                 {etc}
               </span>

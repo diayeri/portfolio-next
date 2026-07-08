@@ -13,7 +13,7 @@ const BuildDate = () => {
 
 const Footer: React.FC = () => {
   return (
-    <footer className="w-full mt-20 border-t border-gray-100 bg-gray-50">
+    <footer className="w-full mt-20 border-t border-gray-200 bg-gray-50">
       <div className="flex flex-col items-center justify-between w-full gap-5 px-4 py-12 md:px-8 md:flex-row">
         {/* Left: Brand & Build Date */}
         <div className="flex flex-col items-center gap-2 md:items-start md:w-1/4">
@@ -23,15 +23,15 @@ const Footer: React.FC = () => {
           >
             DtoD
           </Link>
-          <div className="flex items-center gap-2 text-[10px] font-bold tracking-widest text-gray-300 uppercase">
-            <span>Last Updated</span>
-            <span className="text-gray-400">{BuildDate()}</span>
+          <div className="flex items-center gap-2 text-[10px] tracking-widest text-gray-500 uppercase">
+            <span className="font-normal">Last Updated</span>
+            <span className="font-semibold">{BuildDate()}</span>
           </div>
         </div>
 
         {/* Center: Copyright */}
-        <div className="order-3 text-[10px] md:text-xs tracking-tight text-center text-gray-400 md:order-2 leading-relaxed">
-          <p className="font-bold text-gray-400 uppercase tracking-[0.15em] mb-0.5">
+        <div className="order-3 text-[10px] md:text-xs tracking-tight text-center text-gray-500 md:order-2 leading-relaxed">
+          <p className="font-bold text-gray-500 uppercase tracking-[0.15em] mb-0.5">
             Design & Development by Dayoung Jung
           </p>
 
@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
         <div className="flex justify-end order-2 gap-6 md:w-1/4">
           <a
             href="mailto:jdyoung1031@gmail.com"
-            className="text-gray-400 transition-colors hover:text-gray-900"
+            className="text-gray-500 transition-colors hover:text-gray-900"
             title="Mail"
           >
             <Mail size={18} strokeWidth={2.5} />
@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
             href="https://github.com/diayeri"
             target="_blank"
             rel="noopener"
-            className="text-gray-400 transition-colors hover:text-gray-900"
+            className="text-gray-500 transition-colors hover:text-gray-900"
             title="GitHub"
           >
             <Github size={18} strokeWidth={2.5} />
@@ -64,7 +64,7 @@ const Footer: React.FC = () => {
             href="https://www.linkedin.com/in/diayeri/"
             target="_blank"
             rel="noopener"
-            className="text-gray-400 transition-colors hover:text-gray-900"
+            className="text-gray-500 transition-colors hover:text-gray-900"
             title="LinkedIn"
           >
             <Linkedin size={18} strokeWidth={2.5} />

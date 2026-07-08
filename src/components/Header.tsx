@@ -17,7 +17,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 z-50 w-full px-4 py-4 border-b md:px-8 backdrop-blur-lg border-gray-400/10 bg-gray-50/30">
+    <header className="fixed top-0 z-50 w-full px-4 py-4 border-b md:px-8 backdrop-blur-lg border-gray-500/10 bg-gray-50/30">
       <div className="flex items-center justify-between w-full mx-auto">
         {/* Left: Brand */}
         <div className="flex-1">
@@ -35,8 +35,8 @@ export const Header = () => {
             href="/projects"
             className={`text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase transition-all ${
               pathname.includes("/projects")
-                ? "text-gray-900"
-                : "text-gray-400 hover:text-gray-600"
+                ? "text-primary"
+                : "text-gray-500 hover:text-primary"
             }`}
           >
             Projects
@@ -44,7 +44,7 @@ export const Header = () => {
           <Link
             href="/#timeline"
             onClick={scrollToTimeline}
-            className="text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase text-gray-400 hover:text-gray-600 transition-all"
+            className="text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase text-gray-500 hover:text-primary transition-all"
           >
             Career
           </Link>
@@ -56,7 +56,7 @@ export const Header = () => {
             href="https://github.com/diayeri"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-gray-400 transition-colors group hover:text-gray-900"
+            className="flex items-center gap-1.5 text-gray-500 transition-colors group hover:text-gray-900"
           >
             {/* 모바일: Github 아이콘만 노출 */}
             <Github size={18} className="md:hidden" />

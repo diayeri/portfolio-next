@@ -25,7 +25,7 @@ export default function MDXImage({
   return (
     <figure className="flex flex-col items-center justify-center my-4 md:my-10 not-prose">
       {labelTop && (
-        <figcaption className="mb-2.5 text-sm font-bold tracking-widest text-center text-gray-400 uppercase">
+        <figcaption className="mb-2.5 text-xs font-medium tracking-widest text-center text-gray-500 uppercase">
           {labelTop}
         </figcaption>
       )}
@@ -46,7 +46,7 @@ export default function MDXImage({
       </div>
 
       {label && (
-        <figcaption className="mt-4 text-xs font-medium tracking-widest text-center text-gray-400 uppercase">
+        <figcaption className="mt-4 text-xs font-medium tracking-widest text-center text-gray-500 uppercase">
           {label}
         </figcaption>
       )}

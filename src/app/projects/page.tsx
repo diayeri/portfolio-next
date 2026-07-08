@@ -35,7 +35,7 @@ const Projects: React.FC = () => {
       <div className="flex flex-col items-center mb-12 space-y-12 md:mb-16 md:space-y-16">
         {/* 타이틀 영역 */}
         <div className="space-y-4 text-center">
-          <p className="text-xs font-medium tracking-widest text-gray-400 uppercase md:text-sm">
+          <p className="text-xs font-medium tracking-widest text-gray-500 uppercase md:text-sm">
             Dayoung Jung: UX/UI Designer & Developer
           </p>
           <h2 className="text-4xl font-bold text-gray-900 md:text-6xl">
@@ -50,7 +50,7 @@ const Projects: React.FC = () => {
           <ProjectShowcase />
         </Suspense>
 
-        <div className="flex w-full sm:w-auto overflow-x-auto no-scrollbar p-1.5 bg-gray-100/50 backdrop-blur-md rounded-2xl border border-gray-100">
+        <div className="flex w-full sm:w-auto overflow-x-auto no-scrollbar p-1.5 bg-gray-100/50 backdrop-blur-md rounded-2xl border border-gray-200">
           <div className="flex justify-center w-full mx-auto flex-nowrap sm:w-auto">
             {(["all", "development", "design"] as const).map((c) => (
               <button
@@ -61,7 +61,7 @@ const Projects: React.FC = () => {
               ${
                 category === c
                   ? "bg-white text-primary shadow-sm scale-105"
-                  : "text-gray-400 hover:text-gray-600"
+                  : "text-gray-500 hover:text-gray-700"
               }
             `}
               >

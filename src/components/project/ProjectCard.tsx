@@ -48,10 +48,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       <div className="flex flex-col flex-1 p-6">
         {/* 클라이언트 및 기간 정보 */}
         <div className="flex items-start justify-between mb-4">
-          <span className="text-xs font-bold tracking-wider uppercase text-primary opacity-70 text-nowrap">
+          <span className="text-xs font-bold tracking-wider uppercase text-primary text-nowrap">
             {project.client}
           </span>
-          <span className="text-xs font-medium text-right text-gray-400">
+          <span className="text-xs font-normal text-right text-gray-500">
             {project.startDate} —{" "}
             {project.endDate?.split(".")[1] ? project.endDate : "Present"}
           </span>
@@ -70,7 +70,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           {project.tech.slice(0, 4).map((tech, index) => (
             <span
               key={index}
-              className="px-2.5 py-1 text-xs font-semibold text-gray-500 bg-gray-50 rounded-lg border border-gray-100 group-hover:bg-white transition-colors"
+              className="px-2.5 py-1 text-xs font-semibold text-gray-500 bg-gray-50 rounded-lg border border-gray-200 group-hover:bg-white transition-colors"
             >
               {tech}
             </span>

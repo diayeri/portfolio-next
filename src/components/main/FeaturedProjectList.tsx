@@ -76,7 +76,7 @@ const FeaturedProjectList = () => {
                     >
                       <h3
                         className={`text-xl md:text-2xl xl:text-3xl font-semibold transition-colors duration-200 ${
-                          isActive ? "text-white" : "text-gray-400/40"
+                          isActive ? "text-white" : "text-gray-400/60"
                         }`}
                       >
                         {project.title}

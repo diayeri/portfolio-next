@@ -19,9 +19,9 @@ export const ProjectHeader = ({ project }: { project: ProjectsData }) => {
       >
         <Link
           href="/projects"
-          className="inline-flex items-center gap-2 text-gray-400 transition-colors group hover:text-primary-dark"
+          className="inline-flex items-center gap-2 text-gray-500 transition-colors group hover:text-primary-dark"
         >
-          <div className="flex items-center justify-center w-8 h-8 transition-all border border-gray-100 rounded-full group-hover:border-primary-dark">
+          <div className="flex items-center justify-center w-8 h-8 transition-all border border-gray-200 rounded-full group-hover:border-primary-dark">
             <ArrowLeft size={16} />
           </div>
           <span className="text-[11px] font-bold tracking-[0.2em] uppercase">
@@ -62,7 +62,7 @@ export const ProjectHeader = ({ project }: { project: ProjectsData }) => {
         {/* Right: Project Meta */}
         <motion.div
           {...fadeUp(0.3)}
-          className="w-full lg:w-[300px] shrink-0 pt-8 lg:pt-2 lg:border-l lg:pl-12 border-gray-100"
+          className="w-full lg:w-[300px] shrink-0 pt-8 lg:pt-2 lg:border-l lg:pl-12 border-gray-200"
         >
           <div className="grid grid-cols-2 lg:grid-cols-1 gap-y-8 gap-x-4">
             <MetaItem label="Role" value={project.role} />
@@ -78,7 +78,7 @@ export const ProjectHeader = ({ project }: { project: ProjectsData }) => {
             {/* Connect Section */}
             {(project.links || project.github) && (
               <div className="col-span-2 space-y-2 lg:col-span-1">
-                <span className="text-[11px] font-bold tracking-widest uppercase text-primary-light">
+                <span className="text-[11px] font-bold tracking-widest uppercase text-primary">
                   Connect
                 </span>
                 <div className="flex flex-col gap-1">
@@ -124,7 +124,7 @@ const MetaItem = ({
   value: string | string[];
 }) => (
   <div className="space-y-1.5">
-    <span className="text-[11px] font-bold tracking-widest uppercase text-primary-light">
+    <span className="text-[11px] font-bold tracking-widest uppercase text-primary">
       {label}
     </span>
     <div className="text-sm font-semibold leading-tight text-gray-700 break-keep">

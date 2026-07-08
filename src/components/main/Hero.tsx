@@ -64,7 +64,7 @@ export default function Hero() {
       </motion.h1>
 
       <motion.div {...fadeUp(isMobile ? 0 : 4, visited)}>
-        <p className="mt-16 text-base font-medium leading-7 text-gray-700/60">
+        <p className="mt-16 text-base font-normal leading-7 text-gray-700">
           디자이너와 개발자 사이의 업무 간극을 줄이고,{" "}
           <br className="hidden sm:block" />
           사용자 중심의 디지털 경험을 제공합니다.
@@ -72,7 +72,7 @@ export default function Hero() {
         <div className="z-10 flex items-center justify-center gap-2 mt-10">
           <a
             href="mailto:diayeri.dev@gmail.com"
-            className="inline-flex items-center gap-1.5 px-4 py-1 text-xs font-bold tracking-widest border rounded-full text-gray-400/90 border-gray-400/60"
+            className="inline-flex items-center gap-1.5 px-4 py-1 text-xs font-medium tracking-widest border rounded-full text-gray-500/90 border-gray-400/60"
           >
             <Mail size={14} className="inline-block" />
             diayeri.dev@gmail.com
@@ -81,7 +81,7 @@ export default function Hero() {
             href="https://open.kakao.com/o/sA6r44ui"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-4 py-1 text-xs font-bold tracking-widest border rounded-full text-gray-400/90 border-gray-400/60"
+            className="inline-flex items-center gap-1.5 px-4 py-1 text-xs font-medium tracking-widest border rounded-full text-gray-500/90 border-gray-400/60"
           >
             <MessagesSquare size={14} className="inline-block" />
             Kakaotalk Openchat
