@@ -35,7 +35,7 @@ const Projects: React.FC = () => {
       <div className="flex flex-col items-center mb-12 space-y-12 md:mb-16 md:space-y-16">
         {/* 타이틀 영역 */}
         <div className="space-y-4 text-center">
-          <p className="text-xs font-medium tracking-widest text-gray-500 uppercase md:text-sm">
+          <p className="text-xs font-normal tracking-widest text-gray-500 uppercase md:text-sm">
             Dayoung Jung: UX/UI Designer & Developer
           </p>
           <h2 className="text-4xl font-bold text-gray-900 md:text-6xl">
@@ -50,14 +50,14 @@ const Projects: React.FC = () => {
           <ProjectShowcase />
         </Suspense>
 
-        <div className="flex w-full sm:w-auto overflow-x-auto no-scrollbar p-1.5 bg-gray-100/50 backdrop-blur-md rounded-2xl border border-gray-200">
-          <div className="flex justify-center w-full mx-auto flex-nowrap sm:w-auto">
+        <div className="flex w-full sm:w-[500px] overflow-x-auto no-scrollbar py-1.5 px-2 bg-gray-100/50 backdrop-blur-md rounded-2xl border border-gray-200">
+          <div className="flex justify-center w-full gap-2 mx-auto flex-nowrap">
             {(["all", "development", "design"] as const).map((c) => (
               <button
                 key={c}
                 onClick={() => setCategory(c)}
                 className={`
-              whitespace-nowrap w-1/3 sm:w-auto px-5 md:px-6 py-2.5 md:py-2 text-xs font-bold tracking-widest uppercase transition-all duration-300 rounded-xl
+              whitespace-nowrap w-full py-2.5 md:py-2 text-xs font-bold tracking-widest uppercase transition-all duration-300 rounded-xl
               ${
                 category === c
                   ? "bg-white text-primary shadow-sm scale-105"

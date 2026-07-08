@@ -89,7 +89,7 @@ const ProjectShowcase: React.FC = () => {
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 backdrop-blur-sm bg-gray-900/50" />
+            <div className="absolute inset-0 backdrop-blur-sm bg-gray-900/70" />
             <div className="max-w-[460px] mx-auto z-10 flex flex-col items-center justify-center w-full h-full gap-5 p-10 text-center text-white">
               <h2 className="text-3xl font-bold leading-relaxed text-white md:text-5xl">
                 {items[active].title}
