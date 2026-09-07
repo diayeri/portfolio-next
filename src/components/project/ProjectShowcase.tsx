@@ -36,8 +36,8 @@ const ProjectShowcase: React.FC = () => {
       }
     }
 
-    // 4. 파라미터가 없거나 매칭되는 프로젝트가 없으면 기본 리스트 반환
-    return baseFeatured.slice(0, 3);
+    // 4. 파라미터가 없거나 매칭되는 프로젝트가 없으면 전체 쇼케이스 리스트 반환
+    return sortedBase;
   }, [targetProjectId]);
 
   const [active, setActive] = useState(0);
