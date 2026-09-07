@@ -1,5 +1,16 @@
 export const timelineData = [
   {
+    period: "26.04 -",
+    title: "Water Sports Platform",
+    role: "Web Developer & Designer (Freelancer)",
+    details: "통합신청 사이트와 관리자 웹페이지 설계/개발",
+    highlights: [
+      "Next.js, TypeScript, Supabase, Vercel 활용한 기술 검증",
+      "통합 신청 시스템 및 관리자 페이지 UI/UX 설계",
+      "카페24 플랫폼 기반 웹사이트 디자인 수정 및 개발 유지보수",
+    ],
+  },
+  {
     period: "24.06 - 25.05",
     title: "ESTsoft Frontend Bootcamp & Internship",
     role: "Frontend Developer",
@@ -13,7 +24,7 @@ export const timelineData = [
   {
     period: "22.03 - 24.05",
     title: "(Kakao) Krust Universe & Quarkonix",
-    role: "Web Publisher (Freelancer → Full-time)",
+    role: "UI Developer (Freelancer → Full-time)",
     details:
       "블록체인 기반 마켓플레이스와 트레이드 웹 앱 UI 개발, React/TypeScript 활용",
     highlights: [
@@ -35,7 +46,7 @@ export const timelineData = [
   {
     period: "18.10 - 22.05",
     title: "Miral Welfare Foundation",
-    role: "Web Designer",
+    role: "Web Publisher & Designer",
     details: "콘텐츠 페이지 디자인 및 기능 구현, 홈페이지 운영",
     highlights: [
       "후원 결제창 개편 프로젝트 제안 및 디자인 주도, 모바일 후원 2배 성과 달성",

@@ -65,9 +65,9 @@ export default function Hero() {
 
       <motion.div {...fadeUp(isMobile ? 0 : 4, visited)}>
         <p className="mt-16 text-base font-normal leading-7 text-gray-700">
-          디자이너와 개발자 사이의 업무 간극을 줄이고,{" "}
+          아이디어를 사용자 경험으로, 사용자 경험을 실제 서비스로!
           <br className="hidden sm:block" />
-          사용자 중심의 디지털 경험을 제공합니다.
+          사용자 경험과 개발 구조를 함께 고민합니다.
         </p>
         <div className="z-10 flex items-center justify-center gap-2 mt-10">
           <a

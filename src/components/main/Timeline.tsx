@@ -25,42 +25,57 @@ export default function Timeline() {
           <div className="flex flex-col gap-8 mt-12 text-gray-500 lg:text-sm break-keep">
             <div>
               <h3 className="mb-2 text-lg font-bold text-gray-700">
-                비즈니스 가치를 만드는 UX/UI 설계
+                문제를 발견하고, 제품으로 해결합니다
               </h3>
               <p className="text-[15px] leading-relaxed">
-                UX/UI 디자인 전공을 시작으로 8년여간 웹 기술의 변화를 실무에서
-                겪어왔습니다. 밀알복지재단 결제 UX 리뉴얼을 주도하여{" "}
-                <strong>모바일 후원 200% 증대</strong>를 이끌어냈으며, 사용자
-                편의성을 높이는 기획 의도가 실질적인 성과로 이어지는 과정을
-                경험했습니다.
+                UX/UI 디자인을 전공하고 웹디자인과 퍼블리싱으로 커리어를 시작해,
+                React 기반 UI 개발과 프론트엔드 개발까지 영역을 확장해왔습니다.
+                사용자의 불편을 발견하고 더 나은 경험을 설계하고, 아이디어를
+                실제 서비스로 구현하는 열정이 있습니다.
+              </p>
+              <p className="mt-2 text-[15px] leading-relaxed">
+                밀알복지재단에서는 후원 결제 프로세스의 UX를 개선하여 모바일
+                후원 성과를 전년 대비 200% 성장시키는 경험을 했습니다. 사용자
+                관점에서 문제를 정의하고, 디자인과 개발로 구체화했을 때 비즈니스
+                성과로 이어지는 것을 확인했습니다.
               </p>
             </div>
             <div>
               <h3 className="mb-2 text-lg font-bold text-gray-700">
-                협업의 병목을 해결하는 시스템 구축
+                디자인과 개발을 연결하고, 더 효율적인 구조를 만듭니다
               </h3>
               <p className="text-[15px] leading-relaxed">
-                WBS 설계와 Atomic Design 아키텍처를 제안하여 팀 생산성을 높이고,
-                디자이너와 개발자 사이의 간극을 줄이는 브릿지 역할을 수행합니다.{" "}
-                <br />
-                카카오 크러스트유니버스, 쿼코닉스에서는{" "}
-                <strong>Storybook 기반 UI 문서화를 주도</strong>했습니다.
+                디자인과 개발 양쪽의 업무를 경험한 만큼, 각 직군 사이에서
+                발생하는 병목을 이해하고 해결하는 데 강점이 있습니다. 디자인
+                일정이 개발을 지연시키는 상황에서는 반응형 UI를 직접 설계하고
+                마크업하여 개발을 먼저 진행하고, 이후 필요한 부분을 반영하는
+                방식으로 협업 효율을 높였습니다.
+              </p>
+              <p className="mt-2 text-[15px] leading-relaxed">
+                또한 정적인 마크업 중심의 UI 개발에서 React/TypeScript 기반의
+                컴포넌트 단위 개발 방식으로 전환하며 재사용성과 유지보수성을
+                높였습니다. Storybook을 활용한 UI 문서화와 디자인 시스템 정리를
+                통해 팀이 일관된 UI를 빠르게 개발할 수 있는 환경을 구축한 경험이
+                있습니다.
               </p>
             </div>
             <div>
               <h3 className="mb-2 text-lg font-bold text-gray-700">
-                준비된 End-to-End 전문가
+                화면을 넘어, 서비스 전체를 이해하는 개발자로
               </h3>
               <p className="text-[15px] leading-relaxed">
-                <strong>
-                  초기 기획 검증부터 고도화된 React/TypeScript 구현 및
-                  유지보수까지{" "}
-                </strong>
-                전 과정을 책임지는 올라운더로 영역을 확장하고 있습니다. <br />
+                최근에는 실제 서비스를 기획하고 개발하며 아이디어, 기획, 기술
+                검토, 개발, 배포로 이어지는 전체 과정을 직접 경험하고 있습니다.
+                정리되지 않은 요구사항을 구체적인 기획안과 기술 명세로 정리하고,
+                Next.js, TypeScript, Supabase, Vercel을 활용해 통합 신청
+                사이트와 관리자 웹페이지를 설계/개발하고 있습니다.
               </p>
-              <p className="mt-1 text-[15px] leading-relaxed">
-                8년의 현장 감각과 최신 기술 스택을 결합하여 사용자에게는 편리한
-                경험을, 팀에게는 확장 가능한 구조를 제공하겠습니다.
+              <p className="mt-2 text-[15px] leading-relaxed">
+                새로운 기술을 단순히 공부하는 것보다 실제 문제를 해결하는
+                과정에서 개념을 이해하고 기술을 선택하는 방식을 중요하게
+                생각합니다. 앞으로도 사용자와 비즈니스의 문제를 이해하고, 필요한
+                기능을 스스로 정의하며, 복잡한 문제를 단순하고 확장 가능한
+                제품으로 만들어가는 프론트엔드 개발자로 성장하겠습니다.
               </p>
             </div>
           </div>

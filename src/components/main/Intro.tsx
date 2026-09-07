@@ -32,24 +32,24 @@ export default function Intro() {
 
   const skills = [
     {
-      category: "Visual Strategy",
-      skills: ["Figma", "Photoshop", "Illustrator"],
-      desc: "서비스 톤앤매너 정의 및 디자인, 디자인 시스템 구축",
+      category: "Frontend",
+      skills: ["React", "Next.js", "TypeScript", "JavaScript"],
+      desc: "React와 Next.js 기반의 확장 가능한 프론트엔드 아키텍처 설계 및 구현",
     },
     {
-      category: "Style & UI",
-      skills: ["Tailwind", "SCSS", "Storybook"],
-      desc: "디자인 시스템 고도화 및 UI 문서화",
+      category: "Styling & Design System",
+      skills: ["Tailwind CSS", "SCSS", "Storybook", "Figma"],
+      desc: "디자인 시스템 고도화, 컴포넌트화 및 UI 문서화",
     },
     {
-      category: "Development",
-      skills: ["React", "Next.js", "TypeScript"],
-      desc: "Atomic Design 기반의 확장 가능한 아키텍처 설계",
+      category: "Backend & Deployment",
+      skills: ["Supabase", "Vercel"],
+      desc: "백엔드 서비스 연동 및 효율적인 웹 배포 관리",
     },
     {
-      category: "Collaboration",
-      skills: ["Git", "JIRA", "Notion"],
-      desc: "능동적인 일정 및 태스크 관리",
+      category: "Collaboration & Workflow",
+      skills: ["Git", "GitHub", "Jira", "Notion"],
+      desc: "능동적인 일정 관리 및 협업 툴 활용",
     },
   ];
 
@@ -62,7 +62,7 @@ export default function Intro() {
         <TechMarquee />
       </div>
       <div className="absolute inset-0 z-10 backdrop-blur-xl bg-white [mask-image:radial-gradient(circle_at_center,_black_50%,transparent_70%)] [pointer-events:none]" />
-      <div className="z-20 flex flex-col items-center w-full px-5 md:px-10 max-w-[1200] gap-12 mx-auto md:flex-row lg:gap-24">
+      <div className="z-20 flex flex-col items-center w-full px-5 md:px-10 max-w-[1200px] gap-12 mx-auto md:flex-row lg:gap-24">
         {/* 1. Core Value (좌측) */}
         <section className="flex-[1.4] flex flex-col gap-8 lg:gap-x-8 lg:gap-y-12">
           {values.map((item, index) => (
@@ -125,7 +125,15 @@ export default function Intro() {
 
           {/* 보조 스택 */}
           <div className="flex flex-wrap gap-2 mt-8">
-            {["MUI", "Bootstrap", "Redux", "Recoil"].map((etc, i) => (
+            {[
+              // "HTML5/CSS3",
+              "MUI",
+              "Bootstrap",
+              "Redux",
+              "Recoil",
+              "Photoshop",
+              // "Illustrator",
+            ].map((etc, i) => (
               <span
                 key={i}
                 className="text-xs font-semibold px-2 py-0.5 border border-gray-300/50 rounded text-gray-500"
