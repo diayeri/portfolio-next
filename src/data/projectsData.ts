@@ -2,6 +2,33 @@ import { ProjectsData } from "@/types/projects";
 
 export const projectsData: ProjectsData[] = [
   {
+    id: "portfolio",
+    title: "Portfolio Website",
+    startDate: "2025.12",
+    endDate: "2026.05",
+    category: ["Frontend", "UX/UI Design"],
+    role: "UX/UI Design 100%, Frontend 100%",
+    tech: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Vercel"],
+    tag: [
+      "FullStack",
+      "UX/UI",
+      "DesignSystem",
+      "FrontendDevelopment",
+      "Next.js",
+    ],
+    client: "",
+    clientType: "personal",
+    showcase: {
+      order: 1,
+      cover: "/projects/portfolio/showcase.png",
+    },
+    thumbnail: "/projects/portfolio/thumb.png",
+    links: ["https://portfolio-dy.vercel.app/"],
+    github: "https://github.com/diayeri/portfolio-next",
+    description:
+      "기획부터 디자인, 프론트엔드 개발, 배포까지 전 과정을 주도한 개인 포트폴리오 사이트로, Next.js와 MDX 기반 아키텍처를 도입하여 콘텐츠 유지보수성을 높이고 커리어와 핵심 기술에 온전히 집중할 수 있는 직관적인 사용자 경험을 구현한 프로젝트",
+  },
+  {
     id: "rounz",
     title: "Rounz E-Commerce, Admin",
     startDate: "2024.12",
@@ -35,7 +62,7 @@ export const projectsData: ProjectsData[] = [
       cover: "/projects/muna/mockup.png",
     },
     showcase: {
-      order: 1,
+      order: 2,
       cover: "/projects/muna/showcase.png",
     },
     thumbnail: "/projects/muna/thumb.png",
@@ -124,7 +151,7 @@ export const projectsData: ProjectsData[] = [
       cover: "/projects/miral-payment/mockup.png",
     },
     showcase: {
-      order: 2,
+      order: 4,
       cover: "/projects/miral-payment/showcase.png",
     },
     thumbnail: "/projects/miral-payment/thumb.png",
