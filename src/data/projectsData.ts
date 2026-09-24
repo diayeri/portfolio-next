@@ -9,13 +9,7 @@ export const projectsData: ProjectsData[] = [
     category: ["Frontend", "UX/UI Design"],
     role: "UX/UI Design 100%, Frontend 100%",
     tech: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Vercel"],
-    tag: [
-      "FullStack",
-      "UX/UI",
-      "DesignSystem",
-      "FrontendDevelopment",
-      "Next.js",
-    ],
+    tag: ["FullStack", "UX/UI", "DesignSystem", "Frontend", "Next.js"],
     client: "",
     clientType: "personal",
     showcase: {
@@ -52,9 +46,9 @@ export const projectsData: ProjectsData[] = [
     startDate: "2024.09",
     endDate: "2024.10",
     category: ["Frontend", "UX/UI Design"],
-    role: "UX/UI Design 90%, Frontend 25%",
+    role: "UX/UI Design 90%, Design System 100%, Frontend 25%",
     tech: ["React", "TypeScript", "Redux Toolkit", "Firebase", "SCSS", "Figma"],
-    tag: ["FullStack", "UX/UI", "DesignSystem", "FrontendDevelopment"],
+    tag: ["FullStack", "UX/UI", "DesignSystem", "Frontend"],
     client: "이스트소프트 프론트엔드 부트캠프",
     clientType: "institution",
     featured: {
@@ -127,10 +121,10 @@ export const projectsData: ProjectsData[] = [
     tech: ["SCSS", "Bootstrap"],
     client: "Cocone",
     clientType: "client",
-    featured: {
-      order: 5,
-      cover: "/projects/stichy/mockup.png",
-    },
+    // featured: {
+    //   order: 5,
+    //   cover: "/projects/stichy/mockup.png",
+    // },
     thumbnail: "/projects/stichy/thumb.png",
     description:
       "아바타 기반의 SNS 웹 앱 및 아티스트 전용 관리자 시스템으로, 모바일 UI를 직접 설계하고 프리랜서로서 클라이언트와의 직접 소통을 통해 프로젝트 전 과정을 관리",
@@ -142,7 +136,7 @@ export const projectsData: ProjectsData[] = [
     endDate: "2020.01",
     category: ["UX/UI Design"],
     role: "UX/UI Design 100%",
-    tech: ["Photoshop"],
+    tech: ["Photoshop", "HTML5", "CSS3"],
     tag: ["UX/UI", "Redesign", "MobileOptimization"],
     client: "밀알복지재단",
     clientType: "company",
@@ -156,7 +150,7 @@ export const projectsData: ProjectsData[] = [
     },
     thumbnail: "/projects/miral-payment/thumb.png",
     description:
-      "사용성 분석을 통해 후원 결제 단계의 병목 지점을 개선하고, 모바일 최적화와 입력 공정 간소화를 통해 전년 대비 모바일 후원을 2배 이상으로 성장시킨 UX 리뉴얼 프로젝트",
+      "사용성 분석을 통해 후원 프로세스에서 입력 부담과 이탈 가능성을 발견하여 리뉴얼을 제안하고 주도했습니다. 후원 플로우를 재설계하고 모바일 환경에 맞추어 인터페이스를 개선한 결과 온라인 후원율을 높이는 데 기여했고, 특히 모바일 후원은 전년 대비 2배 이상 증가했습니다.",
   },
   {
     id: "miral-1000",
@@ -213,25 +207,25 @@ export const projectsData: ProjectsData[] = [
     description:
       "통일감 없던 기성 비주얼을 브랜드 아이덴티티에 맞춰 재정립하고, 오프라인 현장 경험(UX)을 바탕으로 한 디자인 개선을 통해 매장의 시각적 복잡성을 해결하고 고객 소통을 원활하게 만든 샌드위치 카페 브랜딩 프로젝트",
   },
-  {
-    showInList: false,
-    id: "godbible",
-    title: "God Bible UX/UI Proposal",
-    startDate: "2026.05",
-    // endDate: "2026.05",
-    category: ["UX/UI Design"],
-    role: "UX/UI Design 100%",
-    tech: ["Figma"],
-    tag: ["UX/UI", "DesignIdea", "MobileApp"],
-    client: "갓바이블",
-    clientType: "client",
-    showcase: {
-      order: 1,
-      cover: "/projects/godbible/showcase.png",
-      showOnlyViaLink: true,
-    },
-    thumbnail: "/projects/godbible/thumb.png",
-    description:
-      "갓바이블 앱의 UX/UI 개선을 통해, 성경 읽기와 묵상 활동을 보다 동적이고 편리한 경험으로 제공하기 위한 아이디어를 제안드립니다. 테스트는 아이폰 13미니, IOS 26.3 기준으로 진행하였습니다.",
-  },
+  // {
+  //   showInList: false,
+  //   id: "godbible",
+  //   title: "God Bible UX/UI Proposal",
+  //   startDate: "2026.05",
+  //   // endDate: "2026.05",
+  //   category: ["UX/UI Design"],
+  //   role: "UX/UI Design 100%",
+  //   tech: ["Figma"],
+  //   tag: ["UX/UI", "DesignIdea", "MobileApp"],
+  //   client: "갓바이블",
+  //   clientType: "client",
+  //   showcase: {
+  //     order: 1,
+  //     cover: "/projects/godbible/showcase.png",
+  //     showOnlyViaLink: true,
+  //   },
+  //   thumbnail: "/projects/godbible/thumb.png",
+  //   description:
+  //     "갓바이블 앱의 UX/UI 개선을 통해, 성경 읽기와 묵상 활동을 보다 동적이고 편리한 경험으로 제공하기 위한 아이디어를 제안드립니다. 테스트는 아이폰 13미니, IOS 26.3 기준으로 진행하였습니다.",
+  // },
 ];

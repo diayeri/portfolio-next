@@ -1,12 +1,13 @@
 export const timelineData = [
   {
-    period: "26.04 -",
-    title: "Water Sports Platform",
-    role: "Web Developer & Designer (Freelancer)",
-    details: "통합신청 사이트와 관리자 웹페이지 설계/개발",
+    period: "26.04 - 현재",
+    title: "Freelancer",
+    role: "Web Designer & Developer",
+    details: "브랜드 디자인, UI/UX 설계, 웹사이트 개발 및 유지보수",
     highlights: [
+      "샌드위치 카페 브랜드 아이덴티티 재정립 및 디자인 개선",
+      "통합 신청 시스템 및 관리자 페이지 UI/UX 설계, 개발",
       "Next.js, TypeScript, Supabase, Vercel 활용한 기술 검증",
-      "통합 신청 시스템 및 관리자 페이지 UI/UX 설계",
       "카페24 플랫폼 기반 웹사이트 디자인 수정 및 개발 유지보수",
     ],
   },
@@ -24,23 +25,21 @@ export const timelineData = [
   {
     period: "22.03 - 24.05",
     title: "(Kakao) Krust Universe & Quarkonix",
-    role: "UI Developer (Freelancer → Full-time)",
-    details:
-      "블록체인 기반 마켓플레이스와 트레이드 웹 앱 UI 개발, React/TypeScript 활용",
+    role: "UI Developer",
+    details: "블록체인 기반 마켓플레이스와 트레이드 웹 앱 UI 개발",
     highlights: [
-      "React 컴포넌트 구현 및 Storybook으로 UI 체계적 문서화 관리",
+      "React/TypeScript 활용한 UI 컴포넌트 구현 및 Storybook으로 UI 체계적 문서화 관리",
       "컴포넌트 단위 반응형 UI 제작과 QA 수행으로 실무 코드 경험 강화",
     ],
   },
   {
     period: "20.10 - 21.04",
     title: "Cocone",
-    role: "Web Publisher (Freelancer)",
-    details:
-      "아바타 기반 소셜 네트워크 웹 서비스 & 관리자 페이지 UI 개발, jQuery 활용",
+    role: "Web Publisher",
+    details: "아바타 기반 소셜 네트워크 웹 서비스 & 관리자 페이지 UI 개발",
     highlights: [
-      "아바타 기반 SNS 반응형 UI 구현",
-      "Admin 관리자 페이지 적응형 UI 구현",
+      "아바타 기반 SNS 반응형 UI, Admin 적응형 UI 구현",
+      "jQuery 활용한 UI 기능 구현 및 유지보수",
     ],
   },
   {
@@ -57,11 +56,10 @@ export const timelineData = [
     period: "15.07 - 17.07",
     title: "Makewith",
     role: "Web Publisher",
-    details:
-      "커뮤니티 웹사이트 제작을 통해 UI 개발 경험 시작, 웹 개발 기초 역량 강화",
+    details: "메이커 커뮤니티 웹사이트 UI 웹 퍼블리싱 전담",
     highlights: [
-      "HTML, CSS, JavaScript를 활용해 전체 서비스 구현 경험",
-      "디자인, 기획, 촬영 등 다양한 실무 경험 수행",
+      "HTML, CSS, JavaScript를 활용한 전체 서비스 마크업 및 유지보수",
+      "리뉴얼 페이지 UI 디자인 및 퍼블리싱 병행",
     ],
   },
   {
