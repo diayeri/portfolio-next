@@ -4,9 +4,11 @@ import { projectsData } from "@/data/projectsData";
 import { notFound } from "next/navigation";
 import ProjectLayout from "@/components/project/ProjectLayout";
 import MDXImage from "@/components/project/mdx/MDXImage";
+import MDXImageGroup from "@/components/project/mdx/MDXImageGroup";
 
 const components = {
   MDXImage,
+  MDXImageGroup,
   // li: (props: string[]) => <li {...props} className="text-base" />,
 };
 
