@@ -51,7 +51,7 @@ const FeaturedProjectList = () => {
         </div>
         <div className="flex flex-col items-center gap-16 lg:flex-row">
           {/* 미리보기 영역 */}
-          <div className="lg:w-1/2 xl:h-[600px] rounded overflow-hidden items-center justify-center lg:flex hidden">
+          <div className="hidden items-center justify-center overflow-hidden rounded lg:flex lg:h-[520px] lg:w-1/2 lg:shrink-0 xl:h-[600px]">
             <NextImage
               src={activeProject.featured!.cover}
               alt={activeProject.title}
@@ -72,16 +72,16 @@ const FeaturedProjectList = () => {
                 >
                   <a href={`/projects/${project.id}`}>
                     <div
-                      className={`flex items-center justify-between py-7 xl:py-8 duration-200 border-b ${isActive ? "border-white/60" : "border-white/20"}`}
+                      className={`flex flex-col items-start gap-3 py-7 duration-200 border-b sm:flex-row sm:items-center sm:justify-between xl:py-8 ${isActive ? "border-white/60" : "border-white/20"}`}
                     >
                       <h3
-                        className={`text-xl md:text-2xl xl:text-3xl font-semibold transition-colors duration-200 ${
+                        className={`min-w-0 text-xl font-semibold break-words transition-colors duration-200 md:text-2xl xl:text-3xl ${
                           isActive ? "text-white" : "text-gray-400/60"
                         }`}
                       >
                         {project.title}
                       </h3>
-                      <div className="inline-flex gap-2 ml-5">
+                      <div className="flex flex-wrap justify-end gap-2 ml-0 sm:ml-5">
                         {project.category.map((tag) => (
                           <span
                             key={tag}
