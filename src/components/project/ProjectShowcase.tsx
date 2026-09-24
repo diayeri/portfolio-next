@@ -104,12 +104,12 @@ const ProjectShowcase: React.FC = () => {
                   </span>
                 ))}
               </div>
-              <div className="flex items-center gap-4 text-xs text-gray-300">
+              {/* <div className="flex items-center gap-4 text-xs text-gray-300">
                 <span className="font-semibold text-primary-light">
                   {items[active].client}
                 </span>
-                {/* <span>{items[active].startDate}</span> */}
-              </div>
+                <span>{items[active].startDate}</span>
+              </div> */}
             </div>
           </Link>
         </motion.div>

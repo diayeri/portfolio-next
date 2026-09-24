@@ -65,11 +65,16 @@ export const ProjectHeader = ({ project }: { project: ProjectsData }) => {
           className="w-full lg:w-[300px] shrink-0 pt-8 lg:pt-2 lg:border-l lg:pl-12 border-gray-200"
         >
           <div className="grid grid-cols-2 lg:grid-cols-1 gap-y-8 gap-x-4">
-            <MetaItem label="Role" value={project.role} />
             <MetaItem
-              label={project.clientType || "Client"}
-              value={project.client}
+              label="Role"
+              value={project.role.split(",").map((role) => role.trim())}
             />
+            {project.clientType !== "personal" && (
+              <MetaItem
+                label={project.clientType || "Client"}
+                value={project.client}
+              />
+            )}
             <MetaItem
               label="Period"
               value={`${project.startDate} — ${project.endDate ?? "Present"}`}
@@ -79,16 +84,16 @@ export const ProjectHeader = ({ project }: { project: ProjectsData }) => {
             {(project.links || project.github) && (
               <div className="col-span-2 space-y-2 lg:col-span-1">
                 <span className="text-[11px] font-bold tracking-widest uppercase text-primary">
-                  Connect
+                  Links
                 </span>
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-1.5 text-sm font-semibold text-gray-700">
                   {project.links?.map((link, idx) => (
                     <a
                       key={idx}
                       href={link}
                       target="_blank"
                       rel="noreferrer"
-                      className="flex items-center gap-1 text-sm font-semibold text-gray-700 transition-colors hover:text-primary group"
+                      className="flex items-center gap-1 transition-colors hover:text-primary group"
                     >
                       Visit Website{" "}
                       <span className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">
@@ -101,7 +106,7 @@ export const ProjectHeader = ({ project }: { project: ProjectsData }) => {
                       href={project.github}
                       target="_blank"
                       rel="noreferrer"
-                      className="flex items-center gap-1 text-sm font-semibold text-gray-700 transition-colors hover:text-primary"
+                      className="flex items-center gap-1 transition-colors hover:text-primary"
                     >
                       Github Repository
                     </a>
@@ -127,8 +132,12 @@ const MetaItem = ({
     <span className="text-[11px] font-bold tracking-widest uppercase text-primary">
       {label}
     </span>
-    <div className="text-sm font-semibold leading-tight text-gray-700 break-keep">
-      {Array.isArray(value) ? value.join(", ") : value}
+    <div className="flex flex-col gap-1 text-sm font-semibold leading-tight text-gray-700 break-keep">
+      {Array.isArray(value)
+        ? value.map((item, index) => (
+            <span key={`${item}-${index}`}>{item}</span>
+          ))
+        : value}
     </div>
   </div>
 );
