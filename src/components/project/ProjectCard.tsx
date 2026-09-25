@@ -49,7 +49,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         {/* 클라이언트 및 기간 정보 */}
         <div className="flex items-start justify-between mb-4">
           <span className="text-xs font-bold tracking-wider uppercase text-primary text-nowrap">
-            {project.client}
+            {project.clientType === "personal"
+              ? "Personal Project"
+              : project.client}
           </span>
           <span className="text-xs font-normal text-right text-gray-500">
             {project.startDate} —{" "}

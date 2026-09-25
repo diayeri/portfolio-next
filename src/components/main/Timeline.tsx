@@ -1,9 +1,12 @@
 "use client";
 
 import { timelineData } from "@/data/timelineData";
+import { projectsData } from "@/data/projectsData";
 import { motion } from "framer-motion";
 import { fadeUp } from "@/motion";
 import { useRole } from "@/context/RoleContext";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 export default function Timeline() {
   const { roleData } = useRole();
@@ -34,10 +37,9 @@ export default function Timeline() {
                 실제 서비스로 구현하는 열정이 있습니다.
               </p>
               <p className="mt-2 text-[15px] leading-relaxed">
-                밀알복지재단에서는 후원 결제 프로세스의 UX를 개선하여 모바일
-                후원 성과를 전년 대비 200% 성장시키는 경험을 했습니다. 사용자
-                관점에서 문제를 정의하고, 디자인과 개발로 구체화했을 때 비즈니스
-                성과로 이어지는 것을 확인했습니다.
+                사용자의 불편함을 예리하게 포착하고, 이를 직관적인 경험 설계와
+                견고한 코드로 구현하여 실질적인 비즈니스 성과(모바일 후원 성과
+                200% 성장 등)로 연결해 온 실행력을 가지고 있습니다.
               </p>
             </div>
             <div>
@@ -61,7 +63,7 @@ export default function Timeline() {
             </div>
             <div>
               <h3 className="mb-2 text-lg font-bold text-gray-700">
-                화면을 넘어, 서비스 전체를 이해하는 개발자로
+                화면을 넘어, 서비스 전체를 이해하는 UX 엔지니어로
               </h3>
               <p className="text-[15px] leading-relaxed">
                 최근에는 실제 서비스를 기획하고 개발하며 아이디어, 기획, 기술
@@ -71,11 +73,10 @@ export default function Timeline() {
                 사이트와 관리자 웹페이지를 설계/개발하고 있습니다.
               </p>
               <p className="mt-2 text-[15px] leading-relaxed">
-                새로운 기술을 단순히 공부하는 것보다 실제 문제를 해결하는
-                과정에서 개념을 이해하고 기술을 선택하는 방식을 중요하게
-                생각합니다. 앞으로도 사용자와 비즈니스의 문제를 이해하고, 필요한
-                기능을 스스로 정의하며, 복잡한 문제를 단순하고 확장 가능한
-                제품으로 만들어가는 프론트엔드 개발자로 성장하겠습니다.
+                실제 문제를 해결하는 과정에서 개념을 이해하고 기술을 선택하는
+                방식을 중요하게 생각합니다. 사용자와 비즈니스의 문제를 이해하고,
+                필요한 기능을 스스로 정의하며, 복잡한 문제를 단순하고 확장
+                가능한 제품으로 만들어가며 성장하고 있습니다.
               </p>
             </div>
           </div>
@@ -105,6 +106,28 @@ export default function Timeline() {
                         <li key={idx}>{item}</li>
                       ))}
                     </ul>
+                  )}
+                  {event.projectIds && event.projectIds.length > 0 && (
+                    <div className="flex flex-wrap mt-6 gap-x-4 gap-y-2">
+                      {event.projectIds.map((projectId) => {
+                        const project = projectsData.find(
+                          (item) => item.id === projectId,
+                        );
+
+                        if (!project) return null;
+
+                        return (
+                          <Link
+                            key={project.id}
+                            href={`/projects/${project.id}`}
+                            className="inline-flex items-center gap-1 text-sm font-semibold text-gray-700 transition-colors hover:text-primary"
+                          >
+                            {project.title}
+                            <ArrowUpRight size={14} aria-hidden="true" />
+                          </Link>
+                        );
+                      })}
+                    </div>
                   )}
                 </div>
               </div>

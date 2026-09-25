@@ -62,9 +62,9 @@ export const ProjectHeader = ({ project }: { project: ProjectsData }) => {
         {/* Right: Project Meta */}
         <motion.div
           {...fadeUp(0.3)}
-          className="w-full lg:w-[300px] shrink-0 pt-8 lg:pt-2 lg:border-l lg:pl-12 border-gray-200"
+          className="w-full shrink-0 rounded-xl border border-gray-200 bg-gray-50 px-5 py-6 sm:px-6 lg:w-[300px] lg:rounded-none lg:border-0 lg:border-l lg:bg-transparent lg:px-0 lg:pb-0 lg:pl-12 lg:pt-2"
         >
-          <div className="grid grid-cols-2 lg:grid-cols-1 gap-y-8 gap-x-4">
+          <div className="flex flex-wrap gap-x-6 gap-y-8 lg:flex-col">
             <MetaItem
               label="Role"
               value={project.role.split(",").map((role) => role.trim())}
@@ -82,7 +82,7 @@ export const ProjectHeader = ({ project }: { project: ProjectsData }) => {
 
             {/* Connect Section */}
             {(project.links || project.github) && (
-              <div className="col-span-2 space-y-2 lg:col-span-1">
+              <div className="min-w-[200px] max-w-[320px] flex-[1_1_240px] space-y-2 lg:w-full lg:max-w-none lg:flex-none">
                 <span className="text-[11px] font-bold tracking-widest uppercase text-primary">
                   Links
                 </span>
@@ -124,11 +124,15 @@ export const ProjectHeader = ({ project }: { project: ProjectsData }) => {
 const MetaItem = ({
   label,
   value,
+  className = "",
 }: {
   label: string;
   value: string | string[];
+  className?: string;
 }) => (
-  <div className="space-y-1.5">
+  <div
+    className={`min-w-[240px] max-w-[320px] flex-[1_1_240px] space-y-1.5 lg:w-full lg:max-w-none lg:flex-none ${className}`}
+  >
     <span className="text-[11px] font-bold tracking-widest uppercase text-primary">
       {label}
     </span>
