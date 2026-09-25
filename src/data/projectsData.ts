@@ -184,6 +184,7 @@ export const projectsData: ProjectsData[] = [
     id: "central-church",
     title: "Central Church Brand Design",
     startDate: "2025.04",
+    endDate: "2026.02",
     category: ["Visual Design", "Branding"],
     role: "Branding Design 100%",
     tech: ["Figma", "OpenAI"],
@@ -191,7 +192,7 @@ export const projectsData: ProjectsData[] = [
     clientType: "client",
     thumbnail: "/projects/central-church/thumb.png",
     description:
-      "상담원이라는 새로운 시작을 디자인으로 알리고, 상담원의 따뜻한 정체성을 시각화하여 성도들의 참여를 이끌어내어 공동체의 건강한 변화에 기여한 브랜드 디자인 프로젝트",
+      "상담원 신설부터 청년부, 단기선교팀에 이르기까지 공동체의 새로운 시작과 비전을 시각적 디자인으로 알리고, 따뜻한 정체성과 역동적인 에너지를 담아내어 공동체의 건강한 변화에 기여한 브랜드 디자인 프로젝트",
   },
   {
     id: "heysandy",
