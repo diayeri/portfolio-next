@@ -20,7 +20,7 @@ export const projectsData: ProjectsData[] = [
     links: ["https://portfolio-dy.vercel.app/"],
     github: "https://github.com/diayeri/portfolio-next",
     description:
-      "기획부터 디자인, 프론트엔드 개발, 배포까지 전 과정을 주도한 개인 포트폴리오 사이트로, Next.js와 MDX 기반 아키텍처를 도입하여 콘텐츠 유지보수성을 높이고 커리어와 핵심 기술에 온전히 집중할 수 있는 직관적인 사용자 경험을 구현한 프로젝트",
+      "기획부터 디자인 설계, 프론트엔드 개발 및 배포까지 전 과정을 주도한 개인 포트폴리오 사이트입니다. 코드로 디자인을 직접 발전시키는 실험을 거쳤으며, Next.js와 MDX 기반 아키텍처를 도입해 콘텐츠 유지보수성을 높였습니다. 커리어와 핵심 기술, 그리고 디자인적 철학에 온전히 집중할 수 있는 직관적인 사용자 경험을 구현했습니다.",
   },
   {
     id: "rounz",
@@ -91,7 +91,7 @@ export const projectsData: ProjectsData[] = [
       // 'https://chromatic.gitbook.io/docs',
     ],
     github: "https://github.com/chromatic-protocol/frontend-archive",
-    description: `블록체인 기술을 바탕으로 실시간 시세 연동 선물 시장을 생성하고, 유동성 공급과 보상 체계를 직관적인 UI로 구현한 탈중앙화 금융(DeFi) 플랫폼`,
+    description: `블록체인 기술을 바탕으로 실시간 시세 연동 선물 시장을 생성하고, 유동성 공급과 보상 체계를 직관적인 UI로 구현한 탈중앙화 금융(DeFi) 플랫폼입니다. 복잡한 트레이딩 환경 속에서 시각적 완성도뿐만 아니라 정보의 우선순위와 화면별 사용 맥락을 함께 설계하며, 디자인과 개발을 유기적으로 연결하는 UX 엔지니어링 경험을 담아낸 프로젝트`,
   },
   {
     id: "klaybay",
@@ -191,7 +191,7 @@ export const projectsData: ProjectsData[] = [
     clientType: "client",
     thumbnail: "/projects/central-church/thumb.png",
     description:
-      "새로 신설된 상담원의 따뜻한 정체성을 시각화하여 성도들의 참여를 이끌어내고, 기획한 무료검사 목표를 달성하며 공동체의 건강한 가정 교육에 기여한 브랜드 디자인 프로젝트",
+      "상담원이라는 새로운 시작을 디자인으로 알리고, 상담원의 따뜻한 정체성을 시각화하여 성도들의 참여를 이끌어내어 공동체의 건강한 변화에 기여한 브랜드 디자인 프로젝트",
   },
   {
     id: "heysandy",
