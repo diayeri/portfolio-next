@@ -35,7 +35,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             ? project.category.map((cat, index) => (
                 <span
                   key={index}
-                  className="px-3 py-1 text-xs font-bold tracking-widest text-white uppercase rounded-full bg-gray-900/40 backdrop-blur-md"
+                  className="px-3 py-1 text-xs font-bold tracking-widest text-white uppercase rounded-full bg-gray-900/30 backdrop-blur-md"
                 >
                   {cat}
                 </span>
