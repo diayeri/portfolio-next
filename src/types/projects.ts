@@ -5,9 +5,8 @@ export interface ProjectsData {
   startDate: string;
   endDate?: string | null; // 없으면 진행중
   category: string[];
-  role: string;
+  role: string[];
   tech: string[];
-  tag?: string[];
   client: string;
   clientType: "company" | "client" | "institution" | "personal";
 
@@ -19,6 +18,7 @@ export interface ProjectsData {
   showcase?: {
     order: number;
     cover: string;
+    tag?: string[];
     showOnlyViaLink?: boolean;
   };
 

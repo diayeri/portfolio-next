@@ -95,7 +95,7 @@ const ProjectShowcase: React.FC = () => {
                 {items[active].title}
               </h2>
               <div className="flex flex-wrap justify-center gap-x-1.5 gap-y-0.5">
-                {items[active].tag?.map((tech, index) => (
+                {items[active].showcase?.tag?.map((tech, index) => (
                   <span
                     key={index}
                     className="text-base font-semibold text-gray-200"

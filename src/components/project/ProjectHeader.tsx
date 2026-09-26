@@ -65,10 +65,7 @@ export const ProjectHeader = ({ project }: { project: ProjectsData }) => {
           className="w-full shrink-0 rounded-xl border border-gray-200 bg-gray-50 px-5 py-6 sm:px-6 lg:w-[300px] lg:rounded-none lg:border-0 lg:border-l lg:bg-transparent lg:px-0 lg:pb-0 lg:pl-12 lg:pt-2"
         >
           <div className="flex flex-wrap gap-x-6 gap-y-8 lg:flex-col">
-            <MetaItem
-              label="Role"
-              value={project.role.split(",").map((role) => role.trim())}
-            />
+            <MetaItem label="Role" value={project.role} />
             {project.clientType !== "personal" && (
               <MetaItem
                 label={project.clientType || "Client"}

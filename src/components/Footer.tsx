@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
         {/* Center: Copyright */}
         <div className="order-3 text-[10px] md:text-xs tracking-tight text-center text-gray-500 md:order-2 leading-relaxed">
           <p className="font-bold text-gray-500 uppercase tracking-[0.15em] mb-0.5">
-            Design & Development by Dayoung Jung
+            Designed & Developed by Dayoung Jung
           </p>
 
           <p className="mt-2 opacity-80">

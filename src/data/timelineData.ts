@@ -17,7 +17,7 @@ export const timelineData = [
     title: "ESTsoft Frontend Bootcamp & Internship",
     role: "Frontend Developer",
     projectIds: ["rounz", "muna"],
-    details: "프론트엔드 최신 기술 학습 (1기 우수수료), 인턴십 실무",
+    details: "프론트엔드 최신 기술 학습 (1기 우수수료), 인턴십 실무 개발",
     highlights: [
       "HTML, CSS, JavaScript, React, TypeScript, Redux, Firebase 학습",
       "PHP 페이지를 React/TypeScript 기반 프론트엔드 개발로 전환",
@@ -25,7 +25,7 @@ export const timelineData = [
     ],
   },
   {
-    period: "22.03 - 24.05",
+    period: "22.05 - 24.05",
     title: "(Kakao) Krust Universe & Quarkonix",
     role: "UI Developer",
     projectIds: ["chromatic", "klaybay"],
@@ -36,17 +36,17 @@ export const timelineData = [
       "반응형 UI 설계 및 개발, UI/UX 개선",
     ],
   },
-  {
-    period: "20.10 - 21.04",
-    title: "Cocone",
-    role: "Web Publisher",
-    projectIds: ["stichy"],
-    details: "아바타 기반 소셜 네트워크 웹 서비스 & 관리자 페이지 UI 개발",
-    highlights: [
-      "아바타 기반 SNS 반응형 UI, Admin 적응형 UI 구현",
-      "jQuery 활용한 UI 기능 구현 및 유지보수",
-    ],
-  },
+  // {
+  //   period: "20.10 - 21.04",
+  //   title: "Cocone",
+  //   role: "Web Publisher",
+  //   projectIds: ["stichy"],
+  //   details: "아바타 기반 소셜 네트워크 웹 서비스 & 관리자 페이지 UI 개발",
+  //   highlights: [
+  //     "아바타 기반 SNS 반응형 UI, Admin 적응형 UI 구현",
+  //     "jQuery 활용한 UI 기능 구현 및 유지보수",
+  //   ],
+  // },
   {
     period: "18.10 - 22.05",
     title: "Miral Welfare Foundation",
