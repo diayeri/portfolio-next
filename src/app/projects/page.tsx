@@ -21,7 +21,9 @@ const Projects: React.FC = () => {
         const tags = project.category.map((t) => t.toLowerCase());
 
         if (category === "development") {
-          return ["frontend", "markup"].some((t) => tags.includes(t));
+          return ["frontend", "markup", "web publishing", "ui dev"].some((t) =>
+            tags.includes(t),
+          );
         }
         return tags.some((t) => t.includes("design"));
       })
@@ -52,7 +54,7 @@ const Projects: React.FC = () => {
 
         <div className="flex w-full sm:w-[500px] overflow-x-auto no-scrollbar py-1.5 px-2 bg-gray-100/50 backdrop-blur-md rounded-2xl border border-gray-200">
           <div className="flex justify-center w-full gap-2 mx-auto flex-nowrap">
-            {(["all", "development", "design"] as const).map((c) => (
+            {(["all", "design", "development"] as const).map((c) => (
               <button
                 key={c}
                 onClick={() => setCategory(c)}

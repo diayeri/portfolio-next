@@ -42,6 +42,16 @@ export const Header = () => {
             Projects
           </Link>
           <Link
+            href="/notes"
+            className={`text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase transition-all ${
+              pathname.includes("/notes")
+                ? "text-primary"
+                : "text-gray-500 hover:text-primary"
+            }`}
+          >
+            Notes
+          </Link>
+          <Link
             href="/#timeline"
             onClick={scrollToTimeline}
             className="text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase text-gray-500 hover:text-primary transition-all"
