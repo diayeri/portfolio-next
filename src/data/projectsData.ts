@@ -85,7 +85,7 @@ export const projectsData: ProjectsData[] = [
     startDate: "2023.03",
     endDate: "2024.05",
     category: ["UI Dev", "Responsive Design"],
-    role: ["UI Development 100%", "Responsive Design 80%"],
+    role: ["UI Development 80%", "Responsive Design 80%"],
     tech: ["React", "TypeScript", "Tailwind", "Storybook"],
     client: "Quarkonix",
     clientType: "company",
