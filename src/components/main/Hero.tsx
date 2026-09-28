@@ -115,8 +115,8 @@ export default function Hero() {
           디자인과 개발을 연결해, 사용자 경험을 제품으로 구현하는{" "}
           <strong>UX 디자인 엔지니어</strong>입니다.
           <br className="hidden sm:block" />
-          사용자 경험과 개발 구조를 함께 고민하여 더욱 쉽고 편한 제품을 만드는
-          것을 목표로 합니다.
+          관리하기 편한 코드와 다정한 디자인으로, 편안한 경험을 만드는 것을
+          목표로 합니다.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-3 mt-10">
           <button
