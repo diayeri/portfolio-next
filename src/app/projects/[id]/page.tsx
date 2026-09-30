@@ -1,4 +1,5 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
 import { getProject } from "@/lib/projects";
 import { projectsData } from "@/data/projectsData";
 import { notFound } from "next/navigation";
@@ -28,7 +29,11 @@ export default async function Page({
 
   return (
     <ProjectLayout project={projectInfo}>
-      <MDXRemote source={projectMDX.content} components={components} />
+      <MDXRemote
+        source={projectMDX.content}
+        components={components}
+        options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+      />
     </ProjectLayout>
   );
 }

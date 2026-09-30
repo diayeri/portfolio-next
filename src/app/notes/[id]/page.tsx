@@ -1,4 +1,5 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { notFound } from "next/navigation";
@@ -44,7 +45,10 @@ export default async function NotePage({
       </header>
 
       <article className="max-w-3xl mt-12 prose prose-slate lg:prose-lg">
-        <MDXRemote source={noteContent.content} />
+        <MDXRemote
+          source={noteContent.content}
+          options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+        />
       </article>
     </main>
   );
