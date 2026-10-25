@@ -182,19 +182,14 @@ export default function MainAnimation(props: { showStatic: boolean }) {
       .join(" ") + (showStatic ? ` ${styles.static}` : "");
 
   return (
-    <div
-      aria-hidden="true"
-      className={`${styles.stage} ${showStatic ? styles["stage-static"] : ""}`}
+    <section
+      className={`${styles.animation} ${showStatic ? styles["animation-done"] : ""}`}
     >
-      <div
-        className={`${styles.animation} ${showStatic ? styles["animation-done"] : ""}`}
-      >
-        {elements.map(({ className, count }, i) =>
-          Array.from({ length: count }, (_, j) => (
-            <div key={`${className}-${i}-${j}`} className={classes(className)} />
-          )),
-        )}
-      </div>
-    </div>
+      {elements.map(({ className, count }, i) =>
+        Array.from({ length: count }, (_, j) => (
+          <div key={`${className}-${i}-${j}`} className={classes(className)} />
+        )),
+      )}
+    </section>
   );
 }

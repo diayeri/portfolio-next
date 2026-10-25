@@ -1,9 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import MainAnimation from "@/components/main/MainAnimation";
-import { GradientMesh } from "@/components/main/GradientMesh";
 import { ScrollIndicator } from "@/components/ScrollIndicator";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { useHero } from "@/context/HeroContext";
@@ -15,32 +14,6 @@ import { useWindowSize } from "@/hooks/useWindowSize";
 
 const HERO_VISITED_KEY = "hero-animation-visited";
 const HERO_DOCUMENT_KEY = "hero-animation-document";
-const HERO_REVEAL_EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
-
-const heroReveal = (delay: number, visited: boolean) => ({
-  initial: {
-    opacity: 0,
-    y: 38,
-    z: -120,
-    rotateX: 16,
-    rotateY: -10,
-    transformPerspective: 1100,
-  },
-  whileInView: {
-    opacity: 1,
-    y: 0,
-    z: 0,
-    rotateX: 0,
-    rotateY: 0,
-    transformPerspective: 1100,
-  },
-  transition: {
-    delay: visited ? 0 : delay,
-    duration: 1.15,
-    ease: HERO_REVEAL_EASE,
-  },
-  viewport: { once: true, amount: 0.15 },
-});
 
 const getDocumentId = () => {
   if (typeof window === "undefined") return "";
@@ -81,27 +54,6 @@ export default function Hero() {
   });
   // const { roleKey, roleData } = useRole();
   const isMobile = useWindowSize();
-  const heroRef = useRef<HTMLElement>(null);
-  const isScrollingToNext = useRef(false);
-  const scrollUnlockTimer = useRef<number | null>(null);
-  const touchStartY = useRef<number | null>(null);
-
-  const scrollToNextSection = useCallback(() => {
-    const aboutSection = document.getElementById("about");
-    if (!aboutSection || isScrollingToNext.current) return;
-
-    isScrollingToNext.current = true;
-    aboutSection.scrollIntoView({
-      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
-        ? "auto"
-        : "smooth",
-      block: "start",
-    });
-    scrollUnlockTimer.current = window.setTimeout(() => {
-      isScrollingToNext.current = false;
-      scrollUnlockTimer.current = null;
-    }, 1200);
-  }, []);
 
   useEffect(() => {
     const shouldReplay = shouldReplayAnimation();
@@ -109,6 +61,7 @@ export default function Hero() {
 
     if (!shouldReplay) {
       setVisited(true);
+      setShowStatic(true);
       return;
     }
 
@@ -121,68 +74,11 @@ export default function Hero() {
     return () => clearTimeout(timer);
   }, [setVisited]);
 
-  useEffect(() => {
-    const hero = heroRef.current;
-    if (!hero) return;
-
-    const isHeroInView = () => {
-      const bounds = hero.getBoundingClientRect();
-      return bounds.bottom > 0 && bounds.top < window.innerHeight;
-    };
-
-    const handleWheel = (event: WheelEvent) => {
-      if (
-        event.deltaY <= 0 ||
-        event.ctrlKey ||
-        Math.abs(event.deltaX) > Math.abs(event.deltaY)
-      ) {
-        return;
-      }
-
-      if (isScrollingToNext.current) {
-        event.preventDefault();
-        return;
-      }
-
-      if (!isHeroInView()) return;
-
-      event.preventDefault();
-      scrollToNextSection();
-    };
-
-    const handleTouchStart = (event: TouchEvent) => {
-      touchStartY.current = isHeroInView()
-        ? event.touches.item(0)?.clientY ?? null
-        : null;
-    };
-
-    const handleTouchEnd = (event: TouchEvent) => {
-      const startY = touchStartY.current;
-      const endY = event.changedTouches.item(0)?.clientY;
-      touchStartY.current = null;
-
-      if (startY === null || endY === undefined || startY - endY < 48) return;
-      scrollToNextSection();
-    };
-
-    window.addEventListener("wheel", handleWheel, { passive: false });
-    window.addEventListener("touchstart", handleTouchStart, { passive: true });
-    window.addEventListener("touchend", handleTouchEnd, { passive: true });
-
-    return () => {
-      window.removeEventListener("wheel", handleWheel);
-      window.removeEventListener("touchstart", handleTouchStart);
-      window.removeEventListener("touchend", handleTouchEnd);
-      if (scrollUnlockTimer.current !== null) {
-        window.clearTimeout(scrollUnlockTimer.current);
-        scrollUnlockTimer.current = null;
-      }
-      isScrollingToNext.current = false;
-    };
-  }, [scrollToNextSection]);
-
   const handleScrollDown = () => {
-    scrollToNextSection();
+    window.scrollBy({
+      top: window.innerHeight,
+      behavior: "smooth",
+    });
 
     //   sendEvent({
     //     action: "click",
@@ -192,20 +88,14 @@ export default function Hero() {
   };
 
   return (
-    <section
-      ref={heroRef}
-      className="relative flex flex-col items-center justify-center w-full h-screen px-5 py-10 overflow-hidden text-center bg-ani-gradient"
-    >
-      <GradientMesh className="z-0" opacity={0.3} speed={0.3} />
-      <div className="absolute hidden left-center top-center z-0 md:flex">
+    <section className="relative flex flex-col items-center justify-center w-full h-screen px-5 py-10 overflow-hidden text-center bg-ani-gradient">
+      <div className="absolute hidden left-center top-center md:flex">
         <MainAnimation showStatic={showStatic} />
       </div>
-      <h2 className="relative z-10 font-mono text-xl md:text-2xl">
-        Design to Development
-      </h2>
+      <h2 className="font-mono text-xl md:text-2xl">Design to Development</h2>
       <motion.h1
-        {...heroReveal(isMobile ? 0 : 3.2, visited)}
-        className="relative z-10 mt-5 text-5xl font-medium text-white sm:text-6xl md:text-8xl"
+        {...fadeUp(isMobile ? 0 : 3.2, visited)}
+        className="z-10 mt-5 text-5xl font-medium text-white sm:text-6xl md:text-8xl"
       >
         <span className="md:ml-[-160px] text-transparent bg-clip-text bg-gradient-to-r from-primary-dark to-black drop-shadow-sm">
           {/* <span className="md:ml-[-120px] text-transparent bg-clip-text bg-gradient-to-r from-primary-dark to-black drop-shadow-sm"> */}
@@ -220,10 +110,7 @@ export default function Hero() {
         </span>
       </motion.h1>
 
-      <motion.div
-        {...heroReveal(isMobile ? 0 : 4, visited)}
-        className="relative z-10"
-      >
+      <motion.div {...fadeUp(isMobile ? 0 : 4, visited)}>
         <p className="mt-16 text-base font-normal leading-7 text-gray-700">
           디자인과 개발을 연결해, 사용자 경험을 제품으로 구현하는{" "}
           <strong>UX 디자인 엔지니어</strong>입니다.
@@ -235,14 +122,14 @@ export default function Hero() {
           <button
             type="button"
             onClick={handleScrollDown}
-            className="relative z-10 inline-flex items-center justify-center gap-2 py-4 text-base font-medium tracking-wide text-gray-900 transition-transform duration-200 border-2 rounded-full px-7 border-gray-900/70 hover:-translate-y-1 hover:bg-white/30"
+            className="z-10 inline-flex items-center justify-center gap-2 py-4 text-base font-medium tracking-wide text-gray-900 transition-transform duration-200 border-2 rounded-full px-7 border-gray-900/70 hover:-translate-y-1 hover:bg-white/30"
           >
             Explore More
             <ArrowDown size={20} aria-hidden="true" />
           </button>
           <Link
             href="/projects"
-            className="relative z-10 inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-medium tracking-wide text-white transition-transform duration-200 bg-gray-900 rounded-full shadow-lg hover:-translate-y-1 hover:bg-black"
+            className="z-10 inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-medium tracking-wide text-white transition-transform duration-200 bg-gray-900 rounded-full shadow-lg hover:-translate-y-1 hover:bg-black"
           >
             View Projects
             <ArrowRight size={20} aria-hidden="true" />
@@ -252,7 +139,7 @@ export default function Hero() {
 
       <motion.div
         {...fadeUp(isMobile ? 0 : 4, visited)}
-        className="absolute left-center bottom-10 z-20"
+        className="absolute left-center bottom-10"
       >
         <ScrollIndicator />
       </motion.div>
