@@ -17,68 +17,82 @@ const HERO_VISITED_KEY = "hero-animation-visited";
 const HERO_DOCUMENT_KEY = "hero-animation-document";
 const HERO_REVEAL_EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
-const heroReveal = (delay: number, visited: boolean) => ({
-  initial: {
-    opacity: 0,
-    y: 38,
-    z: -120,
-    rotateX: 16,
-    rotateY: -10,
-    transformPerspective: 1100,
-  },
-  whileInView: {
+const heroReveal = (delay: number, shouldAnimate: boolean) => {
+  const visibleState = {
     opacity: 1,
     y: 0,
     z: 0,
     rotateX: 0,
     rotateY: 0,
     transformPerspective: 1100,
-  },
-  transition: {
-    delay: visited ? 0 : delay,
-    duration: 1.15,
-    ease: HERO_REVEAL_EASE,
-  },
-  viewport: { once: true, amount: 0.15 },
-});
+  };
+
+  if (!shouldAnimate) {
+    return {
+      initial: false,
+      animate: visibleState,
+      transition: { duration: 0, delay: 0 },
+    };
+  }
+
+  return {
+    initial: {
+      opacity: 0,
+      y: 38,
+      z: -120,
+      rotateX: 16,
+      rotateY: -10,
+      transformPerspective: 1100,
+    },
+    whileInView: visibleState,
+    transition: {
+      delay,
+      duration: 1.15,
+      ease: HERO_REVEAL_EASE,
+    },
+    viewport: { once: true, amount: 0.15 },
+  };
+};
+
+let inMemoryDocumentId: string | null = null;
 
 const getDocumentId = () => {
   if (typeof window === "undefined") return "";
-  return String(performance.timeOrigin);
-};
-
-const isPageReload = () => {
-  if (typeof window === "undefined") return false;
-  const navigation = performance.getEntriesByType("navigation")[0] as
-    | PerformanceNavigationTiming
-    | undefined;
-
-  return navigation?.type === "reload";
-};
-
-const isExternalEntry = () => {
-  if (typeof window === "undefined" || !document.referrer) return false;
-  return new URL(document.referrer).origin !== window.location.origin;
+  return String(window.performance.timeOrigin);
 };
 
 const shouldReplayAnimation = () => {
-  if (typeof window === "undefined") return false;
+  if (typeof window === "undefined") return true;
 
-  const hasVisited = sessionStorage.getItem(HERO_VISITED_KEY) === "true";
-  const isNewDocument =
-    sessionStorage.getItem(HERO_DOCUMENT_KEY) !== getDocumentId();
+  const documentId = getDocumentId();
 
-  return (
-    !hasVisited || (isNewDocument && (isPageReload() || isExternalEntry()))
-  );
+  try {
+    const hasVisited =
+      window.sessionStorage.getItem(HERO_VISITED_KEY) === "true";
+    const previousDocumentId = window.sessionStorage.getItem(HERO_DOCUMENT_KEY);
+    return !hasVisited || previousDocumentId !== documentId;
+  } catch {
+    return inMemoryDocumentId !== documentId;
+  }
+};
+
+const markDocumentVisited = () => {
+  const documentId = getDocumentId();
+  inMemoryDocumentId = documentId;
+
+  try {
+    window.sessionStorage.setItem(HERO_DOCUMENT_KEY, documentId);
+    window.sessionStorage.setItem(HERO_VISITED_KEY, "true");
+  } catch {
+    // The in-memory document ID keeps SPA navigation stable when storage is blocked.
+  }
 };
 
 export default function Hero() {
-  const { visited, setVisited } = useHero();
-  const [showStatic, setShowStatic] = useState(() => {
-    if (visited || typeof window === "undefined") return visited;
-    return !shouldReplayAnimation();
-  });
+  const { setVisited } = useHero();
+  const [replayIntro, setReplayIntro] = useState(shouldReplayAnimation);
+  const [showStatic, setShowStatic] = useState(() => !replayIntro);
+  const [replayKey, setReplayKey] = useState(0);
   // const { roleKey, roleData } = useRole();
   const isMobile = useWindowSize();
   const heroRef = useRef<HTMLElement>(null);
@@ -104,21 +118,32 @@ export default function Hero() {
   }, []);
 
   useEffect(() => {
-    const shouldReplay = shouldReplayAnimation();
-    sessionStorage.setItem(HERO_DOCUMENT_KEY, getDocumentId());
+    markDocumentVisited();
 
-    if (!shouldReplay) {
+    if (!replayIntro) {
       setVisited(true);
       return;
     }
 
-    sessionStorage.setItem(HERO_VISITED_KEY, "true");
-
-    const timer = setTimeout(() => {
+    const timer = window.setTimeout(() => {
       setVisited(true);
       setShowStatic(true);
     }, 5200);
-    return () => clearTimeout(timer);
+    return () => window.clearTimeout(timer);
+  }, [replayIntro, replayKey, setVisited]);
+
+  useEffect(() => {
+    const handlePageShow = (event: PageTransitionEvent) => {
+      if (!event.persisted) return;
+
+      setReplayIntro(true);
+      setShowStatic(false);
+      setVisited(false);
+      setReplayKey((key) => key + 1);
+    };
+
+    window.addEventListener("pageshow", handlePageShow);
+    return () => window.removeEventListener("pageshow", handlePageShow);
   }, [setVisited]);
 
   useEffect(() => {
@@ -198,13 +223,14 @@ export default function Hero() {
     >
       <GradientMesh className="z-0" opacity={0.3} speed={0.3} />
       <div className="absolute hidden left-center top-center z-0 md:flex">
-        <MainAnimation showStatic={showStatic} />
+        <MainAnimation key={replayKey} showStatic={showStatic} />
       </div>
       <h2 className="relative z-10 font-mono text-xl md:text-2xl">
         Design to Development
       </h2>
       <motion.h1
-        {...heroReveal(isMobile ? 0 : 3.2, visited)}
+        key={replayKey}
+        {...heroReveal(isMobile ? 0 : 3.2, replayIntro)}
         className="relative z-10 mt-5 text-5xl font-medium text-white sm:text-6xl md:text-8xl"
       >
         <span className="md:ml-[-160px] text-transparent bg-clip-text bg-gradient-to-r from-primary-dark to-black drop-shadow-sm">
@@ -221,7 +247,8 @@ export default function Hero() {
       </motion.h1>
 
       <motion.div
-        {...heroReveal(isMobile ? 0 : 4, visited)}
+        key={`hero-copy-${replayKey}`}
+        {...heroReveal(isMobile ? 0 : 4, replayIntro)}
         className="relative z-10"
       >
         <p className="mt-16 text-base font-normal leading-7 text-gray-700">
@@ -251,7 +278,14 @@ export default function Hero() {
       </motion.div>
 
       <motion.div
-        {...fadeUp(isMobile ? 0 : 4, visited)}
+        key={`hero-indicator-${replayKey}`}
+        {...(replayIntro
+          ? fadeUp(isMobile ? 0 : 4, false)
+          : {
+              initial: false,
+              animate: { opacity: 1, y: 0 },
+              transition: { duration: 0, delay: 0 },
+            })}
         className="absolute left-center bottom-10 z-20"
       >
         <ScrollIndicator />
