@@ -74,59 +74,39 @@ export default function Intro() {
 
   return (
     <section
-      aria-labelledby="about-heading"
-      className="relative w-full py-16 md:py-24"
+      className="relative flex w-full justify-center py-16 md:py-20"
       id="about"
     >
-      <div className="mx-auto w-full max-w-[1400px] px-5 md:px-10">
-        <h2
-          className="mb-6 text-4xl font-bold text-primary-dark md:mb-10 md:text-5xl"
-          id="about-heading"
-        >
-          Technical Expertise
-        </h2>
-
-        <TechMarquee groups={skills} additionalSkills={supplementarySkills} />
-
-        <section
-          aria-labelledby="core-values-heading"
-          className="mt-14 border-t border-gray-200/70 pt-10 md:mt-20 md:pt-14"
-        >
-          <h3
-            className="mb-8 text-2xl font-semibold tracking-tight text-primary-dark md:text-3xl"
-            id="core-values-heading"
-          >
-            Core Values
-          </h3>
-          <div className="grid grid-cols-1 gap-x-8 gap-y-10 xl:grid-cols-4">
-            {values.map((item) => (
-              <article
-                className="group relative border-l-2 border-gray-200 pl-6 transition-colors hover:border-primary/50"
-                key={item.title}
-              >
-                <span
-                  aria-hidden="true"
-                  className="absolute -left-[2px] top-0 h-8 w-[2px] origin-top scale-y-0 bg-primary transition-transform duration-300 group-hover:scale-y-100"
-                />
-                <h4 className="mb-2 text-xl font-semibold tracking-tight text-primary-dark transition-all md:text-2xl">
-                  {item.title}
-                </h4>
-                <p className="break-keep text-sm leading-relaxed text-gray-500 md:text-base">
-                  {item.description.split(item.highlight).map((part, index, parts) => (
-                    <span key={index}>
-                      {part}
-                      {index < parts.length - 1 && (
-                        <strong className="font-semibold text-gray-900">
-                          {item.highlight}
-                        </strong>
-                      )}
-                    </span>
-                  ))}
-                </p>
-              </article>
-            ))}
-          </div>
+      <div className="grid w-full max-w-[1320px] grid-cols-1 items-center gap-12 px-5 mx-auto md:px-10 xl:grid-cols-[0.88fr_1.12fr] xl:gap-16">
+        {/* 1. Core Value (좌측) */}
+        <section className="flex flex-col gap-8 lg:gap-y-12">
+          {values.map((item, index) => (
+            <div
+              key={index}
+              className="relative pl-6 transition-colors border-l-2 border-gray-200 group hover:border-primary/50"
+            >
+              <span className="absolute -left-[2px] top-0 h-8 w-[2px] bg-primary scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-300" />
+              <h4 className="mb-2 text-xl font-semibold tracking-tight transition-all md:text-2xl text-primary-dark">
+                {item.title}
+              </h4>
+              <p className="text-sm leading-relaxed text-gray-500 md:text-base break-keep">
+                {item.description.split(item.highlight).map((part, i, arr) => (
+                  <span key={i}>
+                    {part}
+                    {i < arr.length - 1 && (
+                      <strong className="font-semibold text-gray-900">
+                        {item.highlight}
+                      </strong>
+                    )}
+                  </span>
+                ))}
+              </p>
+            </div>
+          ))}
         </section>
+
+        {/* 2. Technical Expertise (우측) */}
+        <TechMarquee groups={skills} additionalSkills={supplementarySkills} />
       </div>
     </section>
   );

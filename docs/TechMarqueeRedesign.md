@@ -1,6 +1,6 @@
 # TechMarquee 재설계 제안
 
-> **상태:** 이 제안은 `src/components/main/TechMarquee.tsx`, `TechMarquee.module.css`, `Intro.tsx`에 반영되었습니다. 후속 업데이트에서는 Intro를 full-width 단일 흐름으로 통합하고 `happy marriage` 문구만 흐리게 처리했습니다. 아래 구현 기록은 실제 반영 결과를 함께 설명합니다.
+> **상태:** 이 제안은 `src/components/main/TechMarquee.tsx`, `TechMarquee.module.css`, `Intro.tsx`에 반영되었습니다. 아래 구현 기록은 실제 반영 결과를 함께 설명합니다.
 
 ## 요약
 
@@ -70,7 +70,7 @@
 | 키캡/미니 기기 | Frontend | React, Next.js, TypeScript, JavaScript. “React와 Next.js 기반의 확장 가능한 프론트엔드 아키텍처 설계 및 구현” 설명을 유지합니다. HTML, CSS, jQuery 로고도 이 영역의 보조 요소로 배치할 수 있습니다. |
 | 색상 카드/디자인 노트 | Styling & Design System | Tailwind CSS, SCSS, Storybook, Figma. “디자인 시스템 고도화, 컴포넌트화 및 UI 문서화” 설명을 유지합니다. MUI, Bootstrap, Photoshop, Illustrator는 보조 도구로 연결합니다. |
 | 배포 카드/케이블 | Backend & Deployment | Supabase, Vercel. “백엔드 서비스 연동 및 효율적인 웹 배포 관리” 설명을 유지합니다. |
-| 클립/체크리스트 | Collaboration & Workflow | Git, GitHub, Jira, Notion. “능동적인 일정 관리 및 협업 툴 활용” 설명을 유지합니다. Redux와 Recoil은 현재 보조 스택 목록에 있으므로 보조 태그로 둘지 별도 그룹으로 분류할지는 구현 전에 확인합니다. |
+| 클립/체크리스트 | Collaboration & Workflow | Git, GitHub, Jira, Notion. “능동적인 일정 관리 및 협업 툴 활용” 설명을 ��지합니다. Redux와 Recoil은 현재 보조 스택 목록에 있으므로 보조 태그로 둘지 별도 그룹으로 분류할지는 구현 전에 확인합니다. |
 
 ## 상호작용 설계
 
@@ -112,9 +112,9 @@ flowchart TD
 
 | 대상 | 제안 |
 |---|---|
-| `src/components/main/TechMarquee.tsx` | 로고 궤도를 네 개 기술 그룹 hotspot으로 교체했습니다. 데스크톱은 hover/focus로 전체 폭 상세 패널을 갱신하고, coarse pointer에서는 네이티브 dialog를 엽니다. 기존 12개 로고와 `additionalSkills`도 유지합니다. |
-| `src/components/main/TechMarquee.module.css` | 원본 비율을 유지한 full-width 틴케이스 stage, 반응형 hotspot, 전체 폭 기술 설명 패널과 dialog 스타일을 정의합니다. `happy marriage` 문구만 작은 blur 영역으로 가리고 나머지 이미지는 보존합니다. |
-| `src/components/main/Intro.tsx` | 메인 섹션 타이틀을 사이트의 다른 H2와 같은 크기·두께로 맞추고, 기술 showcase와 기존 `values`를 단일 세로 흐름으로 배치합니다. Core Values는 하단에 4개 항목으로 유지하며 좌우 2단 레이아웃을 제거했습니다. |
+| `src/components/main/TechMarquee.tsx` | 로고 궤도를 네 개 기술 그룹 hotspot으로 교체했습니다. 데스크톱은 hover/focus 팝오버, coarse pointer는 네이티브 dialog 팝업을 사용합니다. 기존 12개 로고와 `additionalSkills`도 유지합니다. |
+| `src/components/main/TechMarquee.module.css` | 540px 데스크톱/480px 모바일 최소 높이의 틴케이스 stage, 텍스트 가림 라벨, 반응형 hotspot, 팝오버와 dialog 스타일을 정의합니다. 넓은 화면에서만 좌우 2단 배치를 사용합니다. |
+| `src/components/main/Intro.tsx` | `values`를 유지하고 기술 상세 데이터를 `TechMarquee`에 전달합니다. 기존 배경 orbit, blur overlay, 평면 기술 카드는 제거했습니다. |
 | `src/components/main/Home.tsx` | 메인 페이지에서 Intro의 순서는 변경하지 않았습니다. |
 | 기술 그룹 데이터 | 별도 파일을 만들지 않고 `Intro.tsx`의 단일 `skills` 배열을 데이터 원본으로 유지합니다. |
 
