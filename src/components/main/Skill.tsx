@@ -128,7 +128,7 @@ export default function Skill() {
     <section className="relative w-full">
       <section
         aria-label="Skills and tools"
-        className="mx-auto flex w-full max-w-[1400px] lg:rounded-2xl -mb-20 lg:mb-0 lg:border flex-col justify-between overflow-hidden bg-[linear-gradient(145deg,rgba(255,255,255,0.88),#fbf8f2)] shadow-[0_22px_60px_rgba(67,49,78,0.09)]"
+        className="mx-auto flex w-full max-w-[1400px] xl:rounded-2xl -mb-20 xl:mb-0 xl:border flex-col justify-between overflow-hidden bg-[linear-gradient(145deg,rgba(255,255,255,0.88),#fbf8f2)] shadow-[0_22px_60px_rgba(67,49,78,0.09)]"
       >
         <div
           className="relative isolate aspect-[1536/741] max-h-[560px] w-full overflow-hidden"
