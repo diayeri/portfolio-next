@@ -27,7 +27,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       href={`/projects/${project.id}`}
       className={`group relative flex h-full flex-col overflow-hidden rounded-[32px] border backdrop-blur-md transition-all duration-500 hover:-translate-y-2 ${
         isDark
-          ? "border-white/10 bg-[#181818] text-white shadow-xl shadow-black/20 hover:border-white/20 hover:bg-[#222] hover:shadow-2xl hover:shadow-black/40"
+          ? "border-white/10 bg-[#211b2e] text-white shadow-xl shadow-black/20 hover:border-white/20 hover:bg-[#2b233a] hover:shadow-2xl hover:shadow-black/40"
           : "border-gray-200/60 bg-white/40 hover:bg-white/80 hover:shadow-2xl hover:shadow-gray-200/50"
       }`}
     >
@@ -35,7 +35,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       <div
         className={`relative h-[260px] w-full overflow-hidden border-b ${
           isDark
-            ? "border-white/10 bg-[#252525]"
+            ? "border-white/10 bg-[#302541]"
             : "border-gray-200/60 bg-gray-50"
         }`}
       >

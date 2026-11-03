@@ -25,20 +25,20 @@
     --font-sans: "Pretendard", "Satoshi", system-ui, sans-serif;
     --font-mono: "Space Mono", monospace;
 
-    /* Primary: 진하고 채도 높은 하늘빛/연보라 */
-    --color-primary: #3a66e0; /* 진하고 명확한 포인트 */
-    --color-primary-light: #7a9df0; /* 밝은 하이라이트 */
-    --color-primary-dark: #3a57b5; /* 딥 톤 */
+    /* Primary: hero mesh와 어울리는 바이올렛 */
+    --color-primary: #8758e8;
+    --color-primary-light: #b69af5;
+    --color-primary-dark: #6337c2;
 
-    /* Secondary: 가볍고 상큼한 시원한 하늘/민트 */
-    --color-secondary: #7de2d1; /* 상큼하고 은은한 시원한 포인트 */
-    --color-secondary-light: #a8f0e6; /* 밝은 하이라이트 */
-    --color-secondary-dark: #4bb9a7; /* 딥 톤 */
+    /* Secondary: mesh의 핑크 하이라이트 */
+    --color-secondary: #e86a9a;
+    --color-secondary-light: #f5a1bf;
+    --color-secondary-dark: #b84473;
 
-    /* Background (연하고 부드러운 하늘색) */
-    --color-background: #f8f5f2;
+    /* Background: 은은한 라일락 뉴트럴 */
+    --color-background: #f7f4fb;
     --color-background-light: #fff;
-    --color-background-dark: #f3f0ed;
+    --color-background-dark: #eee9f5;
 
     /* Text */
     --color-text: #333;
@@ -47,13 +47,13 @@
 
     /* Surface (카드/컨테이너) */
     --color-surface: #fff;
-    --color-surface-light: #fdfdfd;
-    --color-surface-dark: #e9e4dc;
+    --color-surface-light: #fcfaff;
+    --color-surface-dark: #e9e2f2;
 
-    /* Gradient (하늘 배경) */
-    --color-gradient-1: #b3e6ee; /* 맑은 하늘색 */
-    --color-gradient-2: #cccff1; /* 연보라빛 구름색 */
-    --color-gradient-3: #e8dcee;
+    /* Gradient: mesh의 라일락과 핑크를 부드럽게 확장 */
+    --color-gradient-1: #e7e2f5;
+    --color-gradient-2: #e8def1;
+    --color-gradient-3: #f5dce9;
 
     --color-hero-mesh-a: #3b2a8d;
     --color-hero-mesh-b: #aaa7d7;
@@ -61,20 +61,20 @@
   }
 
   .dark {
-    /* Primary: 진주+보랏빛 */
-    --color-primary: #d6dbff; /* 거의 흰색에 가까운 펄라일락 */
-    --color-primary-light: #eef0ff; /* 더 밝은 톤, 하이라이트 */
-    --color-primary-dark: #a5a9e0; /* 살짝 톤다운된 연보라 */
+    /* Primary: hero mesh와 어울리는 라이트 바이올렛 */
+    --color-primary: #d8c8ff;
+    --color-primary-light: #eee6ff;
+    --color-primary-dark: #b596ff;
 
-    /* Secondary: 채도 높은 민트 */
-    --color-secondary: #3a9d8a; /* 깊은 민트 */
-    --color-secondary-light: #5fb5a1; /* 살짝 밝은 청록 */
-    --color-secondary-dark: #267366; /* 더 어두운 청록 */
+    /* Secondary: mesh의 핑크 하이라이트 */
+    --color-secondary: #f28ab0;
+    --color-secondary-light: #ffc0d5;
+    --color-secondary-dark: #d65b8b;
 
-    /* Background (심해) */
-    --color-background: #1a2233;
-    --color-background-light: #232a3a;
-    --color-background-dark: #181e2a;
+    /* Background (딥 바이올렛) */
+    --color-background: #211b2e;
+    --color-background-light: #2b233a;
+    --color-background-dark: #191522;
 
     /* Text */
     --color-text: #f5f6fa; /* 기본 텍스트 */
@@ -82,14 +82,14 @@
     --color-text-dark: #e0e4ec; /* 반전 강조 */
 
     /* Surface (카드/컨테이너) */
-    --color-surface: rgba(26, 34, 51, 0.85);
-    --color-surface-light: rgba(35, 42, 58, 0.75);
-    --color-surface-dark: rgba(26, 34, 51, 0.95);
+    --color-surface: rgba(33, 27, 46, 0.88);
+    --color-surface-light: rgba(43, 35, 58, 0.82);
+    --color-surface-dark: rgba(25, 21, 34, 0.96);
 
-    /* Gradient (바다 배경) */
-    --color-gradient-1: #0d1b2a;
-    --color-gradient-2: #1b263b;
-    --color-gradient-3: #415a77;
+    /* Gradient (딥 바이올렛) */
+    --color-gradient-1: #211b2e;
+    --color-gradient-2: #302541;
+    --color-gradient-3: #4c3655;
 
     --color-hero-mesh-a: #7765cc;
     --color-hero-mesh-b: #aba7d7;
@@ -101,8 +101,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    @apply text-text transition-colors duration-300;
-    /* @apply bg-background text-text transition-colors duration-300; */
+    @apply bg-background text-text transition-colors duration-300;
     margin: 0;
     height: 100vh;
   }

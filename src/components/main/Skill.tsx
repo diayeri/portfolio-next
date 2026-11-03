@@ -128,7 +128,7 @@ export default function Skill() {
     <section className="relative w-full">
       <section
         aria-label="Skills and tools"
-        className="mx-auto flex w-full max-w-[1400px] xl:rounded-2xl -mb-20 xl:mb-0 xl:border flex-col justify-between overflow-hidden bg-[linear-gradient(145deg,rgba(255,255,255,0.88),#fbf8f2)] shadow-[0_22px_60px_rgba(67,49,78,0.09)]"
+        className="mx-auto -mb-20 flex w-full max-w-[1400px] flex-col justify-between overflow-hidden bg-[linear-gradient(145deg,rgba(255,255,255,0.94),#f1ebf8)] shadow-[0_22px_60px_rgba(67,49,78,0.09)] xl:mb-0 xl:rounded-2xl xl:border"
       >
         <div
           className="relative isolate aspect-[1536/741] max-h-[560px] w-full overflow-hidden"
@@ -148,7 +148,7 @@ export default function Skill() {
           <div className="absolute left-0 top-1/2 aspect-[1536/741] w-full -translate-y-1/2">
             <div
               aria-hidden="true"
-              className="absolute inset-0 bg-[#e9e0ef] bg-cover bg-center shadow-[0_14px_28px_rgba(58,43,67,0.15)]"
+              className="absolute inset-0 bg-[#e8def1] bg-cover bg-center shadow-[0_14px_28px_rgba(58,43,67,0.15)]"
               style={{ backgroundImage: `url("${TIN_CASE_IMAGE}")` }}
             >
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(52,38,62,0.1))]" />
@@ -174,7 +174,7 @@ export default function Skill() {
                           ? DETAIL_ID
                           : undefined
                     }
-                    className=" flex min-h-[2.6rem] items-center gap-[0.45rem] rounded-full border border-[rgba(85,67,100,0.19)] bg-[rgba(255,253,248,0.96)] px-[0.62rem] py-[0.38rem] text-[clamp(0.6rem,0.75vw,0.72rem)] font-bold leading-none text-[#51415f] shadow-[0_5px_16px_rgba(44,31,52,0.19)] transition-[transform,background-color,box-shadow] duration-[180ms] hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_9px_22px_rgba(44,31,52,0.23)] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[#9b86b8] focus-visible:outline-offset-[3px] aria-expanded:-translate-y-0.5 aria-expanded:bg-white aria-expanded:shadow-[0_9px_22px_rgba(44,31,52,0.23)] motion-reduce:transition-none max-md:min-h-[2.45rem] max-md:gap-[0.3rem] max-md:px-[0.45rem] max-md:py-[0.3rem] max-md:text-[0.55rem]"
+                    className=" flex min-h-[2.6rem] items-center gap-[0.45rem] rounded-full border border-[rgba(85,67,100,0.19)] bg-[rgba(255,253,248,0.96)] px-[0.62rem] py-[0.38rem] text-[clamp(0.6rem,0.75vw,0.72rem)] font-bold leading-none text-[#51415f] shadow-[0_5px_16px_rgba(44,31,52,0.19)] transition-[transform,background-color,box-shadow] duration-[180ms] hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_9px_22px_rgba(44,31,52,0.23)] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-primary-light focus-visible:outline-offset-[3px] aria-expanded:-translate-y-0.5 aria-expanded:bg-white aria-expanded:shadow-[0_9px_22px_rgba(44,31,52,0.23)] motion-reduce:transition-none max-md:min-h-[2.45rem] max-md:gap-[0.3rem] max-md:px-[0.45rem] max-md:py-[0.3rem] max-md:text-[0.55rem]"
                     onBlur={() => setFocusedGroupId(null)}
                     onClick={() => openMobileDetails(group.id)}
                     onFocus={() => {
@@ -189,7 +189,7 @@ export default function Skill() {
                     }}
                     type="button"
                   >
-                    <span className="grid h-[1.45rem] w-[1.45rem] flex-[0_0_auto] place-items-center rounded-full bg-[#9b86b8] text-[0.58rem] font-extrabold text-white max-md:h-[1.3rem] max-md:w-[1.3rem] max-md:text-[0.53rem]">
+                    <span className="grid h-[1.45rem] w-[1.45rem] flex-[0_0_auto] place-items-center rounded-full bg-primary text-[0.58rem] font-extrabold text-white max-md:h-[1.3rem] max-md:w-[1.3rem] max-md:text-[0.53rem]">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     <span className="overflow-hidden text-sm text-ellipsis whitespace-nowrap max-md:max-w-[4.4rem]">
@@ -212,7 +212,7 @@ export default function Skill() {
             >
               {activeGroup && (
                 <>
-                  <p className="m-0 text-[0.56rem] font-extrabold uppercase tracking-[0.14em] text-[#9b86b8]">
+                  <p className="m-0 text-[0.56rem] font-extrabold uppercase tracking-[0.14em] text-primary">
                     TECH {String(activeGroupIndex).padStart(2, "0")}
                   </p>
                   <h4 className="mb-[0.35rem] mt-[0.45rem] text-base font-bold tracking-[-0.02em]">
@@ -301,12 +301,12 @@ export default function Skill() {
           {mobileGroup && (
             <div>
               <div className="flex items-center justify-between gap-4">
-                <p className="m-0 text-[0.56rem] font-extrabold uppercase tracking-[0.14em] text-[#9b86b8]">
+                <p className="m-0 text-[0.56rem] font-extrabold uppercase tracking-[0.14em] text-primary">
                   TECH {String(mobileGroupIndex).padStart(2, "0")}
                 </p>
                 <button
                   aria-label={`Close ${mobileGroup.category} details`}
-                  className="rounded-full border border-[rgba(81,65,95,0.18)] bg-white px-[0.7rem] py-[0.4rem] text-[0.7rem] font-bold text-[#51415f] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[#9b86b8] focus-visible:outline-offset-[3px]"
+                  className="rounded-full border border-[rgba(81,65,95,0.18)] bg-white px-[0.7rem] py-[0.4rem] text-[0.7rem] font-bold text-[#51415f] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-primary-light focus-visible:outline-offset-[3px]"
                   onClick={() => {
                     setHoveredGroupId(null);
                     setFocusedGroupId(null);
