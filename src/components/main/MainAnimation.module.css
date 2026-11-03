@@ -1,3 +1,22 @@
+@keyframes reveal3d {
+  0% {
+    opacity: 0;
+    filter: blur(6px);
+    transform: perspective(1200px) rotateX(16deg) rotateY(-24deg)
+      translate3d(0, 28px, -160px) scale(0.86);
+  }
+  60% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: perspective(1200px) rotateX(0) rotateY(0)
+      translate3d(0, 0, 0) scale(1);
+  }
+}
+
 @keyframes ani-bgc {
   from {
     background-color: var(--bgc-before);
@@ -56,6 +75,23 @@
     border-radius: 50%;
     transform: scale(12%, 12%) translate(0, -180px) rotate(15deg);
   }
+}
+
+.stage {
+  display: grid;
+  width: 340px;
+  height: 340px;
+  place-items: center;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  animation: reveal3d 1.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.stage-static {
+  opacity: 1;
+  filter: none;
+  transform: none;
+  animation: none;
 }
 
 .animation {
@@ -145,4 +181,20 @@
 .eye {
   background-color: #4d342f;
   --bgc-after: #4d342f;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stage {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    animation: none;
+  }
+
+  .animation,
+  .animation * {
+    animation-delay: 0s !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }

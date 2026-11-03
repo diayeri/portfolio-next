@@ -15,6 +15,12 @@
     -webkit-tap-highlight-color: transparent;
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
   :root {
     --font-sans: "Pretendard", "Satoshi", system-ui, sans-serif;
     --font-mono: "Space Mono", monospace;
@@ -48,6 +54,10 @@
     --color-gradient-1: #b3e6ee; /* 맑은 하늘색 */
     --color-gradient-2: #cccff1; /* 연보라빛 구름색 */
     --color-gradient-3: #e8dcee;
+
+    --color-hero-mesh-a: #3b2a8d;
+    --color-hero-mesh-b: #aaa7d7;
+    --color-hero-mesh-c: #f75092;
   }
 
   .dark {
@@ -80,6 +90,10 @@
     --color-gradient-1: #0d1b2a;
     --color-gradient-2: #1b263b;
     --color-gradient-3: #415a77;
+
+    --color-hero-mesh-a: #7765cc;
+    --color-hero-mesh-b: #aba7d7;
+    --color-hero-mesh-c: #cf6f9c;
   }
 
   body {
@@ -118,7 +132,7 @@
     background-size: 400% 400%;
 
     /* 애니메이션 */
-    animation: gradientFlow 20s ease infinite;
+    animation: gradientFlow 60s ease infinite;
   }
 
   @keyframes gradientFlow {
@@ -130,6 +144,12 @@
     }
     100% {
       background-position: 0% 50%;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bg-ani-gradient {
+      animation: none;
     }
   }
 }
