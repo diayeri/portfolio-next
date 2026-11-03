@@ -1,18 +1,18 @@
 # TechMarquee 재설계 제안
 
-> **범위:** 현재 `main` 브랜치의 TechMarquee 및 Intro 구성 분석과 UI 설계 제안입니다. 요청에 따라 이번 산출물은 문서만 작성하며, 애플리케이션 코드는 수정하지 않았습니다.
+> **상태:** 이 제안은 `src/components/main/TechMarquee.tsx`, `TechMarquee.module.css`, `Intro.tsx`에 반영되었습니다. 아래 구현 기록은 실제 반영 결과를 함께 설명합니다.
 
 ## 요약
 
-현재 TechMarquee는 12개 기술 로고를 3D 원형 궤도로 계속 회전시키는 장식용 배경입니다. 실제 기술 설명은 별도의 `Technical Expertise` 카드에 있고, TechMarquee 자체는 모바일에서 숨겨지며 hover·click 상태가 없습니다. 제안은 이 회전 궤도를 **열린 라일락 틴케이스 속 물건을 탐색하는 인터랙티브 스택 보드**로 바꾸고, 기존 기술 그룹과 설명을 물건별 팝오버/모바일 팝업에 배치하는 것입니다.
+구현 전 TechMarquee는 12개 기술 로고를 3D 원형 궤도로 계속 회전시키는 장식용 배경이었습니다. 실제 기술 설명은 별도의 `Technical Expertise` 카드에 있고, TechMarquee 자체는 모바일에서 숨겨지며 hover·click 상태가 없습니다. 제안은 이 회전 궤도를 **열린 라일락 틴케이스 속 물건을 탐색하는 인터랙티브 스택 보드**로 바꾸고, 기존 기술 그룹과 설명을 물건별 팝오버/모바일 팝업에 배치하는 것입니다.
 
-## 현재 구조와 제약
+## 구현 전 구조와 제약
 
 ### 실제 파일 위치
 
 첨부 지시의 `@components/TechMarquee`, `@assets/styles`, `@assets/scripts` 경로는 저장소에 없습니다. 실제 구현은 아래 경로에 있습니다. `tsconfig.json`은 `@/*`를 `./src/*`에 연결하므로 실제 import 별칭은 `@/components/...` 형태입니다.
 
-| 파일 | 현재 역할 |
+| 파일 | 구현 전 역할 |
 |---|---|
 | `src/components/main/TechMarquee.tsx` | `TechMarquee()`가 12개 로고 배열을 만들고 각도를 `360 / total`, 반지름을 `720px`로 계산해 궤도에 배치합니다. JSX의 `logos.map()`은 이미지에 alt를 제공하지만 상호작용 가능한 요소를 만들지는 않습니다. |
 | `src/components/main/TechMarquee.module.css` | `.container` 높이는 `400px`, 원근은 `1200px`; `.orbit`은 `rotateOrbit` 키프레임을 25초 동안 무한 회전합니다. 개별 `.item`은 `80 × 60px`입니다. |
@@ -70,7 +70,7 @@
 | 키캡/미니 기기 | Frontend | React, Next.js, TypeScript, JavaScript. “React와 Next.js 기반의 확장 가능한 프론트엔드 아키텍처 설계 및 구현” 설명을 유지합니다. HTML, CSS, jQuery 로고도 이 영역의 보조 요소로 배치할 수 있습니다. |
 | 색상 카드/디자인 노트 | Styling & Design System | Tailwind CSS, SCSS, Storybook, Figma. “디자인 시스템 고도화, 컴포넌트화 및 UI 문서화” 설명을 유지합니다. MUI, Bootstrap, Photoshop, Illustrator는 보조 도구로 연결합니다. |
 | 배포 카드/케이블 | Backend & Deployment | Supabase, Vercel. “백엔드 서비스 연동 및 효율적인 웹 배포 관리” 설명을 유지합니다. |
-| 클립/체크리스트 | Collaboration & Workflow | Git, GitHub, Jira, Notion. “능동적인 일정 관리 및 협업 툴 활용” 설명을 유지합니다. Redux와 Recoil은 현재 보조 스택 목록에 있으므로 보조 태그로 둘지 별도 그룹으로 분류할지는 구현 전에 확인합니다. |
+| 클립/체크리스트 | Collaboration & Workflow | Git, GitHub, Jira, Notion. “능동적인 일정 관리 및 협업 툴 활용” 설명을 ��지합니다. Redux와 Recoil은 현재 보조 스택 목록에 있으므로 보조 태그로 둘지 별도 그룹으로 분류할지는 구현 전에 확인합니다. |
 
 ## 상호작용 설계
 
@@ -108,20 +108,20 @@ flowchart TD
 - 기존 25초 무한 회전은 탐색과 읽기를 방해할 수 있으므로 제거하거나 매우 약한 장식 모션으로 축소합니다. `prefers-reduced-motion`에서는 모션을 끕니다.
 - 팔레트는 린넨 아이보리, 라일락, 진한 자주/회색 텍스트, 제한된 포인트 색으로 구성합니다. 본문과 hotspot의 대비를 먼저 확보하고, 사진 위 텍스트에는 단색 카드 바탕을 사용합니다.
 
-## 구현 시 파일 매핑
+## 구현 기록
 
 | 대상 | 제안 |
 |---|---|
-| `src/components/main/TechMarquee.tsx` | 현재 `TechMarquee()`의 로고 orbit를 기술 그룹 hotspot과 팝오버/모바일 팝업 구조로 교체합니다. 현재 계산 로직(`total`, `angle`, `radius`)은 새 배치에서 필요하지 않을 수 있습니다. |
-| `src/components/main/TechMarquee.module.css` | `400px` 고정 컨테이너와 `rotateOrbit` 무한 애니메이션을 반응형 틴케이스 stage, 오브젝트 위치, 팝오버, 모바일 popup 스타일로 대체합니다. |
-| `src/components/main/Intro.tsx` | `values` 콘텐츠를 유지하고, 배경용 `absolute` TechMarquee 및 기존 기술 카드가 새 탐색 레이아웃과 중복되지 않도록 통합합니다. 기존 `skills`의 `category`, `skills`, `desc`를 데이터의 기준으로 유지합니다. |
-| `src/components/main/Home.tsx` | 메인 페이지에서 Intro를 배치하는 현재 순서는 변경할 필요가 없습니다. |
-| `src/components/main/techSkills.ts` *(제안 경로)* | 여러 컴포넌트에서 공유할 경우 기술 그룹 데이터를 한 번만 선언하는 선택지입니다. 현재 파일은 없으며, 구현 승인 전에는 생성하지 않습니다. |
+| `src/components/main/TechMarquee.tsx` | 로고 궤도를 네 개 기술 그룹 hotspot으로 교체했습니다. 데스크톱은 hover/focus 팝오버, coarse pointer는 네이티브 dialog 팝업을 사용합니다. 기존 12개 로고와 `additionalSkills`도 유지합니다. |
+| `src/components/main/TechMarquee.module.css` | 540px 데스크톱/480px 모바일 최소 높이의 틴케이스 stage, 텍스트 가림 라벨, 반응형 hotspot, 팝오버와 dialog 스타일을 정의합니다. 넓은 화면에서만 좌우 2단 배치를 사용합니다. |
+| `src/components/main/Intro.tsx` | `values`를 유지하고 기술 상세 데이터를 `TechMarquee`에 전달합니다. 기존 배경 orbit, blur overlay, 평면 기술 카드는 제거했습니다. |
+| `src/components/main/Home.tsx` | 메인 페이지에서 Intro의 순서는 변경하지 않았습니다. |
+| 기술 그룹 데이터 | 별도 파일을 만들지 않고 `Intro.tsx`의 단일 `skills` 배열을 데이터 원본으로 유지합니다. |
 
 ## 가정 및 확인이 필요한 점
 
 1. `Intro.tsx`의 네 기술 카테고리와 설명이 우선적인 콘텐츠 원본이며, 기존 12개 로고와 보조 스택은 가능한 한 그 분류에 맞춰 유지한다고 가정했습니다.
 2. 첨부 이미지는 구도·색감 참고로 보고, 종교 문구가 있는 메모는 중립적인 카드로 가립니다. 종교 상징물 자체까지 제외할지는 요청에 명시되지 않아 이 제안의 범위에는 포함하지 않았습니다.
-3. 원본 이미지를 그대로 배경으로 사용할지, 구도를 참고해 별도 비주얼을 만들지는 구현 단계에서 에셋 라이선스·선명도·텍스트 가림 방식을 확인해야 합니다. 이 문서는 원본 이미지 파일을 프로젝트에 복사하거나 코드에서 사용하지 않습니다.
+3. 제공된 이미지 Source URL을 장면 배경으로 사용하고, 종교 문구가 있는 메모 위에 불투명한 중립 라벨을 겹쳐 가립니다. 별도 이미지 파일을 저장하지 않았습니다.
 4. Julia Moresco 캡처에서 확인한 세부 discovery 인터랙션은 제한적이므로, 본 제안은 탐색 가능한 오브젝트 패턴을 참고하되 hover/focus/touch 동작을 명시적으로 정의했습니다.
-5. 이번 산출물은 요청에 따라 설계 문서만 작성했으며, UI·CSS·JavaScript 코드는 변경하지 않았습니다.
+5. 설계 문서와 구현은 같은 Git 브랜치에서 관리됩니다. TechMarquee를 사용하는 다른 페이지가 추가되면 Intro의 그룹 데이터 공유 범위를 재검토해야 합니다.

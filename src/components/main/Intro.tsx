@@ -32,39 +32,54 @@ export default function Intro() {
 
   const skills = [
     {
+      id: "frontend",
       category: "Frontend",
-      skills: ["React", "Next.js", "TypeScript", "JavaScript"],
+      shortLabel: "Frontend",
+      skills: ["React", "Next.js", "TypeScript", "JavaScript", "HTML", "CSS", "jQuery"],
       desc: "React와 Next.js 기반의 확장 가능한 프론트엔드 아키텍처 설계 및 구현",
     },
     {
+      id: "design-system",
       category: "Styling & Design System",
-      skills: ["Tailwind CSS", "SCSS", "Storybook", "Figma"],
+      shortLabel: "Design system",
+      skills: [
+        "Tailwind CSS",
+        "SCSS",
+        "Storybook",
+        "Figma",
+        "MUI",
+        "Bootstrap",
+        "Photoshop",
+        "Illustrator",
+      ],
       desc: "디자인 시스템 고도화, 컴포넌트화 및 UI 문서화",
     },
     {
+      id: "deployment",
       category: "Backend & Deployment",
+      shortLabel: "Deployment",
       skills: ["Supabase", "Vercel"],
       desc: "백엔드 서비스 연동 및 효율적인 웹 배포 관리",
     },
     {
+      id: "workflow",
       category: "Collaboration & Workflow",
+      shortLabel: "Workflow",
       skills: ["Git", "GitHub", "Jira", "Notion"],
       desc: "능동적인 일정 관리 및 협업 툴 활용",
     },
   ];
 
+  const supplementarySkills = ["Redux", "Recoil"];
+
   return (
     <section
-      className="relative flex flex-col items-center w-full py-16 overflow-hidden"
+      className="relative flex w-full justify-center py-16 md:py-20"
       id="about"
     >
-      <div className="absolute inset-0 z-0 items-center hidden opacity-50 md:flex">
-        <TechMarquee />
-      </div>
-      <div className="absolute inset-0 z-10 backdrop-blur-xl bg-white [mask-image:radial-gradient(circle_at_center,_black_50%,transparent_70%)] [pointer-events:none]" />
-      <div className="z-20 flex flex-col items-center w-full px-5 md:px-10 max-w-[1200px] gap-12 mx-auto md:flex-row lg:gap-24">
+      <div className="grid w-full max-w-[1320px] grid-cols-1 items-center gap-12 px-5 mx-auto md:px-10 xl:grid-cols-[0.88fr_1.12fr] xl:gap-16">
         {/* 1. Core Value (좌측) */}
-        <section className="flex-[1.4] flex flex-col gap-8 lg:gap-x-8 lg:gap-y-12">
+        <section className="flex flex-col gap-8 lg:gap-y-12">
           {values.map((item, index) => (
             <div
               key={index}
@@ -91,58 +106,7 @@ export default function Intro() {
         </section>
 
         {/* 2. Technical Expertise (우측) */}
-        <section className="flex-1 w-full px-8 pb-8 overflow-hidden border bg-gray-50/50 rounded-3xl border-gray-200/50">
-          <h3 className="text-xs font-black tracking-[0.2em] uppercase mb-8 -mx-8 px-8 bg-gray-400 text-white py-3">
-            Technical Expertise
-          </h3>
-
-          <div className="grid grid-cols-1 gap-y-9 gap-x-8">
-            {skills.map((group, i) => (
-              <div key={i} className="group/item">
-                <div className="flex justify-between items-end mb-2 border-b border-gray-200/50 pb-1.5">
-                  <p className="text-xs font-bold tracking-widest uppercase text-primary">
-                    {group.category}
-                  </p>
-                </div>
-
-                <div className="flex flex-wrap mb-2 gap-x-4 gap-y-1">
-                  {group.skills.map((skill, j) => (
-                    <span
-                      key={j}
-                      className="text-base font-bold text-gray-700 transition-colors"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-
-                <p className="text-xs leading-tight text-gray-500">
-                  {group.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          {/* 보조 스택 */}
-          <div className="flex flex-wrap gap-2 mt-8">
-            {[
-              // "HTML5/CSS3",
-              "MUI",
-              "Bootstrap",
-              "Redux",
-              "Recoil",
-              "Photoshop",
-              // "Illustrator",
-            ].map((etc, i) => (
-              <span
-                key={i}
-                className="text-xs font-semibold px-2 py-0.5 border border-gray-300/50 rounded text-gray-500"
-              >
-                {etc}
-              </span>
-            ))}
-          </div>
-        </section>
+        <TechMarquee groups={skills} additionalSkills={supplementarySkills} />
       </div>
     </section>
   );
