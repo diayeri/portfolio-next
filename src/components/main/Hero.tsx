@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import MainAnimation from "@/components/main/MainAnimation";
 import { GradientMesh } from "@/components/main/GradientMesh";
@@ -95,27 +95,6 @@ export default function Hero() {
   const [replayKey, setReplayKey] = useState(0);
   // const { roleKey, roleData } = useRole();
   const isMobile = useWindowSize();
-  const heroRef = useRef<HTMLElement>(null);
-  const isScrollingToNext = useRef(false);
-  const scrollUnlockTimer = useRef<number | null>(null);
-  const touchStartY = useRef<number | null>(null);
-
-  const scrollToNextSection = useCallback(() => {
-    const aboutSection = document.getElementById("about");
-    if (!aboutSection || isScrollingToNext.current) return;
-
-    isScrollingToNext.current = true;
-    aboutSection.scrollIntoView({
-      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
-        ? "auto"
-        : "smooth",
-      block: "start",
-    });
-    scrollUnlockTimer.current = window.setTimeout(() => {
-      isScrollingToNext.current = false;
-      scrollUnlockTimer.current = null;
-    }, 1200);
-  }, []);
 
   useEffect(() => {
     markDocumentVisited();
@@ -146,83 +125,12 @@ export default function Hero() {
     return () => window.removeEventListener("pageshow", handlePageShow);
   }, [setVisited]);
 
-  useEffect(() => {
-    const hero = heroRef.current;
-    if (!hero) return;
-
-    const isHeroInView = () => {
-      const bounds = hero.getBoundingClientRect();
-      return bounds.bottom > 0 && bounds.top < window.innerHeight;
-    };
-
-    const handleWheel = (event: WheelEvent) => {
-      if (
-        event.deltaY <= 0 ||
-        event.ctrlKey ||
-        Math.abs(event.deltaX) > Math.abs(event.deltaY)
-      ) {
-        return;
-      }
-
-      if (isScrollingToNext.current) {
-        event.preventDefault();
-        return;
-      }
-
-      if (!isHeroInView()) return;
-
-      event.preventDefault();
-      scrollToNextSection();
-    };
-
-    const handleTouchStart = (event: TouchEvent) => {
-      touchStartY.current = isHeroInView()
-        ? event.touches.item(0)?.clientY ?? null
-        : null;
-    };
-
-    const handleTouchEnd = (event: TouchEvent) => {
-      const startY = touchStartY.current;
-      const endY = event.changedTouches.item(0)?.clientY;
-      touchStartY.current = null;
-
-      if (startY === null || endY === undefined || startY - endY < 48) return;
-      scrollToNextSection();
-    };
-
-    window.addEventListener("wheel", handleWheel, { passive: false });
-    window.addEventListener("touchstart", handleTouchStart, { passive: true });
-    window.addEventListener("touchend", handleTouchEnd, { passive: true });
-
-    return () => {
-      window.removeEventListener("wheel", handleWheel);
-      window.removeEventListener("touchstart", handleTouchStart);
-      window.removeEventListener("touchend", handleTouchEnd);
-      if (scrollUnlockTimer.current !== null) {
-        window.clearTimeout(scrollUnlockTimer.current);
-        scrollUnlockTimer.current = null;
-      }
-      isScrollingToNext.current = false;
-    };
-  }, [scrollToNextSection]);
-
-  const handleScrollDown = () => {
-    scrollToNextSection();
-
-    //   sendEvent({
-    //     action: "click",
-    //     category: "portfolio",
-    //     label: "heroExplore_button",
-    //   });
-  };
-
   return (
     <section
-      ref={heroRef}
       className="relative flex flex-col items-center justify-center w-full h-screen px-5 py-10 overflow-hidden text-center bg-ani-gradient"
     >
       <GradientMesh className="z-0" opacity={0.3} speed={0.3} />
-      <div className="absolute hidden left-center top-center z-0 md:flex">
+      <div className="absolute z-0 hidden left-center top-center md:flex">
         <MainAnimation key={replayKey} showStatic={showStatic} />
       </div>
       <h2 className="relative z-10 font-mono text-xl md:text-2xl">
@@ -259,14 +167,13 @@ export default function Hero() {
           목표로 합니다.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-3 mt-10">
-          <button
-            type="button"
-            onClick={handleScrollDown}
+          <a
+            href="#main"
             className="relative z-10 inline-flex items-center justify-center gap-2 py-4 text-base font-medium tracking-wide text-gray-900 transition-transform duration-200 border-2 rounded-full px-7 border-gray-900/70 hover:-translate-y-1 hover:bg-white/30"
           >
             Explore More
             <ArrowDown size={20} aria-hidden="true" />
-          </button>
+          </a>
           <Link
             href="/projects"
             className="relative z-10 inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-medium tracking-wide text-white transition-transform duration-200 bg-gray-900 rounded-full shadow-lg hover:-translate-y-1 hover:bg-black"
@@ -286,7 +193,7 @@ export default function Hero() {
               animate: { opacity: 1, y: 0 },
               transition: { duration: 0, delay: 0 },
             })}
-        className="absolute left-center bottom-10 z-20"
+        className="absolute z-20 left-center bottom-10"
       >
         <ScrollIndicator />
       </motion.div>

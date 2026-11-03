@@ -7,6 +7,7 @@ import Link from "next/link";
 
 interface ProjectCardProps {
   project: ProjectsData;
+  variant?: "light" | "dark";
 }
 
 /**
@@ -15,14 +16,29 @@ interface ProjectCardProps {
  * - 반응형 디자인
  * - 호버 효과
  */
-const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({
+  project,
+  variant = "light",
+}) => {
+  const isDark = variant === "dark";
+
   return (
     <Link
       href={`/projects/${project.id}`}
-      className="group relative h-full flex flex-col bg-white/40 backdrop-blur-md border border-gray-200/60 rounded-[32px] overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gray-200/50 hover:bg-white/80"
+      className={`group relative flex h-full flex-col overflow-hidden rounded-[32px] border backdrop-blur-md transition-all duration-500 hover:-translate-y-2 ${
+        isDark
+          ? "border-white/10 bg-[#181818] text-white shadow-xl shadow-black/20 hover:border-white/20 hover:bg-[#222] hover:shadow-2xl hover:shadow-black/40"
+          : "border-gray-200/60 bg-white/40 hover:bg-white/80 hover:shadow-2xl hover:shadow-gray-200/50"
+      }`}
     >
       {/* 1. 상단 비주얼 영역 (Thumbnail) */}
-      <div className="relative w-full h-[260px] overflow-hidden bg-gray-50 border-b border-gray-200/60">
+      <div
+        className={`relative h-[260px] w-full overflow-hidden border-b ${
+          isDark
+            ? "border-white/10 bg-[#252525]"
+            : "border-gray-200/60 bg-gray-50"
+        }`}
+      >
         <NextImage
           src={project.thumbnail}
           alt={project.title}
@@ -53,17 +69,31 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               ? "Personal Project"
               : project.client}
           </span>
-          <span className="text-xs font-normal text-right text-gray-500">
+          <span
+            className={`text-right text-xs font-normal ${
+              isDark ? "text-gray-400" : "text-gray-500"
+            }`}
+          >
             {project.startDate} —{" "}
             {project.endDate?.split(".")[1] ? project.endDate : "Present"}
           </span>
         </div>
 
         {/* 제목 및 설명 */}
-        <h3 className="mb-3 text-2xl font-bold tracking-tight text-gray-900 transition-colors group-hover:text-primary-dark">
+        <h3
+          className={`mb-3 text-2xl font-bold tracking-tight transition-colors ${
+            isDark
+              ? "text-white group-hover:text-primary-light"
+              : "text-gray-900 group-hover:text-primary-dark"
+          }`}
+        >
           {project.title}
         </h3>
-        <p className="mb-6 text-sm leading-relaxed text-gray-500 line-clamp-2">
+        <p
+          className={`mb-6 line-clamp-2 text-sm leading-relaxed ${
+            isDark ? "text-gray-300" : "text-gray-500"
+          }`}
+        >
           {project.description}
         </p>
 
@@ -72,13 +102,21 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           {project.tech.slice(0, 4).map((tech, index) => (
             <span
               key={index}
-              className="px-2.5 py-1 text-xs font-semibold text-gray-500 bg-gray-50 rounded-lg border border-gray-200 group-hover:bg-white transition-colors"
+              className={`rounded-lg border px-2.5 py-1 text-xs font-semibold transition-colors ${
+                isDark
+                  ? "border-white/10 bg-white/5 text-gray-300 group-hover:bg-white/10"
+                  : "border-gray-200 bg-gray-50 text-gray-500 group-hover:bg-white"
+              }`}
             >
               {tech}
             </span>
           ))}
           {project.tech.length > 4 && (
-            <span className="self-center ml-1 text-xs font-medium text-gray-300">
+            <span
+              className={`ml-1 self-center text-xs font-medium ${
+                isDark ? "text-gray-500" : "text-gray-300"
+              }`}
+            >
               +{project.tech.length - 4}
             </span>
           )}

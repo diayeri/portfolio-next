@@ -3,13 +3,21 @@
 import Hero from "@/components/main/Hero";
 import Intro from "@/components/main/Intro";
 import Timeline from "@/components/main/Timeline";
-import FeaturedProjectList from "@/components/main/FeaturedProjectList";
+import ProjectPreviewList from "@/components/main/ProjectPreviewList";
 import { HeroProvider } from "@/context/HeroContext";
 import { RoleProvider } from "@/context/RoleContext";
 
 type HomeProps = {
   roleKey: "design" | "develop";
 };
+
+const projectPreviewIds = [
+  "heysandy",
+  "miral-1000",
+  "miral-fan",
+  "miral-payment",
+  "muna",
+];
 
 export default function Home({ roleKey }: HomeProps) {
   return (
@@ -18,7 +26,7 @@ export default function Home({ roleKey }: HomeProps) {
         <HeroProvider>
           <Hero />
         </HeroProvider>
-        <FeaturedProjectList />
+        <ProjectPreviewList projectIds={projectPreviewIds} />
         <Timeline />
         <Intro />
       </div>

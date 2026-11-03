@@ -6,10 +6,10 @@ export const timelineData = [
     projectIds: ["heysandy", "portfolio", "central-church"],
     details: "브랜드 디자인, UI/UX 설계, 웹사이트 개발 및 유지보수",
     highlights: [
-      "샌드위치 카페 브랜드 아이덴티티 재정립 및 디자인 개선",
-      "통합 신청 시스템 및 관리자 페이지 UI/UX 설계, 개발",
-      "Next.js, TypeScript, Supabase, Vercel 활용한 기술 검증",
+      "샌드위치 카페 브랜드 아이덴티티 재정립, 오프라인 디자인",
       "카페24 플랫폼 기반 웹사이트 디자인 수정 및 개발 유지보수",
+      "생존수영 통합 신청 시스템 및 관리자 페이지 UI/UX 설계",
+      "코드잇 프로덕트 디자이너 부트캠프 웹 퍼블리싱 특강 강사",
     ],
   },
   {

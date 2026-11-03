@@ -28,6 +28,22 @@ export default function Timeline() {
           <div className="flex flex-col gap-8 mt-12 text-gray-500 lg:text-sm break-keep">
             <div>
               <h3 className="mb-2 text-lg font-bold text-gray-700">
+                디자인을 중심으로, 다양한 가능성을 구현합니다.
+              </h3>
+              <p className="text-[15px] leading-relaxed">
+                웹디자인과 퍼블리싱부터 프론트엔드 개발까지 경험하며 디지털
+                환경에 대한 이해와 디자인 역량을 함께 쌓아왔습니다. 웹 콘텐츠뿐
+                아니라 패키지와 인쇄물, 제품 촬영 등 다양한 제작 업무를 경험하며
+                매체와 목적에 맞는 디자인을 고민해왔습니다.
+              </p>
+              <p className="mt-2 text-[15px] leading-relaxed">
+                폭넓은 실무 경험과 빠른 습득력을 바탕으로 필요한 업무에 유연하게
+                대응하고, 디자인을 통해 제품과 브랜드의 가치를 효과적으로
+                전달하는 일에 기여하겠습니다.
+              </p>
+            </div>
+            {/* <div>
+              <h3 className="mb-2 text-lg font-bold text-gray-700">
                 문제를 발견하고, 제품으로 해결합니다
               </h3>
               <p className="text-[15px] leading-relaxed">
@@ -78,7 +94,7 @@ export default function Timeline() {
                 필요한 기능을 스스로 정의하며, 복잡한 문제를 단순하고 확장
                 가능한 제품으로 만들어가며 성장하고 있습니다.
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
         {/* Right */}

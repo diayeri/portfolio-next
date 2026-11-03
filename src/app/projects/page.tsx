@@ -11,7 +11,7 @@ import { fadeUp } from "@/motion";
 type TabCategory = "all" | "development" | "design";
 
 const Projects: React.FC = () => {
-  const [category, setCategory] = useState<TabCategory>("all");
+  const [category, setCategory] = useState<TabCategory>("design");
 
   const filteredProjects = useMemo(() => {
     return projectsData
@@ -37,20 +37,20 @@ const Projects: React.FC = () => {
       <div className="flex flex-col items-center mb-12 space-y-12 md:mb-16 md:space-y-16">
         {/* 타이틀 영역 */}
         <div className="space-y-4 text-center">
-          <p className="text-xs font-normal tracking-widest text-gray-500 uppercase md:text-sm">
-            Dayoung Jung: UX/UI Designer & Developer
-          </p>
+          {/* <p className="text-xs font-normal tracking-widest text-gray-500 uppercase md:text-sm">
+            Dayoung Jung: Design To Develop
+          </p> */}
           <h2 className="text-4xl font-bold text-gray-900 md:text-6xl">
             Project Archive
           </h2>
         </div>
-        <Suspense
+        {/* <Suspense
           fallback={
             <div className="w-full h-[420px] bg-gray-100 rounded-3xl animate-pulse" />
           }
         >
           <ProjectShowcase />
-        </Suspense>
+        </Suspense> */}
 
         <div className="flex w-full sm:w-[500px] overflow-x-auto no-scrollbar py-1.5 px-2 bg-gray-100/50 backdrop-blur-md rounded-2xl border border-gray-200">
           <div className="flex justify-center w-full gap-2 mx-auto flex-nowrap">
