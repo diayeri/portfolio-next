@@ -42,11 +42,16 @@ export function TechMarquee({
 }: TechMarqueeProps) {
   const [hoveredGroupId, setHoveredGroupId] = useState<string | null>(null);
   const [focusedGroupId, setFocusedGroupId] = useState<string | null>(null);
+  const [selectedGroupId, setSelectedGroupId] = useState<string | null>(
+    groups[0]?.id ?? null,
+  );
   const [mobileGroupId, setMobileGroupId] = useState<string | null>(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   const activeGroup = groups.find(
-    (group) => group.id === (hoveredGroupId ?? focusedGroupId),
+    (group) =>
+      group.id ===
+      (hoveredGroupId ?? focusedGroupId ?? selectedGroupId),
   );
   const activeGroupIndex = activeGroup
     ? groups.findIndex((group) => group.id === activeGroup.id) + 1
@@ -67,7 +72,9 @@ export function TechMarquee({
     }
   }, [mobileGroupId]);
 
-  const openMobileDetails = (groupId: string) => {
+  const openGroupDetails = (groupId: string) => {
+    setSelectedGroupId(groupId);
+
     if (window.matchMedia("(hover: none), (pointer: coarse)").matches) {
       setHoveredGroupId(null);
       setFocusedGroupId(null);
@@ -76,18 +83,14 @@ export function TechMarquee({
   };
 
   return (
-    <section className={styles.container} aria-labelledby="tech-marquee-title">
+    <div className={styles.container}>
       <div className={styles.header}>
-        <div>
-          <p className={styles.eyebrow}>The little things</p>
-          <h3 className={styles.title} id="tech-marquee-title">
-            Technical Expertise
-          </h3>
-        </div>
+        <p className={styles.eyebrow}>The little things</p>
         <p className={styles.hint}>Hover, focus or tap to explore</p>
       </div>
 
       <div
+        aria-label="Interactive technology showcase"
         className={styles.artwork}
         onPointerLeave={(event) => {
           if (event.pointerType === "mouse") setHoveredGroupId(null);
@@ -98,6 +101,7 @@ export function TechMarquee({
             setFocusedGroupId(null);
           }
         }}
+        role="group"
       >
         <div
           aria-hidden="true"
@@ -107,6 +111,7 @@ export function TechMarquee({
         <div className={styles.maskedNote} aria-hidden="true">
           IDEAS · UI · NOTES
         </div>
+        <div className={styles.happyMarriageBlur} aria-hidden="true" />
 
         {groups.map((group, index) => {
           const isActive = activeGroup?.id === group.id;
@@ -131,7 +136,7 @@ export function TechMarquee({
                 }
                 className={styles.hotspotButton}
                 onBlur={() => setFocusedGroupId(null)}
-                onClick={() => openMobileDetails(group.id)}
+                onClick={() => openGroupDetails(group.id)}
                 onFocus={() => {
                   if (!window.matchMedia("(pointer: coarse)").matches) {
                     setFocusedGroupId(group.id);
@@ -152,30 +157,32 @@ export function TechMarquee({
             </div>
           );
         })}
+      </div>
 
-        <div
-          aria-hidden={!activeGroup}
-          className={`${styles.detailCard} ${activeGroup ? styles.detailCardVisible : ""}`}
-          id={DETAIL_ID}
-          role="tooltip"
-        >
-          {activeGroup && (
-            <>
-              <p className={styles.detailEyebrow}>
-                TECH {String(activeGroupIndex).padStart(2, "0")}
-              </p>
-              <h4 className={styles.detailTitle}>{activeGroup.category}</h4>
-              <p className={styles.detailDescription}>{activeGroup.desc}</p>
-              <ul className={styles.skillList}>
-                {activeGroup.skills.map((skill) => (
-                  <li className={styles.skillTag} key={skill}>
-                    {skill}
-                  </li>
-                ))}
-              </ul>
-            </>
-          )}
-        </div>
+      <div
+        aria-hidden={!activeGroup}
+        aria-label="Selected technology group details"
+        aria-live="polite"
+        className={styles.detailCard}
+        id={DETAIL_ID}
+        role="region"
+      >
+        {activeGroup && (
+          <>
+            <p className={styles.detailEyebrow}>
+              TECH {String(activeGroupIndex).padStart(2, "0")}
+            </p>
+            <h3 className={styles.detailTitle}>{activeGroup.category}</h3>
+            <p className={styles.detailDescription}>{activeGroup.desc}</p>
+            <ul className={styles.skillList}>
+              {activeGroup.skills.map((skill) => (
+                <li className={styles.skillTag} key={skill}>
+                  {skill}
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
       </div>
 
       <div className={styles.toolTray}>
@@ -249,7 +256,10 @@ export function TechMarquee({
                 Close
               </button>
             </div>
-            <h3 className={styles.dialogTitle} id={`tech-dialog-${mobileGroup.id}`}>
+            <h3
+              className={styles.dialogTitle}
+              id={`tech-dialog-${mobileGroup.id}`}
+            >
               {mobileGroup.category}
             </h3>
             <p className={styles.dialogDescription}>{mobileGroup.desc}</p>
@@ -263,6 +273,6 @@ export function TechMarquee({
           </div>
         )}
       </dialog>
-    </section>
+    </div>
   );
 }
