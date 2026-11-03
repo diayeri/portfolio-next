@@ -70,11 +70,11 @@ const ProjectPreviewList = ({ projectIds }: ProjectPreviewListProps) => {
       <div className="mx-auto max-w-[1400px] px-5 md:px-10">
         <div className="flex items-end justify-between gap-6 mb-8 md:mb-12">
           <div>
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-secondary-light md:text-sm">
+            {/* <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-secondary-light md:text-sm">
               Selected Works
-            </p>
+            </p> */}
             <h2
-              className="text-3xl font-bold tracking-tight text-white md:text-5xl"
+              className="text-3xl font-bold text-white md:text-5xl"
               id="project-preview-title"
             >
               Project Preview

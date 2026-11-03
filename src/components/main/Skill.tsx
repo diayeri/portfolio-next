@@ -125,7 +125,7 @@ export default function Skill() {
   };
 
   return (
-    <section className="relative w-full">
+    <section className="relative w-full xl:px-5">
       <section
         aria-label="Skills and tools"
         className="mx-auto -mb-20 flex w-full max-w-[1400px] flex-col justify-between overflow-hidden bg-[linear-gradient(145deg,rgba(255,255,255,0.94),#f1ebf8)] shadow-[0_22px_60px_rgba(67,49,78,0.09)] xl:mb-0 xl:rounded-2xl xl:border"
@@ -142,7 +142,7 @@ export default function Skill() {
             }
           }}
         >
-          <p className="absolute right-3 top-3 z-[5] m-0 max-w-40 text-right text-[0.58rem] font-extrabold uppercase tracking-[0.08em] text-[#51415f] max-md:max-w-[7.5rem] max-md:text-[0.52rem]">
+          <p className="absolute right-3 top-3 z-[5] m-0 max-w-40 text-right text-[0.58rem] font-extrabold uppercase tracking-[0.08em] text-primary-dark opacity-60 max-md:max-w-[7.5rem] max-md:text-[0.52rem]">
             Hover, focus or tap to explore
           </p>
           <div className="absolute left-0 top-1/2 aspect-[1536/741] w-full -translate-y-1/2">
