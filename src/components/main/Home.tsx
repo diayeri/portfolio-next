@@ -1,7 +1,7 @@
 "use client";
 
 import Hero from "@/components/main/Hero";
-import Intro from "@/components/main/Intro";
+import Skill from "@/components/main/Skill";
 import Timeline from "@/components/main/Timeline";
 import ProjectPreviewList from "@/components/main/ProjectPreviewList";
 import { HeroProvider } from "@/context/HeroContext";
@@ -28,7 +28,7 @@ export default function Home({ roleKey }: HomeProps) {
         </HeroProvider>
         <ProjectPreviewList projectIds={projectPreviewIds} />
         <Timeline />
-        <Intro />
+        <Skill />
       </div>
     </RoleProvider>
   );
