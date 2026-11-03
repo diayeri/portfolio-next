@@ -23,10 +23,10 @@ const Footer: React.FC = () => {
           >
             DtoD
           </Link>
-          <div className="flex items-center gap-2 text-[10px] tracking-widest text-gray-500 uppercase">
+          {/* <div className="flex items-center gap-2 text-[10px] tracking-widest text-gray-500 uppercase">
             <span className="font-normal">Last Updated</span>
             <span className="font-semibold">{BuildDate()}</span>
-          </div>
+          </div> */}
         </div>
 
         {/* Center: Copyright */}

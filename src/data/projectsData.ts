@@ -195,6 +195,25 @@ export const projectsData: ProjectsData[] = [
       "팬덤의 '인증 문화'를 기부와 결합한 리워드 컨셉을 업계 최초로 기획하고, 감사장과 굿즈를 아우르는 통합 디자인 가이드를 수립하고 인터랙티브 요소를 직접 퍼블리싱했습니다. SNS 자발적 바이럴을 통해 기부의 선순환 구조를 만든 프로젝트입니다.",
   },
   {
+    id: "miral-campaign",
+    title: "소외계층 후원 캠페인",
+    startDate: "2018.10",
+    endDate: "2022.05",
+    category: ["Web Design", "Web Publishing"],
+    role: [
+      "Web Design 100%",
+      "Web Publishing 100%",
+      "Photography 80%",
+      "Illustration 100%",
+    ],
+    tech: ["Photoshop", "HTML5", "CSS3", "JavaScript", "jQuery"],
+    client: "밀알복지재단",
+    clientType: "company",
+    thumbnail: "/projects/miral-campaign/thumb.png",
+    description:
+      "팬덤의 '인증 문화'를 기부와 결합한 리워드 컨셉을 업계 최초로 기획하고, 감사장과 굿즈를 아우르는 통합 디자인 가이드를 수립하고 인터랙티브 요소를 직접 퍼블리싱했습니다. SNS 자발적 바이럴을 통해 기부의 선순환 구조를 만든 프로젝트입니다.",
+  },
+  {
     id: "central-church",
     title: "Central Church Brand Design",
     startDate: "2025.04",

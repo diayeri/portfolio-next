@@ -15,8 +15,8 @@ const projectPreviewIds = [
   "heysandy",
   "miral-fan",
   "muna",
+  "miral-campaign",
   "miral-payment",
-  "miral-1000",
 ];
 
 export default function Home({ roleKey }: HomeProps) {

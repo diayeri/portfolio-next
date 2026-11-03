@@ -128,7 +128,7 @@ export default function Skill() {
     <section className="relative w-full xl:px-5">
       <section
         aria-label="Skills and tools"
-        className="mx-auto -mb-20 flex w-full max-w-[1400px] flex-col justify-between overflow-hidden bg-[linear-gradient(145deg,rgba(255,255,255,0.94),#f1ebf8)] shadow-[0_22px_60px_rgba(67,49,78,0.09)] xl:mb-0 xl:rounded-2xl xl:border"
+        className="mx-auto -mb-20 flex w-full max-w-[1400px] flex-col justify-between overflow-hidden bg-[linear-gradient(145deg,rgba(255,255,255,0.94),#f1ebf8)] shadow-[0_22px_60px_rgba(67,49,78,0.09)] xl:mb-0 xl:border"
       >
         <div
           className="relative isolate aspect-[1536/741] max-h-[560px] w-full overflow-hidden"
@@ -261,14 +261,14 @@ export default function Skill() {
                 />
               </li>
             ))}
-            {additionalSkills.map((skill) => (
+            {/* {additionalSkills.map((skill) => (
               <li
                 className="whitespace-nowrap rounded-full border border-[rgba(106,87,121,0.15)] bg-[#f3eef5] px-[0.55rem] py-[0.32rem] text-[0.58rem] font-semibold leading-[1.1] text-[#51415f]"
                 key={skill}
               >
                 {skill}
               </li>
-            ))}
+            ))} */}
           </ul>
         </div>
 
@@ -276,7 +276,7 @@ export default function Skill() {
           aria-labelledby={
             mobileGroup ? `skill-dialog-${mobileGroup.id}` : undefined
           }
-          className="fixed left-1/2 top-1/2 m-0 max-h-[calc(100dvh-2rem)] w-[min(25rem,calc(100vw-2rem))] max-w-none -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-3xl border border-[rgba(112,96,126,0.2)] bg-[#fbf8f2] p-[1.35rem] text-[#51415f] shadow-[0_24px_70px_rgba(37,27,46,0.26)] backdrop:bg-[rgba(40,31,47,0.42)] backdrop:backdrop-blur-[5px]"
+          className="fixed left-1/2 top-1/2 m-0 max-h-[calc(100dvh-2rem)] w-[min(25rem,calc(100vw-2rem))] max-w-none -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-[32px] border border-[rgba(112,96,126,0.2)] bg-[#fbf8f2] p-[1.35rem] text-[#51415f] shadow-[0_24px_70px_rgba(37,27,46,0.26)] backdrop:bg-[rgba(40,31,47,0.42)] backdrop:backdrop-blur-[5px]"
           id={mobileGroup ? `skill-dialog-${mobileGroup.id}-dialog` : undefined}
           onCancel={(event) => {
             event.preventDefault();
