@@ -126,9 +126,7 @@ export default function Hero() {
   }, [setVisited]);
 
   return (
-    <section
-      className="relative flex flex-col items-center justify-center w-full h-screen px-5 py-10 overflow-hidden text-center bg-ani-gradient"
-    >
+    <section className="relative flex flex-col items-center justify-center w-full h-screen px-5 py-10 overflow-hidden text-center bg-ani-gradient">
       <GradientMesh className="z-0" opacity={0.3} speed={0.3} />
       <div className="absolute z-0 hidden left-center top-center md:flex">
         <MainAnimation key={replayKey} showStatic={showStatic} />
@@ -141,15 +139,17 @@ export default function Hero() {
         {...heroReveal(isMobile ? 0 : 3.2, replayIntro)}
         className="relative z-10 mt-5 text-5xl font-medium text-white sm:text-6xl md:text-8xl"
       >
-        <span className="md:ml-[-160px] text-transparent bg-clip-text bg-gradient-to-r from-primary-dark to-black drop-shadow-sm">
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-dark to-black drop-shadow-sm">
+          {/* <span className="md:ml-[-160px] text-transparent bg-clip-text bg-gradient-to-r from-primary-dark to-black drop-shadow-sm"> */}
           {/* <span className="md:ml-[-120px] text-transparent bg-clip-text bg-gradient-to-r from-primary-dark to-black drop-shadow-sm"> */}
           {/* <span className={roleKey !== "design" ? "ml-[54px]" : ""}>
             {roleData.titleEn}
           </span> */}
-          <span>UX Engineer</span>
+          <span>Design Engineer</span>
         </span>
         <br />
         <span className="md:mr-[-244px] text-nowrap drop-shadow-xl">
+          {/* <span className="text-nowrap drop-shadow-xl"> */}
           Dayoung Jung
         </span>
       </motion.h1>
@@ -160,11 +160,9 @@ export default function Hero() {
         className="relative z-10"
       >
         <p className="mt-16 text-base font-normal leading-7 text-gray-700">
-          디자인과 개발을 연결해, 사용자 경험을 제품으로 구현하는{" "}
-          <strong>UX 디자인 엔지니어</strong>입니다.
-          <br className="hidden sm:block" />
-          관리하기 편한 코드와 다정한 디자인으로, 편안한 경험을 만드는 것을
-          목표로 합니다.
+          디자인 기획부터 제작, 구현까지 폭넓게 주도하며
+          <br /> 실질적인 성과를 만들어내는 <strong>디자인 엔지니어</strong>
+          입니다.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-3 mt-10">
           <a
