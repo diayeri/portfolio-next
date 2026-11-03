@@ -13,10 +13,10 @@ type HomeProps = {
 
 const projectPreviewIds = [
   "heysandy",
-  "miral-1000",
   "miral-fan",
-  "miral-payment",
   "muna",
+  "miral-payment",
+  "miral-1000",
 ];
 
 export default function Home({ roleKey }: HomeProps) {
