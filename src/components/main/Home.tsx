@@ -18,9 +18,9 @@ export default function Home({ roleKey }: HomeProps) {
         <HeroProvider>
           <Hero />
         </HeroProvider>
-        <Intro />
         <FeaturedProjectList />
         <Timeline />
+        <Intro />
       </div>
     </RoleProvider>
   );

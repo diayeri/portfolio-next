@@ -29,7 +29,7 @@ const FeaturedProjectList = () => {
   }, [featuredProjects]);
 
   return (
-    <section className="w-full bg-black">
+    <section className="w-full bg-black" id="about">
       <div className="max-w-[1400px] mx-auto px-5 py-16 md:py-24 md:px-10">
         <div className="flex flex-wrap justify-between w-full gap-6 mb-5 md:mb-12">
           <motion.h2
