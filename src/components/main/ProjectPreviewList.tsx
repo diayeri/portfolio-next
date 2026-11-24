@@ -64,7 +64,7 @@ const ProjectPreviewList = ({ projectIds }: ProjectPreviewListProps) => {
   return (
     <section
       aria-labelledby="project-preview-title"
-      className="w-full py-16 overflow-hidden bg-[#171321] text-white md:py-24"
+      className="w-full py-16 overflow-hidden bg-deep text-white md:py-24"
       id="main"
     >
       <div className="mx-auto max-w-[1400px] px-5 md:px-10">

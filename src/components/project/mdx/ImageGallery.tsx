@@ -89,7 +89,7 @@ const ImageGallery = ({ images, height = "400px" }: ImageGalleryProps) => {
                 onClick={() => setCurrentIndex(idx)}
                 className={`relative flex-none w-20 h-14 rounded-md overflow-hidden border-2 transition-all ${
                   currentIndex === idx
-                    ? "border-blue-500 scale-110"
+                    ? "border-secondary scale-110"
                     : "border-transparent opacity-50"
                 }`}
               >
