@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Mono } from "next/font/google";
+import { Gaegu, Space_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import DefaultLayout from "@/layouts/DefaultLayout";
 import Script from "next/script";
@@ -17,6 +17,15 @@ const spaceMono = Space_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
   weight: ["400", "700"],
+});
+
+// 손글씨체(폴라로이드 키워드, 포인트 문구). Phase 1에서 폰트를 확정하면 이 블록만 바꾼다.
+// 한글 글리프는 subset으로 나눌 수 없어 preload를 끈다.
+const handFont = Gaegu({
+  variable: "--font-hand",
+  weight: ["400", "700"],
+  preload: false,
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -70,7 +79,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${satoshi.variable} ${spaceMono.variable} antialiased`}>
+      <body className={`${satoshi.variable} ${spaceMono.variable} ${handFont.variable} antialiased`}>
         <GAListener />
         <DefaultLayout>{children}</DefaultLayout>
       </body>

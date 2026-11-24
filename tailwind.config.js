@@ -8,6 +8,7 @@ module.exports = {
       fontFamily: {
         sans: ["Satoshi", "Pretendard", "sans-serif"],
         mono: ["Space Mono", "monospace"],
+        hand: ["var(--font-hand)", "cursive"],
       },
       colors: {
         primary: "var(--color-primary)",
