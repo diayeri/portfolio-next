@@ -25,39 +25,53 @@
     --font-sans: "Pretendard", "Satoshi", system-ui, sans-serif;
     --font-mono: "Space Mono", monospace;
 
-    /* Primary: hero mesh와 어울리는 바이올렛 */
-    --color-primary: #8758e8;
-    --color-primary-light: #b69af5;
-    --color-primary-dark: #6337c2;
+    /* Primary: 월넛 브라운 (선반, 링크, 기본 포인트) */
+    --color-primary: #6b4a33;
+    --color-primary-light: #9c7457;
+    --color-primary-dark: #4a3222;
 
-    /* Secondary: mesh의 핑크 하이라이트 */
-    --color-secondary: #e86a9a;
-    --color-secondary-light: #f5a1bf;
-    --color-secondary-dark: #b84473;
+    /* Secondary: 주 강조 테라코타 (CTA hover, 선택/활성, 섹션 포인트)
+       크림 위 대비 약 3.5:1 → 본문 글자색으로 쓰지 않는다 */
+    --color-secondary: #c0643f;
+    --color-secondary-light: #e09b7c;
+    --color-secondary-dark: #94482a;
 
-    /* Background: 은은한 라일락 뉴트럴 */
-    --color-background: #f7f4fb;
-    --color-background-light: #fff;
-    --color-background-dark: #eee9f5;
+    /* Accent: 보조 강조 세이지 (태그/칩, 상태 표시, 작은 장식)
+       secondary와 한 요소에 나란히 쓰지 않는다 */
+    --color-accent: #6f8a5b;
+    --color-accent-light: #a3b58f;
+    --color-accent-dark: #4f6640;
+    --color-accent-soft: #e4eadb; /* 칩 배경 */
 
-    /* Text */
-    --color-text: #333;
-    --color-text-light: #666; /* 보조 텍스트 */
-    --color-text-dark: #222; /* 강조/딥 텍스트 */
+    /* Background: 벽 크림 */
+    --color-background: #f4eee3;
+    --color-background-light: #faf6ef;
+    --color-background-dark: #eae1d2;
 
-    /* Surface (카드/컨테이너) */
-    --color-surface: #fff;
-    --color-surface-light: #fcfaff;
-    --color-surface-dark: #e9e2f2;
+    /* Text: 웜 다크 브라운 (순흑 사용 안 함) */
+    --color-text: #3a2e26;
+    --color-text-light: #74665a; /* 보조 텍스트 */
+    --color-text-dark: #241c17; /* 강조/딥 텍스트 */
 
-    /* Gradient: mesh의 라일락과 핑크를 부드럽게 확장 */
-    --color-gradient-1: #e7e2f5;
-    --color-gradient-2: #e8def1;
-    --color-gradient-3: #f5dce9;
+    /* Surface (카드/컨테이너): 크림에 어울리는 오프화이트 */
+    --color-surface: #fbf8f2;
+    --color-surface-light: #fffdf9;
+    --color-surface-dark: #efe6d8;
 
-    --color-hero-mesh-a: #3b2a8d;
-    --color-hero-mesh-b: #aaa7d7;
-    --color-hero-mesh-c: #f75092;
+    /* Deep: 웜 다크 섹션 (기존 #171321 대체) */
+    --color-deep: #2e241d;
+    --color-deep-light: #3b2f26; /* 다크 섹션 위 카드 */
+    --color-deep-lighter: #4a3b2f; /* 카드 hover, 썸네일 영역 */
+
+    /* Gradient (.bg-ani-gradient): Hero 교체(Phase 3) 후 제거 후보 */
+    --color-gradient-1: #f4eee3;
+    --color-gradient-2: #efe4d3;
+    --color-gradient-3: #f1ddd0;
+
+    /* Hero mesh (GradientMesh): Hero 교체(Phase 3) 후 제거 후보 */
+    --color-hero-mesh-a: #6b4a33;
+    --color-hero-mesh-b: #e8dcc8;
+    --color-hero-mesh-c: #c0643f;
   }
 
   .dark {
